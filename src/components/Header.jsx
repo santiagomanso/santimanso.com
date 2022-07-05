@@ -3,8 +3,14 @@ import { useNavigate } from 'react-router-dom'
 import { AnimationContext } from '../context/animationContext'
 
 const Header = () => {
-  const [animation1, animation2, setAnimation1, setAnimation2] =
-    useContext(AnimationContext)
+  const [
+    animation1,
+    animation2,
+    animation3,
+    setAnimation1,
+    setAnimation2,
+    setAnimation3,
+  ] = useContext(AnimationContext)
 
   const navigate = useNavigate()
 
