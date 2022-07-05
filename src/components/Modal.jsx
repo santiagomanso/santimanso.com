@@ -15,7 +15,7 @@ export default function Modal({
   return ReactDom.createPortal(
     <>
       <div className='fixed top-0 left-0 bottom-0 right-0 bg-black/70' />
-      <div className='fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] bg-red-600 w-screen lg:w-[85vw] xl:w-[60vw] h-full lg:h-3/4'>
+      <div className='fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] w-screen lg:w-[85vw] xl:w-[60vw] h-full lg:h-3/4'>
         <div className='flex flex-col lg:flex-row w-full h-full'>
           <div className='text-white flex justify-center items-center w-full lg:w-2/3 h-2/4 lg:h-full bg-variant2 overflow-hidden select-none'>
             <img
