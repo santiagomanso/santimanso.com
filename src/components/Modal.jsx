@@ -1,4 +1,6 @@
+import { useContext } from 'react'
 import ReactDom from 'react-dom'
+import { AnimationContext } from '../context/animationContext'
 
 export default function Modal({
   open,
@@ -10,13 +12,23 @@ export default function Modal({
   urlCode,
   stack,
 }) {
+  const [
+    animation1,
+    animation2,
+    animation3,
+    setAnimation1,
+    setAnimation2,
+    setAnimation3,
+  ] = useContext(AnimationContext)
   if (!open) return null
 
   return ReactDom.createPortal(
     <>
       <div className='fixed top-0 left-0 bottom-0 right-0 bg-black/70' />
       <div className='fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] w-screen lg:w-[85vw] xl:w-[60vw] h-full lg:h-3/4'>
-        <div className='flex flex-col lg:flex-row w-full h-full'>
+        <div
+          className={` ${animation3} flex flex-col lg:flex-row w-full h-full`}
+        >
           <div className='text-white flex justify-center items-center w-full lg:w-2/3 h-2/4 lg:h-full bg-variant2 overflow-hidden select-none'>
             <img
               src={img}
@@ -97,7 +109,9 @@ export default function Modal({
           </div>
         </div>
         <button onClick={onClose}>
-          <i className='absolute right-3 top-0 text-secondary text-5xl lg:text-6xl fa-solid fa-xmark select-none'></i>
+          <i
+            className={`${animation3} absolute right-3 top-0 text-secondary text-5xl lg:text-6xl fa-solid fa-xmark select-none`}
+          ></i>
         </button>
       </div>
     </>,

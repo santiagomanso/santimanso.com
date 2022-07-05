@@ -2,8 +2,18 @@ import { projectsData } from '../data/projects'
 import { ModalContext } from '../context/ModalContext'
 import { useContext, useState } from 'react'
 import Modal from './Modal'
+import { AnimationContext } from '../context/animationContext'
 
 const ProjectList = () => {
+  const [
+    animation1,
+    animation2,
+    animation3,
+    setAnimation1,
+    setAnimation2,
+    setAnimation3,
+  ] = useContext(AnimationContext)
+
   const [open, setOpen] = useContext(ModalContext)
 
   const [img, setImg] = useState('')
@@ -14,7 +24,13 @@ const ProjectList = () => {
   const [urlCode, setUrlCode] = useState('')
 
   const handlerCloseModal = () => {
-    setOpen(false)
+    setAnimation3('animate__animated animate__slideOutRight')
+    setTimeout(() => {
+      setAnimation3('animate__animated animate__slideInRight')
+    }, 900)
+    setTimeout(() => {
+      setOpen(false)
+    }, 750)
   }
 
   return (

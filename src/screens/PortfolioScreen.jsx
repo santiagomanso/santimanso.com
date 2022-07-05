@@ -2,7 +2,7 @@ import ProjectList from '../components/ProjectList'
 
 const PortfolioScreen = () => {
   return (
-    <div className='h-screen md:w-5/6 select-none overflow-hidden'>
+    <div className='h-screen md:w-5/6 select-none overflow-hidden animate__animated animate__backInLeft'>
       <div className='flex flex-col items-center xl:items-start py-1 md:py-2 px-5 md:px-14 xl:px-2'>
         <h1 className='text-white text-5xl md:pt-5 xl:pt-10'>
           <span className='hidden md:inline'>my </span>portfolio
