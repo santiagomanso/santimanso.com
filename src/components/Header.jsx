@@ -1,6 +1,13 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Header = () => {
+  const navigate = useNavigate()
+
+  const handlerNavigate = () => {
+    navigate('/portfolio')
+  }
+
   return (
     <div className='flex justify-center items-center '>
       <div className='flex flex-col items-center text-center gap-4 select-none p-4 sm:p-0'>
@@ -13,12 +20,12 @@ const Header = () => {
         <h2 className='text-secondary text-3xl lg:text-4xl tracking-wider'>
           let's do something special. hit me up
         </h2>
-        <a
-          href='/portfolio'
+        <button
+          onClick={handlerNavigate}
           className='mt-5 px-12 py-5 rounded-md border-solid border-2 border-white text-3xl text-white tracking-widest cta'
         >
           portfolio
-        </a>
+        </button>
       </div>
     </div>
   )
