@@ -22,7 +22,7 @@ const Nav = () => {
       <div
         className={`${
           open ? 'translate-x-0' : 'translate-x-full'
-        } bg-primary/90 w-2/3 h-screen fixed top-0 right-0 z-10 select-none ease-in-out duration-300`}
+        } bg-primary/100 w-2/3 h-screen fixed top-0 right-0 z-10 select-none ease-in-out duration-300`}
       >
         <nav className={`  text-secondary text-3xl`}>
           <button onClick={handlerToggleOpen} className='fixed top-3 right-5'>
@@ -34,46 +34,46 @@ const Nav = () => {
           </button>
           <ul className=' flex flex-col gap-5 pt-20'>
             <li className='px-5 flex justify-between items-center group'>
-              <i className='opacity-50 group-hover:opacity-100 text-3xl fa-solid fa-house'></i>
-              <p className='opacity-50 group-hover:opacity-100 text-2xl'>
+              <i className='opacity-30 group-hover:opacity-100 group-hover:color-white text-3xl fa-solid fa-house'></i>
+              <p className='opacity-30 group-hover:opacity-100 group-hover:color-white text-2xl'>
                 home
               </p>
-              <i className='opacity-50 group-hover:opacity-100 fa-solid fa-chevron-right text-2xl'></i>
+              <i className='opacity-30 group-hover:opacity-100 group-hover:color-white fa-solid fa-chevron-right text-2xl'></i>
             </li>
             <li className='px-5 flex justify-between items-center group'>
-              <i className='opacity-50 group-hover:opacity-100 text-3xl fa-solid fa-user-graduate'></i>
-              <p className='opacity-50 group-hover:opacity-100 text-2xl'>
+              <i className='opacity-30 group-hover:opacity-100 group-hover:color-white text-3xl fa-solid fa-user-graduate'></i>
+              <p className='opacity-30 group-hover:opacity-100 group-hover:color-white text-2xl'>
                 about
               </p>
-              <i className='opacity-50 group-hover:opacity-100 fa-solid fa-chevron-right text-2xl'></i>
+              <i className='opacity-30 group-hover:opacity-100 group-hover:color-white fa-solid fa-chevron-right text-2xl'></i>
             </li>
             <li className='px-5 flex justify-between items-center group'>
-              <i className='opacity-50 group-hover:opacity-100 text-3xl fa-solid fa-briefcase'></i>
-              <p className='opacity-50 group-hover:opacity-100 text-2xl'>
+              <i className='opacity-30 group-hover:opacity-100 group-hover:color-white text-3xl fa-solid fa-briefcase'></i>
+              <p className='opacity-30 group-hover:opacity-100 group-hover:color-white text-2xl'>
                 portfolio
               </p>
-              <i className='opacity-50 group-hover:opacity-100 fa-solid fa-chevron-right text-2xl'></i>
+              <i className='opacity-30 group-hover:opacity-100 group-hover:color-white fa-solid fa-chevron-right text-2xl'></i>
             </li>
             <li className='px-5 flex justify-between items-center group'>
-              <i className='opacity-50 group-hover:opacity-100 text-3xl fa-solid fa-file-lines'></i>
-              <p className='opacity-50 group-hover:opacity-100 text-2xl'>
+              <i className='opacity-30 group-hover:opacity-100 group-hover:color-white text-3xl fa-solid fa-file-lines'></i>
+              <p className='opacity-30 group-hover:opacity-100 group-hover:color-white text-2xl'>
                 curriculum
               </p>
-              <i className='opacity-50 group-hover:opacity-100 fa-solid fa-chevron-right text-2xl'></i>
+              <i className='opacity-30 group-hover:opacity-100 group-hover:color-white fa-solid fa-chevron-right text-2xl'></i>
             </li>
             <li className='px-5 flex justify-between items-center group'>
-              <i className='opacity-50 group-hover:opacity-100 text-3xl fa-brands fa-github'></i>
-              <p className='opacity-50 group-hover:opacity-100 text-2xl'>
+              <i className='opacity-30 group-hover:opacity-100 group-hover:color-white text-3xl fa-brands fa-github'></i>
+              <p className='opacity-30 group-hover:opacity-100 group-hover:color-white text-2xl'>
                 github
               </p>
-              <i className='opacity-50 group-hover:opacity-100 fa-solid fa-chevron-right text-2xl'></i>
+              <i className='opacity-30 group-hover:opacity-100 group-hover:color-white fa-solid fa-chevron-right text-2xl'></i>
             </li>
             <li className='px-5 flex justify-between items-center group'>
-              <i className='opacity-50 group-hover:opacity-100 text-3xl fa-brands fa-linkedin-in'></i>
-              <p className='opacity-50 group-hover:opacity-100 text-2xl'>
+              <i className='opacity-30 group-hover:opacity-100 group-hover:color-white text-3xl fa-brands fa-linkedin-in'></i>
+              <p className='opacity-30 group-hover:opacity-100 group-hover:color-white text-2xl'>
                 LinkedIn
               </p>
-              <i className='opacity-50 group-hover:opacity-100 fa-solid fa-chevron-right text-2xl'></i>
+              <i className='opacity-30 group-hover:opacity-100 group-hover:color-white fa-solid fa-chevron-right text-2xl'></i>
             </li>
           </ul>
         </nav>
