@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { AnimationContext } from '../context/animationContext'
+import { Cursor, useTypewriter } from 'react-simple-typewriter'
 
 const Header = () => {
   const [
@@ -23,22 +24,31 @@ const Header = () => {
       setAnimation2('animate__animated animate__fadeInLeft')
     }, 1500)
   }
+  const { text } = useTypewriter({
+    words: ['Developer', 'Student', 'passionate'],
+    loop: false, // Infinit
+    delaySpeed: 2000,
+    typeSpeed: 200,
+    deleteSpeed: 90,
+  })
 
   return (
     <div className={`${animation1}   `}>
-      <div className='flex flex-col items-center text-center gap-4 select-none p-4 sm:p-0'>
-        <h1 className='text-white text-6xl lg:text-8xl tracking-wide'>
-          hi, it's santiago manso castro
-        </h1>
-        <h2 className='text-secondary text-3xl lg:text-4xl tracking-wider'>
-          berlin based Frontend developer
+      <div className='flex  flex-col justify-center gap-4 select-none p-4 sm:p-0'>
+        <h1>santiago manso castro</h1>
+        <h2>
+          Frontend{' '}
+          <span className='text-white italic tracking-wide'>
+            {text}
+            <Cursor cursorStyle={'_'} />
+          </span>
         </h2>
-        <h2 className='text-secondary text-3xl lg:text-4xl tracking-wider'>
-          let's do something special. hit me up
+        <h2>
+          let's <span>create</span> something special.
         </h2>
         <button
           onClick={handlerNavigate}
-          className='mt-5 px-12 py-5 rounded-md border-solid border-2 border-white text-3xl text-white tracking-widest cta'
+          className='mt-5 w-2/3 py-3 self-center rounded-md border-solid border-2 border-white text-3xl text-white tracking-widest cta'
         >
           portfolio
         </button>

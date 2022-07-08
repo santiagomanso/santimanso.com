@@ -22,7 +22,7 @@ const Nav = () => {
       <div
         className={`${
           open ? 'translate-x-0' : 'translate-x-full'
-        } bg-primary/100 w-2/3 h-screen fixed top-0 right-0 z-10 select-none ease-in-out duration-300`}
+        } bg-primary/100 w-3/4 rounded-tl-xl rounded-bl-xl h-screen fixed top-0 right-0 z-10 select-none ease-in-out duration-300`}
       >
         <nav className={`  text-secondary text-3xl`}>
           <button onClick={handlerToggleOpen} className='fixed top-3 right-5'>
@@ -41,7 +41,7 @@ const Nav = () => {
               <i className='opacity-30 group-hover:opacity-100  fa-solid fa-chevron-right text-2xl'></i>
             </li>
             <li className='px-5 flex justify-between items-center group'>
-              <i className='opacity-30 group-hover:opacity-100  text-3xl fa-solid fa-microchip'></i>
+              <i className='opacity-30 group-hover:opacity-100  text-3xl fa-solid fa-hammer'></i>
               <p className='opacity-30 group-hover:opacity-100  text-2xl'>
                 skills
               </p>
