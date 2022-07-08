@@ -25,7 +25,7 @@ const Header = () => {
     }, 1500)
   }
   const { text } = useTypewriter({
-    words: ['Developer', 'Student', 'passionate'],
+    words: ['Web Developer', 'Student'],
     loop: false, // Infinit
     delaySpeed: 2000,
     typeSpeed: 200,
@@ -37,18 +37,17 @@ const Header = () => {
       <div className='flex  flex-col justify-center gap-4 select-none p-4 sm:p-0'>
         <h1>santiago manso castro</h1>
         <h2>
-          Frontend{' '}
           <span className='text-white italic tracking-wide'>
             {text}
             <Cursor cursorStyle={'_'} />
           </span>
         </h2>
         <h2>
-          let's <span>create</span> something special.
+          let's <span>create</span> something special
         </h2>
         <button
           onClick={handlerNavigate}
-          className='mt-5 w-2/3 py-3 self-center rounded-md border-solid border-2 border-white text-3xl text-white tracking-widest cta'
+          className='mt-5 w-2/3 py-3 self-center lg:self-end rounded-md border-solid border-2 border-white text-3xl text-white tracking-widest cta'
         >
           portfolio
         </button>
