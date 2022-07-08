@@ -15,15 +15,15 @@
     text-decoration: none;
   }
   .app{
-    background: linear-gradient(33deg, rgba(55,86,106,1) 0%, rgba(34,38,42,1) 33%);
+    background: linear-gradient(55deg, rgba(55,86,106,1) 3%, rgba(34,38,42,1) 16%);
     word-spacing: .3rem;
   }
 
   h1{
-    @apply text-white text-5xl
+    @apply text-white 
   }
   h2{
-    @apply text-secondary text-4xl
+    @apply text-secondary 
   }
 
   .cta{

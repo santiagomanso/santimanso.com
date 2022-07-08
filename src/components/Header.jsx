@@ -33,8 +33,8 @@ const Header = () => {
   })
 
   return (
-    <div className={`${animation1}   `}>
-      <div className='flex  flex-col justify-center gap-4 select-none p-4 sm:p-0'>
+    <div className={`${animation1}  `}>
+      <div className=' bg-blue-500/50 hidden'>
         <h1>santiago manso castro</h1>
         <h2>
           <span className='text-white italic tracking-wide'>
@@ -47,7 +47,7 @@ const Header = () => {
         </h2>
         <button
           onClick={handlerNavigate}
-          className='mt-5 w-2/3 py-3 self-center lg:self-end rounded-md border-solid border-2 border-white text-3xl text-white tracking-widest cta'
+          className='py-3  rounded-md border-solid border-2 border-white text-3xl text-white tracking-widest cta'
         >
           portfolio
         </button>
