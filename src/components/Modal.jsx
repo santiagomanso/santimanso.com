@@ -39,10 +39,10 @@ export default function Modal({
           <div className='flex flex-col justify-between items-start px-5 pt-2 lg:pt-16 pb-6 w-full lg:w-1/2 h-full bg-variant1'>
             <div>
               <h2 className='text-secondary text-xl lg:text-3xl'>PROJECT</h2>
-              <h1 className='text-white text-xl lg:text-5xl tracking-wider'>
+              <h1 className='text-white text-2xl lg:text-5xl tracking-wider'>
                 {name}
               </h1>
-              <ul className='flex flex-wrap gap-4 text-secondary mt-2 lg:mt-5 text-xs lg:text-md'>
+              <ul className='flex flex-wrap gap-4 text-secondary mt-2 lg:mt-5 text-lg lg:text-md'>
                 {stack.map((tech, i) => (
                   <li
                     key={i}
@@ -53,7 +53,7 @@ export default function Modal({
                 ))}
               </ul>
               <h2 className='text-secondary text-lg lg:text-3xl mt-5'>About</h2>
-              <p className='text-white text-sm lg:text-2xl font-console font-[200]'>
+              <p className='text-white text-xl lg:text-2xl font-console font-[200]'>
                 {about}
               </p>
             </div>
