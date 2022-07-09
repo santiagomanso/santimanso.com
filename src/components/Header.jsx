@@ -25,11 +25,11 @@ const Header = () => {
     }, 1500)
   }
   const { text } = useTypewriter({
-    words: ['Web Developer', 'Student'],
+    words: ['Developer />', '/> </Student />'],
     loop: false, // Infinit
     delaySpeed: 2000,
-    typeSpeed: 200,
-    deleteSpeed: 90,
+    typeSpeed: 150,
+    deleteSpeed: 70,
   })
 
   return (
