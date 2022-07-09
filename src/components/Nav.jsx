@@ -11,35 +11,35 @@ const Nav = () => {
 
   return (
     <>
-      <nav className='hidden lg:inline text-secondary  tracking-widest select-none'>
-        <ul className='flex justify-between'>
+      <nav className=' hidden lg:inline text-secondary  tracking-widest select-none'>
+        <ul className='mt-10 flex justify-between items-center'>
           <li className=' cursor-pointer  hover:text-white flex items-baseline gap-1 translate-y-0 hover:translate-y-1 hover:scale-105 transition-all ease-out duration-300 group'>
-            <i className='fa-solid text-xl fa-code'></i>
+            <i className='fa-solid text-2xl fa-code group-hover:rotate-[-23deg] transition-all ease-in-out duration-300'></i>
             <a>
-              <p className='opacity-40 group-hover:opacity-100 text-lg'>home</p>
+              <p className='opacity-40 group-hover:opacity-100 text-xl'>home</p>
             </a>
           </li>
           <div className=' flex gap-20'>
             <li className=' cursor-pointer  hover:text-white flex items-baseline gap-1 translate-y-0 hover:translate-y-1 hover:scale-105 transition-all ease-out duration-300 group'>
-              <i className='fa-solid text-xl fa-folder-open'></i>
+              <i className='fa-solid text-2xl fa-folder-open group-hover:rotate-[-23deg] transition-all ease-in-out duration-300'></i>
               <a>
-                <p className='opacity-40 group-hover:opacity-100 text-lg'>
+                <p className='opacity-40 group-hover:opacity-100 text-xl'>
                   portfolio
                 </p>
               </a>
             </li>
             <li className=' cursor-pointer  hover:text-white flex items-baseline gap-1 translate-y-0 hover:translate-y-1 hover:scale-105 transition-all ease-out duration-300 group'>
-              <i className='fa-solid text-xl fa-file-lines'></i>
+              <i className='fa-solid text-2xl fa-file-lines group-hover:rotate-[-23deg] transition-all ease-in-out duration-300'></i>
               <a>
-                <p className='opacity-40 group-hover:opacity-100 text-lg'>
+                <p className='opacity-40 group-hover:opacity-100 text-xl'>
                   curriculum
                 </p>
               </a>
             </li>
             <li className=' cursor-pointer  hover:text-white flex items-baseline gap-1 translate-y-0 hover:translate-y-1 hover:scale-105 transition-all ease-out duration-300 group'>
-              <i className='fa-solid text-xl fa-hammer'></i>
+              <i className='fa-solid text-2xl fa-hammer group-hover:rotate-[-23deg] transition-all ease-in-out duration-300'></i>
               <a>
-                <p className='opacity-40 group-hover:opacity-100 text-lg'>
+                <p className='opacity-40 group-hover:opacity-100 text-xl'>
                   skills
                 </p>
               </a>
@@ -52,7 +52,7 @@ const Nav = () => {
           onClick={handlerToggleOpen}
           className={`${
             open ? 'inline' : ''
-          }  text-secondary text-4xl sm:text-5xl fixed top-15 right-5`}
+          }  text-secondary text-4xl sm:text-5xl fixed top-13 sm:top-15 right-10`}
         >
           <i className='fa-solid fa-bars'></i>
         </button>
