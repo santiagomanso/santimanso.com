@@ -33,26 +33,25 @@ const Header = () => {
   })
 
   return (
-    <div className={`${animation1}  `}>
-      <div className=' bg-blue-500/50 hidden'>
-        <h1>santiago manso castro</h1>
-        <h2>
-          <span className='text-white italic tracking-wide'>
-            {text}
+    <aside className='flex justify-between h-full pb-32'>
+      <div className='flex flex-col md:justify-start lg:justify-end '>
+        <h1 className='text-4xl sm:text-6xl lg:text-6xl'>
+          Santiago M<span className='inline md:hidden'>.</span>
+          <span className='hidden md:inline'>anso</span> Castro
+        </h1>
+        <span className='text-secondary text-3xl md:text-4xl italic tracking-wide mt-5 lg:mt-0'>
+          {'<'}Frontend {text}
+          <span className='text-white'>
+            {''}
             <Cursor cursorStyle={'_'} />
           </span>
-        </h2>
-        <h2>
-          let's <span>create</span> something special
-        </h2>
-        <button
-          onClick={handlerNavigate}
-          className='py-3  rounded-md border-solid border-2 border-white text-3xl text-white tracking-widest cta'
-        >
-          portfolio
-        </button>
+        </span>
       </div>
-    </div>
+      <div className='hidden md:flex flex-col justify-end gap-2  text-5xl select-none'>
+        <i className='opacity-30 hover:opacity-100 text-white hover:text-secondary  fa-brands fa-linkedin-in'></i>
+        <i className='opacity-30 hover:opacity-100 text-white hover:text-secondary  fa-brands fa-github'></i>
+      </div>
+    </aside>
   )
 }
 
