@@ -25,7 +25,7 @@ const Header = () => {
     }, 1500)
   }
   const { text } = useTypewriter({
-    words: ['Developer />', '/> </Student />'],
+    words: ['Developer />', '/> <Student />'],
     loop: false, // Infinit
     delaySpeed: 2000,
     typeSpeed: 150,
@@ -33,12 +33,22 @@ const Header = () => {
   })
 
   return (
-    <aside className='flex justify-between h-full select-none'>
-      <div className='flex flex-col md:justify-start lg:justify-end '>
-        <h1 className='text-4xl sm:text-6xl lg:text-6xl'>
-          Santiago M<span className='inline md:hidden'>.</span>
-          <span className='hidden md:inline'>anso</span> Castro
-        </h1>
+    <aside
+      className={` ${animation1} w-full flex flex-col tracking-wider lg:mt-[65%] xl:mt-[40%] select-none`}
+    >
+      <div className='flex flex-col'>
+        <div className='flex justify-between'>
+          <h1 className=' text-3xl sm:text-4xl lg:text-5xl '>
+            Santiago M<span className='inline md:hidden '>.</span>
+            <span className='hidden md:inline'>anso</span> Castro
+          </h1>
+          <div className='hidden lg:flex flex-col '>
+            <i className='opacity-30 hover:opacity-100 text-white hover:text-secondary  fa-brands fa-linkedin-in pr-0 text-3xl'></i>
+            <i className='opacity-30 hover:opacity-100 text-white hover:text-secondary  fa-brands fa-github pr-0 text-3xl'></i>
+          </div>
+        </div>
+      </div>
+      <div className='flex flex-col md:flex-row items-center justify-between gap-3  text-4xl select-none '>
         <span className='text-secondary text-3xl md:text-4xl italic tracking-wide mt-5 lg:mt-0'>
           {'<'}Frontend {text}
           <span className='text-white'>
@@ -46,15 +56,15 @@ const Header = () => {
             <Cursor cursorStyle={'_'} />
           </span>
         </span>
-      </div>
-      <div className='hidden md:flex flex-col justify-end gap-3 items-end text-4xl select-none'>
-        <i className='opacity-30 hover:opacity-100 text-white hover:text-secondary  fa-brands fa-linkedin-in pr-2'></i>
-        <i className='opacity-30 hover:opacity-100 text-white hover:text-secondary  fa-brands fa-github pr-1'></i>
-        <div className='text-secondary flex items-center gap-3 group  transition-all ease-in-out duration-300'>
-          <span className=' text-2xl tracking-wide scale-100 group-hover:-translate-x-4 group-hover:scale-[1.2] group-hover:-translate-y-2 transition-all ease-in-out duration-300  border-2 border-solid border-secondary px-8 py-2 rounded-xl'>
+
+        <div
+          onClick={handlerNavigate}
+          className='text-lime-600 flex items-center gap-3 group  transition-all ease-in-out duration-300 hover:cursor-pointer'
+        >
+          <span className=' text-3xl tracking-wide scale-100 group-hover:-translate-x-4 group-hover:scale-[1.2] group-hover:-translate-y-2 transition-all ease-in-out duration-300  border-2 border-solid border-lime-600 px-8 py-2 rounded-xl'>
             my work
           </span>
-          <i className='fa-solid fa-display text-4xl group group-hover:rotate-[20deg] transition-all ease-in duration-300'></i>
+          <i className='fa-solid fa-display text-5xl group group-hover:rotate-[20deg] transition-all ease-in duration-300 text-lime-600'></i>
         </div>
       </div>
     </aside>

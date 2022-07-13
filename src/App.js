@@ -14,7 +14,6 @@ function App() {
       <ModalProvider>
         <BrowserRouter>
           <Container>
-            <Nav />
             <Routes>
               <Route exact path='/' element={<HomeScreen />} />
               <Route path='/portfolio' element={<PortfolioScreen />} />

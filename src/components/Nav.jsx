@@ -1,7 +1,13 @@
-import { useState } from 'react'
+import { useEffect } from 'react'
+import { useContext, useState } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
+import { AnimationContext } from '../context/animationContext'
 
 const Nav = () => {
+  const { pathname } = useLocation()
+
   const [open, setOpen] = useState(false)
+  const [active, setActive] = useState('home')
 
   const handlerToggleOpen = () => {
     if (open) {
@@ -9,40 +15,123 @@ const Nav = () => {
     } else setOpen(true)
   }
 
+  const [
+    animation1,
+    animation2,
+    animation3,
+    setAnimation1,
+    setAnimation2,
+    setAnimation3,
+  ] = useContext(AnimationContext)
+
+  const navigate = useNavigate()
+
+  const handlerNavigate = (url) => {
+    setAnimation1('animate__animated animate__backOutRight')
+    setAnimation2('animate__animated animate__fadeOutLeft')
+    setTimeout(() => {
+      navigate(url)
+      setAnimation1('animate__animated animate__fadeInLeft')
+      setAnimation2('animate__animated animate__fadeInLeft')
+    }, 1500)
+  }
+
+  useEffect(() => {
+    if (pathname === '/portfolio') {
+      setActive('portfolio')
+    }
+  }, [pathname])
+
   return (
     <>
       <nav className=' hidden lg:inline text-secondary  tracking-widest select-none'>
-        <ul className='mt-10 flex justify-between items-center'>
-          <li className=' cursor-pointer  hover:text-white flex items-baseline gap-1 translate-y-0 hover:translate-y-1 hover:scale-105 transition-all ease-out duration-300 group'>
-            <i className='fa-solid text-xl fa-code group-hover:rotate-[-23deg] transition-all ease-in-out duration-300'></i>
-            <a>
-              <p className='opacity-40 group-hover:opacity-100 text-lg'>home</p>
-            </a>
+        <ul className=' flex justify-between items-center'>
+          <li
+            onClick={() => {
+              setActive('home')
+              handlerNavigate('/')
+            }}
+            className={`${
+              active === 'home' ? ' text-white opacity-100' : ''
+            } cursor-pointer  hover:text-white flex items-baseline gap-1 translate-y-0 hover:translate-y-1 hover:scale-105 transition-all ease-out duration-300 group`}
+          >
+            <p className='flex items-baseline gap-1'>
+              <i className='fa-solid text-xl fa-code group-hover:rotate-[-23deg] transition-all ease-in-out duration-300'></i>
+
+              <span
+                className={` ${
+                  active === 'home' ? 'opacity-100' : 'opacity-40'
+                }  group-hover:opacity-100 text-lg`}
+              >
+                home
+              </span>
+            </p>
           </li>
           <div className=' flex gap-20'>
-            <li className=' cursor-pointer  hover:text-white flex items-baseline gap-1 translate-y-0 hover:translate-y-1 hover:scale-105 transition-all ease-out duration-300 group'>
-              <i className='fa-solid text-xl fa-folder-open group-hover:rotate-[-23deg] transition-all ease-in-out duration-300'></i>
-              <a>
-                <p className='opacity-40 group-hover:opacity-100 text-lg'>
+            <li
+              onClick={() => {
+                setActive('portfolio')
+                handlerNavigate('/portfolio')
+              }}
+              className={`${
+                active === 'portfolio'
+                  ? ' text-white opacity-100 translate-y-1 scale-110 '
+                  : ''
+              } cursor-pointer  hover:text-white flex items-baseline gap-1 translate-y-0 hover:translate-y-1 hover:scale-105 transition-all ease-out duration-300 group`}
+            >
+              <p className='flex items-baseline gap-1' href='/portfolio'>
+                <i className='fa-solid text-xl fa-folder-open group-hover:rotate-[-23deg] transition-all ease-in-out duration-300'></i>
+
+                <span
+                  className={` ${
+                    active === 'portfolio' ? 'opacity-100' : 'opacity-40'
+                  }  group-hover:opacity-100 text-lg`}
+                >
                   portfolio
-                </p>
-              </a>
+                </span>
+              </p>
             </li>
-            <li className=' cursor-pointer  hover:text-white flex items-baseline gap-1 translate-y-0 hover:translate-y-1 hover:scale-105 transition-all ease-out duration-300 group'>
-              <i className='fa-solid text-xl fa-file-lines group-hover:rotate-[-23deg] transition-all ease-in-out duration-300'></i>
-              <a>
-                <p className='opacity-40 group-hover:opacity-100 text-lg'>
+            <li
+              onClick={() => {
+                setActive('curriculum')
+                handlerNavigate('/curriculum')
+              }}
+              className={`${
+                active === 'curriculum' ? ' text-white opacity-100' : ''
+              } cursor-pointer  hover:text-white flex items-baseline gap-1 translate-y-0 hover:translate-y-1 hover:scale-105 transition-all ease-out duration-300 group`}
+            >
+              <p className='flex items-baseline gap-1'>
+                <i className='fa-solid text-xl fa-file-lines group-hover:rotate-[-23deg] transition-all ease-in-out duration-300'></i>
+
+                <span
+                  className={` ${
+                    active === 'curriculum' ? 'opacity-100' : 'opacity-40'
+                  }  group-hover:opacity-100 text-lg`}
+                >
                   curriculum
-                </p>
-              </a>
+                </span>
+              </p>
             </li>
-            <li className=' cursor-pointer  hover:text-white flex items-baseline gap-1 translate-y-0 hover:translate-y-1 hover:scale-105 transition-all ease-out duration-300 group'>
-              <i className='fa-solid text-xl fa-hammer group-hover:rotate-[-23deg] transition-all ease-in-out duration-300'></i>
-              <a>
-                <p className='opacity-40 group-hover:opacity-100 text-lg'>
+            <li
+              onClick={() => {
+                setActive('skills')
+                handlerNavigate('/skills')
+              }}
+              className={`${
+                active === 'skills' ? ' text-white opacity-100' : ''
+              } cursor-pointer  hover:text-white flex items-baseline gap-1 translate-y-0 hover:translate-y-1 hover:scale-105 transition-all ease-out duration-300 group`}
+            >
+              <p className='flex items-baseline gap-1'>
+                <i className='fa-solid text-xl fa-hammer group-hover:rotate-[-23deg] transition-all ease-in-out duration-300'></i>
+
+                <span
+                  className={` ${
+                    active === 'skills' ? 'opacity-100' : 'opacity-40'
+                  }  group-hover:opacity-100 text-lg`}
+                >
                   skills
-                </p>
-              </a>
+                </span>
+              </p>
             </li>
           </div>
         </ul>
@@ -52,7 +141,7 @@ const Nav = () => {
           onClick={handlerToggleOpen}
           className={`${
             open ? 'inline' : ''
-          }  text-secondary text-4xl sm:text-5xl fixed top-13 sm:top-15 right-10`}
+          }  text-secondary text-4xl sm:text-5xl fixed top-4 sm:top-15 right-8 z-10`}
         >
           <i className='fa-solid fa-bars'></i>
         </button>

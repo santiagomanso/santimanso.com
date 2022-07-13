@@ -22,6 +22,8 @@ const ProjectList = () => {
   const [about, setAbout] = useState('')
   const [urlDemo, setUrlDemo] = useState('')
   const [urlCode, setUrlCode] = useState('')
+  const [screenshot, setScreenshot] = useState('')
+  const [video, setVideo] = useState('')
 
   const handlerCloseModal = () => {
     setAnimation3('animate__animated animate__slideOutRight')
@@ -35,11 +37,11 @@ const ProjectList = () => {
 
   return (
     <>
-      <div className='h-4/5 md:max-h-3/5 lg:h-[85%] xl:max-h-4/5 flex flex-wrap justify-around md:justify-center xl:justify-between xl:items-start'>
+      <div className='mt-2 relative flex flex-wrap justify-between gap-x-28 gap-y-10 select-none'>
         {projectsData.map((project) => (
           <div
             key={project.id}
-            className='relative h-[30%] w-[42%] md:w-1/3 md:h-1/4 lg:w-[28%] lg:h-2/5 mx-2 my-5  bg-gray-600/90 hover:bg-blue-300/20  rounded-lg flex flex-col justify-between items-center overflow-hidden group card border-solid border-[1px] border-white/30 hover:border-white/80'
+            className='relative overflow-hidden group card border-solid border-[3px] border-secondary/40 hover:border-white/60  h-60 w-60 bg-lime-500/70 hover:bg-black/20 rounded-md'
           >
             <div className='text-white'>
               <img
@@ -48,11 +50,14 @@ const ProjectList = () => {
                 className='absolute left-[10%] w-5/6 h-5/6 group-hover:scale-[1.8] group-hover:-rotate-[23deg] group-hover:opacity-50 transition-all duration-1000'
               />
             </div>
-            <div className='relative w-full h-full lg:h-[65%] bg-zinc-900/80 flex flex-col gap-1 justify-start items-center text-white  group-hover:bg-zinc-900/80 rounded-md  xl:h-2/3 translate-y-[82%] md:translate-y-[79%] lg:translate-y-[75%] xl:translate-y-[70%] group-hover:translate-y-0 transition-all duration-[450ms]'>
-              <h1 className='pt-2 xl:pt-3 text-xl md:text-xl lg:text-3xl xl:text-4xl'>
+            <div
+              className='relative h-full bg-zinc-900/80 translate-y-[76%] group-hover:-translate-y-[0%] flex flex-col gap-1 justify-start items-center text-white
+              group-hover:bg-zinc-900/80 rounded-md   transition-all duration-[450ms]'
+            >
+              <h1 className='pt-2 xl:pt-3 text-xl md:text-xl lg:text-3xl xl:text-3xl'>
                 {project.name}
               </h1>
-              <p className='text-sm lg:text-xl xl:text-2xl px-3 lg:px-5'>
+              <p className='text-sm lg:text-xl xl:text-xl px-3 lg:px-5 tracking-wider'>
                 {project.descShort}
               </p>
               <button
@@ -64,8 +69,10 @@ const ProjectList = () => {
                   setAbout(project.descLong)
                   setUrlDemo(project.urlDemo)
                   setUrlCode(project.urlCode)
+                  setScreenshot('feature is currently beeing developed')
+                  setVideo('video feature is currently beeing developed')
                 }}
-                className='absolute lg:text-xl bottom-2 lg:bottom-4 cta px-2 lg:px-10 xl:px-14  py-1 xl:py-2 rounded-md border-solid border-2 border-white  text-white tracking-widest'
+                className='absolute lg:text-xl bottom-2 lg:bottom-4 cta px-2 lg:px-10  py-1 xl:py-2 rounded-md border-solid border-2 border-white  text-white tracking-wider'
               >
                 view project
               </button>
@@ -82,6 +89,8 @@ const ProjectList = () => {
         urlDemo={urlDemo}
         urlCode={urlCode}
         stack={stack}
+        screenshots={screenshot}
+        video={video}
       />
     </>
   )

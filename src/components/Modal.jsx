@@ -1,3 +1,5 @@
+import { useState } from 'react'
+import { useEffect } from 'react'
 import { useContext } from 'react'
 import ReactDom from 'react-dom'
 import { AnimationContext } from '../context/animationContext'
@@ -11,7 +13,21 @@ export default function Modal({
   urlDemo,
   urlCode,
   stack,
+  screenshots,
+  video,
+  dependencies,
 }) {
+  useEffect(() => {
+    setTabContent(about)
+  }, [about])
+
+  const [tabContent, setTabContent] = useState('')
+  const [active, setActive] = useState('about')
+
+  const handlerTab = (arg) => {
+    setTabContent(arg)
+  }
+
   const [
     animation1,
     animation2,
@@ -25,7 +41,7 @@ export default function Modal({
   return ReactDom.createPortal(
     <>
       <div className='fixed top-0 left-0 bottom-0 right-0 bg-black/70' />
-      <div className='fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] w-screen lg:w-[85vw] xl:w-[60vw] h-full lg:h-3/4'>
+      <div className='fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] w-screen lg:w-[85vw]  h-full lg:h-[90%]'>
         <div
           className={` ${animation3} flex flex-col lg:flex-row w-full h-full`}
         >
@@ -36,13 +52,13 @@ export default function Modal({
               className='w-2/4 lg:w-3/4 h-3/4 animate-spin-slow'
             />
           </div>
-          <div className='flex flex-col justify-between items-start px-5 pt-2 lg:pt-16 pb-6 w-full lg:w-1/2 h-full bg-variant1'>
+          <div className='flex flex-col justify-between items-start px-5 pt-2 lg:pt-2 pb-6 w-full lg:w-2/3 h-full bg-variant1'>
             <div>
-              <h2 className='text-secondary text-xl lg:text-3xl'>PROJECT</h2>
-              <h1 className='text-white text-2xl lg:text-5xl tracking-wider'>
+              <h2 className='text-secondary text-xl lg:text-2xl'>PROJECT</h2>
+              <h1 className='text-white text-2xl lg:text-4xl tracking-wider'>
                 {name}
               </h1>
-              <ul className='flex flex-wrap gap-4 text-secondary mt-2 lg:mt-5 text-md lg:text-md'>
+              <ul className='flex flex-wrap gap-4 text-secondary mt-2 lg:mt-3 text-md lg:text-md'>
                 {stack.map((tech, i) => (
                   <li
                     key={i}
@@ -52,10 +68,64 @@ export default function Modal({
                   </li>
                 ))}
               </ul>
-              <h2 className='text-secondary text-lg lg:text-3xl mt-5'>About</h2>
-              <p className='text-white text-lg lg:text-2xl font-console font-[200]'>
-                {about}
-              </p>
+              <div className='mt-4 rounded-full'>
+                <div className='flex justify-between text-xl tracking-wider select-none hover:cursor-pointer'>
+                  <h2
+                    className={`flex items-baseline gap-1 ${
+                      active === 'about' ? 'bg-secondary/10' : 'bg-primary/60'
+                    }   px-6 py-2`}
+                    onClick={() => {
+                      setActive('about')
+                      handlerTab(about)
+                    }}
+                  >
+                    About<i class='fa-solid fa-address-card'></i>
+                  </h2>
+                  <h2
+                    className={`flex items-baseline gap-1 ${
+                      active === 'screenshots'
+                        ? 'bg-secondary/10'
+                        : 'bg-primary/60'
+                    }   px-6 py-2`}
+                    onClick={() => {
+                      setActive('screenshots')
+                      handlerTab(screenshots)
+                    }}
+                  >
+                    Screenshots<i class='fa-solid fa-camera'></i>
+                  </h2>
+                  <h2
+                    className={`flex items-baseline gap-1 ${
+                      active === 'video' ? 'bg-secondary/10' : 'bg-primary/60'
+                    }   px-6 py-2`}
+                    onClick={() => {
+                      setActive('video')
+                      handlerTab(video)
+                    }}
+                  >
+                    Video<i class='fa-solid fa-video'></i>
+                  </h2>
+                  <h2
+                    className={`flex items-baseline gap-1 ${
+                      active === 'dependencies'
+                        ? 'bg-secondary/10'
+                        : 'bg-primary/60'
+                    }   px-6 py-2`}
+                    onClick={() => {
+                      setActive('dependencies')
+                      handlerTab(dependencies)
+                    }}
+                  >
+                    Dependencies<i class='fa-solid fa-laptop-code'></i>
+                  </h2>
+                </div>
+                <div className='bg-secondary/10 px-3 py-2 text-white text-lg lg:text-2xl font-console font-[200] rounded-br-lg rounded-bl-lg'>
+                  {tabContent}{' '}
+                  {(active === 'screenshots') | (active === 'video') ? (
+                    <i class='fa-solid fa-person-digging text-yellow-400/80 text-3xl'></i>
+                  ) : null}
+                </div>
+              </div>
             </div>
 
             <div className='flex justify-evenly w-full  select-none text-white'>
@@ -108,7 +178,12 @@ export default function Modal({
             </div>
           </div>
         </div>
-        <button onClick={onClose}>
+        <button
+          onClick={() => {
+            setActive('about')
+            onClose()
+          }}
+        >
           <i
             className={`${animation3} absolute right-3 top-0 text-secondary text-5xl lg:text-6xl fa-solid fa-xmark select-none`}
           ></i>

@@ -1,13 +1,24 @@
+import { useContext } from 'react'
 import ProjectList from '../components/ProjectList'
+import { AnimationContext } from '../context/animationContext'
 
 const PortfolioScreen = () => {
+  const [
+    animation1,
+    animation2,
+    animation3,
+    setAnimation1,
+    setAnimation2,
+    setAnimation3,
+  ] = useContext(AnimationContext)
+
   return (
-    <div className='h-screen md:w-5/6 select-none overflow-hidden animate__animated animate__backInLeft'>
-      <div className='flex flex-col items-center xl:items-start py-1 md:py-2 px-5 md:px-14 xl:px-2'>
-        <h1 className='text-white text-5xl md:pt-5 xl:pt-10'>
+    <div className={` ${animation1} self-start mt-2 w-full`}>
+      <div className='flex flex-col items-center xl:items-start select-none'>
+        <h1 className='text-white text-3xl tracking-wider'>
           <span className='hidden md:inline'>my </span>portfolio
         </h1>
-        <h2 className='hidden sm:block text-secondary text-md lg:text-3xl'>
+        <h2 className='hidden sm:block text-secondary text-md lg:text-xl tracking-wider word-2'>
           '// These are my favorite projects I've worked on for the past year.
           Have a look around
         </h2>
