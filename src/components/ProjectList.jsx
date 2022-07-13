@@ -37,7 +37,7 @@ const ProjectList = () => {
 
   return (
     <>
-      <div className='mt-2 relative flex flex-wrap justify-between gap-x-4 gap-y-10 select-none'>
+      <div className='mt-2 relative flex flex-wrap justify-between gap-x-20 gap-y-10 select-none'>
         {projectsData.map((project) => (
           <div
             onClick={() => {

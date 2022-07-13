@@ -5,9 +5,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300&display=swap');
 @layer base{
 
-  @media (-webkit-device-pixel-ratio: 1.5) {
+  @media (-webkit-device-pixel-ratio: 1.50) {
     .card {
-      zoom: 0.72;
+      zoom: .73;
+    }
+  }
+
+  @media (-webkit-device-pixel-ratio: 1.25) {
+    .card {
+      zoom: .9;
     }
   }
 
