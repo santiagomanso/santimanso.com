@@ -18,8 +18,14 @@ export default function Modal({
   dependencies,
 }) {
   useEffect(() => {
+    const detectKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        onClose()
+      }
+    }
     setTabContent(about)
-  }, [about])
+    document.addEventListener('keydown', detectKeyDown)
+  }, [about, onClose])
 
   const [tabContent, setTabContent] = useState('')
   const [active, setActive] = useState('about')
@@ -79,7 +85,7 @@ export default function Modal({
                       handlerTab(about)
                     }}
                   >
-                    About<i class='fa-solid fa-address-card'></i>
+                    About<i className='fa-solid fa-address-card'></i>
                   </h2>
                   <h2
                     className={`flex items-baseline gap-1 ${
@@ -92,7 +98,7 @@ export default function Modal({
                       handlerTab(screenshots)
                     }}
                   >
-                    Screenshots<i class='fa-solid fa-camera'></i>
+                    Screenshots<i className='fa-solid fa-camera'></i>
                   </h2>
                   <h2
                     className={`flex items-baseline gap-1 ${
@@ -103,7 +109,7 @@ export default function Modal({
                       handlerTab(video)
                     }}
                   >
-                    Video<i class='fa-solid fa-video'></i>
+                    Video<i className='fa-solid fa-video'></i>
                   </h2>
                   <h2
                     className={`flex items-baseline gap-1 ${
@@ -116,13 +122,13 @@ export default function Modal({
                       handlerTab(dependencies)
                     }}
                   >
-                    Dependencies<i class='fa-solid fa-laptop-code'></i>
+                    Dependencies<i className='fa-solid fa-laptop-code'></i>
                   </h2>
                 </div>
                 <div className='bg-secondary/10 px-3 py-2 text-white text-lg lg:text-2xl font-console font-[200] rounded-br-lg rounded-bl-lg'>
                   {tabContent}{' '}
                   {(active === 'screenshots') | (active === 'video') ? (
-                    <i class='fa-solid fa-person-digging text-yellow-400/80 text-3xl'></i>
+                    <i className='fa-solid fa-person-digging text-yellow-400/80 text-3xl'></i>
                   ) : null}
                 </div>
               </div>
