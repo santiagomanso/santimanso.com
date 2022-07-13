@@ -9,11 +9,27 @@
     .card {
       zoom: .73;
     }
+    .about{
+      zoom: .7
+    }
   }
 
   @media (-webkit-device-pixel-ratio: 1.25) {
     .card {
       zoom: .9;
+    }
+    .about{
+      zoom: .7
+    }
+  }
+
+  @media (-webkit-device-pixel-ratio: 1.00) {
+    .card{zoom:1.3}
+    .tabs-header{
+      zoom: 1.5
+    }
+    .about{
+      zoom:1.3
     }
   }
 

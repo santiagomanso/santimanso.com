@@ -75,7 +75,7 @@ export default function Modal({
                 ))}
               </ul>
               <div className='mt-4 rounded-full'>
-                <div className='flex justify-between text-xl tracking-wider select-none hover:cursor-pointer'>
+                <div className='flex justify-between text-md tracking-wider select-none hover:cursor-pointer tabs-header'>
                   <h2
                     className={`flex items-baseline gap-1 ${
                       active === 'about' ? 'bg-secondary/10' : 'bg-primary/60'
@@ -126,7 +126,7 @@ export default function Modal({
                   </h2>
                 </div>
                 <div className='bg-secondary/10 px-3 py-2 text-white text-lg lg:text-2xl font-console font-[200] rounded-br-lg rounded-bl-lg'>
-                  {tabContent}{' '}
+                  <span className='about font-console'>{tabContent}</span>
                   {(active === 'screenshots') | (active === 'video') ? (
                     <i className='fa-solid fa-person-digging text-yellow-400/80 text-3xl'></i>
                   ) : null}
