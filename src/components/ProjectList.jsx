@@ -37,9 +37,20 @@ const ProjectList = () => {
 
   return (
     <>
-      <div className='mt-2 relative flex flex-wrap justify-between gap-x-28 gap-y-10 select-none'>
+      <div className='mt-2 relative flex flex-wrap justify-between gap-x-4 gap-y-10 select-none'>
         {projectsData.map((project) => (
           <div
+            onClick={() => {
+              setOpen(true)
+              setName(project.name)
+              setStack(project.stack)
+              setImg(project.img)
+              setAbout(project.descLong)
+              setUrlDemo(project.urlDemo)
+              setUrlCode(project.urlCode)
+              setScreenshot('feature is currently beeing developed')
+              setVideo('video feature is currently beeing developed')
+            }}
             key={project.id}
             className='relative overflow-hidden group card border-solid border-[3px] border-secondary/40 hover:border-white/60  h-60 w-60 bg-lime-500/70 hover:bg-black/20 rounded-md'
           >
