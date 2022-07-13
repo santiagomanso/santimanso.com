@@ -4,6 +4,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300&display=swap');
 @layer base{
+
+  @media (-webkit-device-pixel-ratio: 1.5) {
+    .card {
+      zoom: 0.72;
+    }
+  }
+
   *{
     font-family: Staatliches, sans-serif;
     margin: 0;
