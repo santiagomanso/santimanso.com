@@ -46,7 +46,10 @@ export default function Modal({
 
   return ReactDom.createPortal(
     <>
-      <div className='fixed top-0 left-0 bottom-0 right-0 bg-black/70' />
+      <div
+        className='fixed top-0 left-0 bottom-0 right-0 bg-black/70'
+        onClick={onClose}
+      />
       <div className='fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] w-screen lg:w-[85vw]  h-full lg:h-[90%]'>
         <div
           className={` ${animation3} flex flex-col lg:flex-row w-full h-full`}
