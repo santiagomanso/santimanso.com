@@ -9,6 +9,7 @@ module.exports = {
         variant1: '#343A41',
         variant2: '#22262A',
         github: '#22272E',
+        cta: '##1988E1',
       },
       fontFamily: {
         console: 'Inconsolata',

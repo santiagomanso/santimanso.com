@@ -5,12 +5,57 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300&display=swap');
 @layer base{
 
+
+
+  body::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #22262A; 
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #94A4B4; 
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #7d48b5; 
+  }
+
   @media (-webkit-device-pixel-ratio: 1.50) {
-    .card {
-      zoom: .73;
+
+    h1{
+      zoom: .7;
     }
-    .about{
-      zoom: .7
+    h2{
+      zoom: .8;
+    }
+    .modal__stack{
+      zoom: .8;
+    }
+    .modal__about{
+      zoom: .7;
+    }
+    .modal__about__container{
+      max-height: 130px;
+    }
+    .card {
+      zoom: .7;
+    }
+    .card h1{
+      zoom: 1;
+    }
+    .modal__buttons{
+      zoom: .8;
     }
   }
 
@@ -21,6 +66,11 @@
     .about{
       zoom: .7
     }
+
+    .modal__about__container{
+      max-height: 150px;
+    }
+
   }
 
   @media (-webkit-device-pixel-ratio: 1.00) {

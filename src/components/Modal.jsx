@@ -50,7 +50,7 @@ export default function Modal({
         className='fixed top-0 left-0 bottom-0 right-0 bg-black/70'
         onClick={onClose}
       />
-      <div className='fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] w-screen lg:w-[85vw]  h-full lg:h-[90%]'>
+      <div className='fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] w-screen h-full lg:h-[70%] lg:w-[70vw] modal'>
         <div
           className={` ${animation3} flex flex-col lg:flex-row w-full h-full`}
         >
@@ -67,7 +67,7 @@ export default function Modal({
               <h1 className='text-white text-2xl lg:text-4xl tracking-wider'>
                 {name}
               </h1>
-              <ul className='flex flex-wrap gap-4 text-secondary mt-2 lg:mt-3 text-md lg:text-md'>
+              <ul className='flex flex-wrap gap-4 text-secondary mt-2 lg:mt-3 text-md lg:text-md modal__stack'>
                 {stack.map((tech, i) => (
                   <li
                     key={i}
@@ -77,8 +77,8 @@ export default function Modal({
                   </li>
                 ))}
               </ul>
-              <div className='mt-4 rounded-full'>
-                <div className='flex justify-between text-md tracking-wider select-none hover:cursor-pointer tabs-header'>
+              <div className='mt-4'>
+                <div className='flex justify-start text-md tracking-wider select-none hover:cursor-pointer tabs-header '>
                   <h2
                     className={`flex items-baseline gap-1 ${
                       active === 'about' ? 'bg-secondary/10' : 'bg-primary/60'
@@ -114,30 +114,21 @@ export default function Modal({
                   >
                     Video<i className='fa-solid fa-video'></i>
                   </h2>
-                  <h2
-                    className={`flex items-baseline gap-1 ${
-                      active === 'dependencies'
-                        ? 'bg-secondary/10'
-                        : 'bg-primary/60'
-                    }   px-6 py-2`}
-                    onClick={() => {
-                      setActive('dependencies')
-                      handlerTab(dependencies)
-                    }}
-                  >
-                    Dependencies<i className='fa-solid fa-laptop-code'></i>
-                  </h2>
                 </div>
-                <div className='bg-secondary/10 px-3 py-2 text-white text-lg lg:text-2xl font-console font-[200] rounded-br-lg rounded-bl-lg'>
-                  <span className='about font-console'>{tabContent}</span>
-                  {(active === 'screenshots') | (active === 'video') ? (
-                    <i className='fa-solid fa-person-digging text-yellow-400/80 text-3xl'></i>
-                  ) : null}
+                <div className='bg-secondary/10 px-3 py-2 text-white text-lg lg:text-2xl font-console font-[200] rounded-br-lg rounded-bl-lg overflow-auto modal__about__container'>
+                  <div className=''>
+                    <span className='font-console modal__about'>
+                      {tabContent}
+                    </span>
+                    {(active === 'screenshots') | (active === 'video') ? (
+                      <i className='fa-solid fa-person-digging text-yellow-400/80 text-3xl'></i>
+                    ) : null}
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div className='flex justify-evenly w-full  select-none text-white'>
+            <div className='flex justify-evenly w-full  select-none text-white modal__buttons'>
               <a
                 href={urlDemo}
                 target='_blank'
@@ -159,7 +150,9 @@ export default function Modal({
                     d='M572.52 241.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400a144 144 0 1 1 144-144 143.93 143.93 0 0 1-144 144zm0-240a95.31 95.31 0 0 0-25.31 3.79 47.85 47.85 0 0 1-66.9 66.9A95.78 95.78 0 1 0 288 160z'
                   ></path>
                 </svg>
-                <p className='text-white group-hover:text-variant1'>demo</p>
+                <p className='text-white group-hover:text-variant1'>
+                  view live
+                </p>
               </a>
               <a
                 href={urlCode}
