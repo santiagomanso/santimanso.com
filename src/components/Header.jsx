@@ -25,7 +25,7 @@ const Header = () => {
     }, 1500)
   }
   const { text } = useTypewriter({
-    words: ['Developer />', '/> <Student />'],
+    words: ['Developer />', '/> <passionate />'],
     loop: false, // Infinit
     delaySpeed: 2000,
     typeSpeed: 150,
@@ -42,9 +42,19 @@ const Header = () => {
             Santiago M<span className='inline md:hidden '>.</span>
             <span className='hidden md:inline'>anso</span> Castro
           </h1>
-          <div className='hidden lg:flex flex-col '>
-            <i className='opacity-30 hover:opacity-100 text-white hover:text-secondary  fa-brands fa-linkedin-in pr-0 text-3xl'></i>
-            <i className='opacity-30 hover:opacity-100 text-white hover:text-secondary  fa-brands fa-github pr-0 text-3xl'></i>
+          <div className='hidden lg:flex flex-col items-center pr-[0.20rem] '>
+            <div className='flex items-baseline opacity-30 hover:opacity-100 gap-1 text-2xl group'>
+              <label className='scale-0 group-hover:scale-100 transition-all duration-[400ms] translate-x-14 group-hover:-translate-x-2 '>
+                linked
+              </label>
+              <i className=' text-white hover:text-[#0A66C2]  fa-brands fa-linkedin-in text-3xl hover:-rotate-[20deg] hover:scale-[1.5] transition-all ease-in duration-300 '></i>
+            </div>
+            <div className='flex items-center opacity-30 hover:opacity-100 gap-1 text-2xl group'>
+              <label className='scale-0 group-hover:scale-100 transition-all duration-[400ms] translate-x-14 group-hover:-translate-x-2 '>
+                github
+              </label>
+              <i className=' text-white hover:text-[#fafafa]  fa-brands fa-github text-3xl hover:-rotate-[20deg] hover:scale-[1.5] transition-all ease-in duration-300'></i>
+            </div>
           </div>
         </div>
       </div>
@@ -59,12 +69,12 @@ const Header = () => {
 
         <div
           onClick={handlerNavigate}
-          className='text-lime-600 flex items-center gap-3 group  transition-all ease-in-out duration-300 hover:cursor-pointer'
+          className=' flex items-center gap-3 group  transition-all ease-in-out duration-300 hover:cursor-pointer cta__home'
         >
-          <span className=' text-3xl tracking-wide scale-100 group-hover:-translate-x-4 group-hover:scale-[1.2] group-hover:-translate-y-2 transition-all ease-in-out duration-300  border-2 border-solid border-lime-600 px-8 py-2 rounded-xl'>
+          <span className='bg-purple-500/80 text-white/60 group-hover:text-white tracking-wide scale-100 group-hover:-translate-x-6 group-hover:scale-[1.2] group-hover:-translate-y-2 transition-all ease-in-out duration-300   px-8 py-2 rounded-lg'>
             my work
           </span>
-          <i className='fa-solid fa-display text-5xl group group-hover:rotate-[20deg] transition-all ease-in duration-300 text-lime-600'></i>
+          <i className='fa-solid fa-display text-3xl text-white/60 group-hover:text-purple-500/80 group group-hover:rotate-[20deg] group-hover:scale-[1.5] transition-all ease-in duration-300 '></i>
         </div>
       </div>
     </aside>

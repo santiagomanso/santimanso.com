@@ -5,7 +5,61 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300&display=swap');
 @layer base{
 
+  *{
+    font-family: Staatliches, sans-serif;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+  }
+  .app{
+    background: linear-gradient(55deg, rgba(55,86,106,1) 3%, rgba(34,38,42,1) 16%);
+  }
 
+  h1{
+    @apply text-white 
+  }
+  h2{
+    @apply text-secondary 
+  }
+
+  .app{
+    word-spacing: .2rem
+  }
+  
+  .cta__home{
+    
+  }
+
+  .cta{
+    box-shadow: inset 0 0 0 0 rgba(148, 164, 180, 0.8);
+    transition: ease-out 5s;
+  }
+
+  .cta:hover{
+    cursor: pointer;
+    box-shadow: inset 250px 0 0 0.9px rgba(148, 164, 180, 0.8);
+  
+  }
+
+  .cta2{
+    box-shadow: inset 0 0 0 0 #343A41;
+    transition: ease-out .6s;
+  }
+  
+  .cta2:hover{
+    cursor: pointer;
+    box-shadow: inset 250px 0 0 0.9px #343A41;
+  }
+
+  .card{
+    box-shadow: 10px 10px 10px black;
+  }
+
+}
 
   body::-webkit-scrollbar {
     display: none;
@@ -46,7 +100,7 @@
       zoom: .7;
     }
     .modal__about__container{
-      max-height: 130px;
+      max-height: 120px;
     }
     .card {
       zoom: .7;
@@ -83,54 +137,4 @@
     }
   }
 
-  *{
-    font-family: Staatliches, sans-serif;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    box-sizing: border-box;
-    list-style: none;
-    text-decoration: none;
-  }
-  .app{
-    background: linear-gradient(55deg, rgba(55,86,106,1) 3%, rgba(34,38,42,1) 16%);
-  }
-
-  h1{
-    @apply text-white 
-  }
-  h2{
-    @apply text-secondary 
-  }
-
-  .app{
-    word-spacing: .2rem
-  }
-
-  .cta{
-    box-shadow: inset 0 0 0 0 rgba(148, 164, 180, 0.8);
-    transition: ease-out .5s;
-  }
-
-  .cta:hover{
-    cursor: pointer;
-    box-shadow: inset 250px 0 0 0.9px rgba(148, 164, 180, 0.8);
   
-  }
-
-  .cta2{
-    box-shadow: inset 0 0 0 0 #be123c;
-    transition: ease-out .9s;
-  }
-  
-  .cta2:hover{
-    cursor: pointer;
-    box-shadow: inset 250px 0 0 0.9px #be123c;
-  }
-
-  .card{
-    box-shadow: 10px 10px 10px black;
-  }
-
-}

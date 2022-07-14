@@ -83,7 +83,7 @@ const ProjectList = () => {
                   setScreenshot('feature is currently beeing developed')
                   setVideo('video feature is currently beeing developed')
                 }}
-                className='absolute lg:text-xl bottom-2 lg:bottom-4 cta px-2 lg:px-10  py-1 xl:py-2 rounded-md border-solid border-2 border-white  text-white tracking-wider'
+                className='bg-secondary text-variant1 hover:text-white cta2 font-semibold absolute lg:text-xl bottom-2 lg:bottom-4 px-2 lg:px-10  py-1 xl:py-2 rounded-md border-solid border-2 border-white   tracking-wider'
               >
                 view project
               </button>
