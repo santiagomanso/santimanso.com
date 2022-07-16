@@ -12,7 +12,7 @@ const Container = ({ children }) => {
           <Nav />
         </div>
         <div className=''>
-          <div className=' flex h-full items-start lg:items-end container px-2 lg:px-0'>
+          <div className='flex  h-full items-start lg:items-end container px-2 lg:px-0'>
             {children}
           </div>
         </div>

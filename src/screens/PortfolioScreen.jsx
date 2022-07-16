@@ -13,8 +13,8 @@ const PortfolioScreen = () => {
   ] = useContext(AnimationContext)
 
   return (
-    <div className={` ${animation1} self-start mt-2 w-full`}>
-      <div className='flex flex-col items-center xl:items-start select-none'>
+    <div className={` ${animation1} self-start mt-2 lg:mt-6 w-full`}>
+      <div className='flex flex-col items-center xl:items-start select-none portfolio__header'>
         <h1 className='text-white text-3xl tracking-wider'>
           <span className='hidden md:inline'>my </span>portfolio
         </h1>
