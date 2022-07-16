@@ -44,6 +44,7 @@ const Nav = () => {
 
   return (
     <>
+      {/* PC/LAPTOP nav */}
       <nav className=' hidden lg:inline text-secondary  tracking-widest select-none'>
         <ul className=' flex justify-between items-center'>
           <li
@@ -136,6 +137,8 @@ const Nav = () => {
           </div>
         </ul>
       </nav>
+
+      {/* Phones */}
       <div className='lg:hidden select-none'>
         <button
           onClick={handlerToggleOpen}
@@ -166,13 +169,21 @@ const Nav = () => {
                   setActive('home')
                   handlerNavigate('/')
                 }}
-                className='px-5 flex justify-between items-center group'
+                className={` ${
+                  active === 'home' ? 'opacity-100 text-white' : 'opacity-60'
+                } px-5 flex justify-between items-center group`}
               >
-                <i className='opacity-60 group-hover:opacity-100 group-hover:rotate-[23deg] transition-all ease-in duration-200 hover:text-secondary   fa-solid fa-house'></i>
-                <p className='opacity-60 group-hover:opacity-100 hover:text-secondary   tracking-wider'>
-                  home
-                </p>
-                <i className='opacity-60 group-hover:opacity-100 hover:text-secondary  fa-solid fa-chevron-right '></i>
+                <i
+                  className={` ${
+                    active === 'home' ? 'rotate-[23deg]' : ''
+                  } group-hover:rotate-[23deg] transition-all ease-in duration-200 hover:text-secondary   fa-solid fa-house`}
+                ></i>
+                <p className=' hover:text-secondary   tracking-wider'>home</p>
+                <i
+                  className={` ${
+                    active === 'home' ? 'rotate-90' : ''
+                  } hover:text-secondary  fa-solid fa-chevron-right `}
+                ></i>
               </li>
 
               <li
