@@ -34,11 +34,11 @@ const Header = () => {
 
   return (
     <aside
-      className={` ${animation1} w-full flex flex-col tracking-wider lg:mt-[65%] xl:mt-[45%] select-none`}
+      className={` ${animation1} w-full flex flex-col tracking-wider select-none header__welcome`}
     >
       <div className='flex flex-col'>
         <div className='flex justify-between items-center'>
-          <h1 className=' text-3xl sm:text-4xl lg:text-5xl xl:text-6xl'>
+          <h1 className=' text-3xl sm:text-4xl lg:text-5xl'>
             Santiago M<span className='inline md:hidden '>.</span>
             <span className='hidden md:inline'>anso</span> Castro
           </h1>

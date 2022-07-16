@@ -87,6 +87,10 @@
 
   @media (-webkit-device-pixel-ratio: 1.50) {
 
+    .header__welcome{
+      margin-top: 40%;
+    }
+
     h1{
       zoom: .7;
     }
@@ -114,6 +118,9 @@
   }
 
   @media (-webkit-device-pixel-ratio: 1.25) {
+    .header__welcome{
+      margin-top: 40%;
+    }
     .card {
       zoom: 1.2;
     }
@@ -128,6 +135,9 @@
   }
 
   @media (-webkit-device-pixel-ratio: 1.00) {
+    .header__welcome{
+      margin-top: 45%;
+    }
     .portfolio__header{
       zoom: 1.2;
     }
