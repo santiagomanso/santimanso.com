@@ -3,6 +3,7 @@ import { ModalContext } from '../context/ModalContext'
 import { useContext, useState } from 'react'
 import Modal from './Modal'
 import { AnimationContext } from '../context/animationContext'
+import { NavContext } from '../context/NavContext'
 
 const ProjectList = () => {
   const [
@@ -14,7 +15,8 @@ const ProjectList = () => {
     setAnimation3,
   ] = useContext(AnimationContext)
 
-  const [open, setOpen] = useContext(ModalContext)
+  const [openModal, setOpenModal] = useContext(ModalContext)
+  const [openNav, showNav, setOpenNav, setShowNav] = useContext(NavContext)
 
   const [img, setImg] = useState('')
   const [name, setName] = useState('')
@@ -31,7 +33,8 @@ const ProjectList = () => {
       setAnimation3('animate__animated animate__slideInRight')
     }, 900)
     setTimeout(() => {
-      setOpen(false)
+      setOpenModal(false)
+      setShowNav(true) //hide navigation bar from smartphones
     }, 750)
   }
 
@@ -41,7 +44,8 @@ const ProjectList = () => {
         {projectsData.map((project) => (
           <div
             onClick={() => {
-              setOpen(true)
+              setShowNav(false)
+              setOpenModal(true)
               setName(project.name)
               setStack(project.stack)
               setImg(project.img)
@@ -73,7 +77,8 @@ const ProjectList = () => {
               </p>
               <button
                 onClick={() => {
-                  setOpen(true)
+                  setShowNav(false)
+                  setOpenModal(true)
                   setName(project.name)
                   setStack(project.stack)
                   setImg(project.img)
@@ -92,7 +97,7 @@ const ProjectList = () => {
         ))}
       </div>
       <Modal
-        open={open}
+        open={openModal}
         onClose={handlerCloseModal}
         name={name}
         img={img}

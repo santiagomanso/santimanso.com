@@ -2,17 +2,18 @@ import { useEffect } from 'react'
 import { useContext, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { AnimationContext } from '../context/animationContext'
+import { NavContext } from '../context/NavContext'
 
 const Nav = () => {
   const { pathname } = useLocation()
 
-  const [open, setOpen] = useState(false)
+  const [openNav, showNav, setOpenNav, setShowNav] = useContext(NavContext)
   const [active, setActive] = useState('home')
 
   const handlerToggleOpen = () => {
-    if (open) {
-      setOpen(false)
-    } else setOpen(true)
+    if (openNav) {
+      setOpenNav(false)
+    } else setOpenNav(true)
   }
 
   const [
@@ -139,30 +140,32 @@ const Nav = () => {
       </nav>
 
       {/* Phones */}
-      <div className='lg:hidden select-none'>
+      <div
+        className={` ${showNav ? 'inline' : 'hidden'} lg:hidden select-none`}
+      >
         <button
           onClick={handlerToggleOpen}
           className={`${
-            open ? 'inline' : ''
+            openNav ? 'inline' : ''
           }  text-secondary text-4xl sm:text-5xl fixed top-4 sm:top-15 right-8 z-10`}
         >
           <i className='fa-solid fa-bars'></i>
         </button>
         <div
           className={`${
-            open ? 'translate-x-0' : ' translate-x-full'
+            openNav ? 'translate-x-0' : ' translate-x-full'
           } bg-primary/100 w-3/4 rounded-tl-xl rounded-bl-xl h-screen fixed top-0 right-0 z-10 select-none ease-in-out duration-300`}
         >
           <nav className={`text-secondary`}>
             <button
               onClick={handlerToggleOpen}
-              className='text-5xl sm:text-6xl fixed top-12 right-5'
+              className='text-5xl sm:text-6xl fixed top-3 right-8'
             >
               <i>
                 <i className={`fa-solid fa-xmark`}></i>
               </i>
             </button>
-            <ul className=' flex flex-col gap-12 pt-32 text-3xl sm:text-4xl '>
+            <ul className=' flex flex-col gap-12 pt-20 px-2 text-3xl sm:text-4xl '>
               <li
                 onClick={() => {
                   handlerToggleOpen()
