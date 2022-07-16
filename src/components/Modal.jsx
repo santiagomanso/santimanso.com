@@ -61,13 +61,13 @@ export default function Modal({
               className='w-2/4 lg:w-3/4 h-3/4 animate-spin-slow'
             />
           </div>
-          <div className='flex flex-col justify-between items-start px-5 pt-2 lg:pt-2 pb-6 w-full lg:w-2/3 h-full bg-variant1'>
+          <div className=' flex flex-col justify-between items-start px-1 lg:px-4 pt-2 lg:pt-2 pb-6 w-full lg:w-2/3 h-full bg-variant1'>
             <div>
               <h2 className='text-secondary text-xl lg:text-2xl'>PROJECT</h2>
               <h1 className='text-white text-2xl lg:text-4xl tracking-wider'>
                 {name}
               </h1>
-              <ul className='flex flex-wrap gap-4 text-secondary mt-2 lg:mt-3 text-md lg:text-md modal__stack'>
+              <ul className='flex flex-wrap gap-2 lg:gap-4 text-secondary mt-2 lg:mt-3 text-sm lg:text-xl modal__stack'>
                 {stack.map((tech, i) => (
                   <li
                     key={i}
@@ -86,7 +86,7 @@ export default function Modal({
                     }}
                     className={`flex items-baseline gap-1 ${
                       active === 'about' ? 'bg-secondary/10' : 'bg-primary/60'
-                    }   px-6 py-2 group`}
+                    }   px-4 lg:px-6 py-2 group`}
                   >
                     <h2>about</h2>
                     <i
@@ -106,7 +106,7 @@ export default function Modal({
                       active === 'screenshots'
                         ? 'bg-secondary/10'
                         : 'bg-primary/60'
-                    }   px-6 py-2 group`}
+                    }   px-4 lg:px-6 py-2 group`}
                   >
                     <h2>screenshots</h2>
                     <i
@@ -137,7 +137,7 @@ export default function Modal({
                   </div>
                 </div>
                 <div className='bg-secondary/10 px-3 py-2 text-white text-lg lg:text-2xl font-console font-[200] rounded-br-lg rounded-bl-lg overflow-auto modal__about__container'>
-                  <div className=''>
+                  <div className='h-[20vh] overflow-auto'>
                     <span className='font-console modal__about'>
                       {tabContent}
                     </span>
