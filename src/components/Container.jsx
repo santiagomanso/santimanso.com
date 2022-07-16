@@ -3,7 +3,7 @@ import ProjectList from './ProjectList'
 
 const Container = ({ children }) => {
   return (
-    <div className='w-screen h-screen app '>
+    <div className='w-screen h-screen app'>
       <div
         className='h-full max-w-full lg:max-w-[65vw] mx-auto text-white 
       grid grid-cols-1 content-start'

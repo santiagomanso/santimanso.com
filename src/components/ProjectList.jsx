@@ -37,7 +37,7 @@ const ProjectList = () => {
 
   return (
     <>
-      <div className='mt-2 relative flex flex-wrap justify-between gap-x-20 gap-y-10 select-none'>
+      <div className='mt-2 relative flex flex-wrap justify-center gap-x-5 gap-y-6 lg:justify-between  select-none'>
         {projectsData.map((project) => (
           <div
             onClick={() => {
@@ -52,7 +52,7 @@ const ProjectList = () => {
               setVideo('video feature is currently beeing developed')
             }}
             key={project.id}
-            className='relative overflow-hidden group card border-solid border-[3px] border-secondary/40 hover:border-white/60  h-60 w-60 bg-slate-400/50 hover:bg-black/20 rounded-md cursor-pointer'
+            className='relative overflow-hidden group card border-solid border-[3px] border-secondary/40 hover:border-white/60  h-48 w-40 lg:h-60 lg:w-60  bg-slate-400/50 hover:bg-black/20 rounded-md cursor-pointer'
           >
             <div className='text-white'>
               <img
@@ -62,7 +62,7 @@ const ProjectList = () => {
               />
             </div>
             <div
-              className='relative h-full bg-zinc-900/80 translate-y-[76%] group-hover:-translate-y-[0%] flex flex-col gap-1 justify-start items-center text-white
+              className='relative h-full bg-zinc-900/80  translate-y-[77%] lg:translate-y-[76%] group-hover:-translate-y-[0%] flex flex-col gap-1 justify-start items-center text-white
               group-hover:bg-zinc-900/80 rounded-md   transition-all duration-[450ms]'
             >
               <h1 className='pt-2 xl:pt-3 text-xl md:text-xl lg:text-3xl xl:text-3xl'>
