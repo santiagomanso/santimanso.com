@@ -62,8 +62,10 @@ export default function Modal({
             />
           </div>
           <div className=' flex flex-col justify-between items-start px-1 lg:px-4 pt-2 lg:pt-2 pb-6 w-full lg:w-2/3 h-full bg-variant1'>
-            <div>
-              <h2 className='text-secondary text-xl lg:text-2xl'>PROJECT</h2>
+            <div className='modal__right'>
+              <h2 className='text-secondary text-xl lg:text-2xl modal__right__project'>
+                PROJECT
+              </h2>
               <h1 className='text-white text-2xl lg:text-4xl tracking-wider'>
                 {name}
               </h1>
