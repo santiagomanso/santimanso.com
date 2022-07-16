@@ -192,55 +192,65 @@ const Nav = () => {
                   setActive('portfolio')
                   handlerNavigate('/portfolio')
                 }}
-                className='px-5 flex justify-between items-center group'
+                className={` ${
+                  active === 'portfolio'
+                    ? 'opacity-100 text-white'
+                    : 'opacity-60'
+                } px-5 flex justify-between items-center group`}
               >
-                <i className='opacity-60 group-hover:opacity-100 group-hover:rotate-[23deg] transition-all ease-in duration-200 hover:text-secondary   fa-solid fa-briefcase'></i>
-                <p className='opacity-60 group-hover:opacity-100 hover:text-secondary   tracking-wider'>
+                <i className=' group-hover:rotate-[23deg] transition-all ease-in duration-200 hover:text-secondary   fa-solid fa-briefcase'></i>
+                <p className=' hover:text-secondary   tracking-wider'>
                   portfolio
                 </p>
-                <i className='opacity-60 group-hover:opacity-100 hover:text-secondary  fa-solid fa-chevron-right '></i>
+                <i
+                  className={` ${
+                    active === 'portfolio' ? 'rotate-90' : ''
+                  } hover:text-secondary  fa-solid fa-chevron-right `}
+                ></i>
               </li>
               <li
                 onClick={() => {
                   handlerToggleOpen()
-                  setActive('skills')
-                  handlerNavigate('/skills')
+                  setActive('curriculum')
+                  handlerNavigate('/curriculum')
                 }}
-                className='px-5 flex justify-between items-center group'
+                className={` ${
+                  active === 'curriculum'
+                    ? 'opacity-100 text-white'
+                    : 'opacity-60'
+                } px-5 flex justify-between items-center group`}
               >
-                <i className='opacity-60 group-hover:opacity-100 group-hover:rotate-[23deg] transition-all ease-in duration-200 hover:text-secondary   fa-solid fa-hammer'></i>
-                <p className='opacity-60 group-hover:opacity-100 hover:text-secondary   tracking-wider'>
-                  skills
-                </p>
-                <i className='opacity-60 group-hover:opacity-100 hover:text-secondary  fa-solid fa-chevron-right '></i>
-              </li>
-              <li
-                onClick={() => {
-                  handlerToggleOpen()
-                  setActive('home')
-                  handlerNavigate('/')
-                }}
-                className='px-5 flex justify-between items-center group'
-              >
-                <i className='opacity-60 group-hover:opacity-100 group-hover:rotate-[23deg] transition-all ease-in duration-200 hover:text-secondary   fa-solid fa-file-lines'></i>
-                <p className='opacity-60 group-hover:opacity-100 hover:text-secondary   tracking-wider'>
+                <i className=' group-hover:rotate-[23deg] transition-all ease-in duration-200 hover:text-secondary   fa-solid fa-file-lines'></i>
+                <p className=' hover:text-secondary   tracking-wider'>
                   curriculum
                 </p>
-                <i className='opacity-60 group-hover:opacity-100 hover:text-secondary  fa-solid fa-chevron-right '></i>
+                <i
+                  className={` ${
+                    active === 'curriculum' ? 'rotate-90' : ''
+                  } hover:text-secondary  fa-solid fa-chevron-right `}
+                ></i>
               </li>
-              <li className='md:hidden px-5 flex justify-between items-center group'>
-                <i className='opacity-60 group-hover:opacity-100 group-hover:rotate-[23deg] transition-all ease-in duration-200 hover:text-secondary   fa-brands fa-github'></i>
-                <p className='opacity-60 group-hover:opacity-100 hover:text-secondary   tracking-wider'>
-                  github
-                </p>
-                <i className='opacity-60 group-hover:opacity-100 hover:text-secondary  fa-solid fa-chevron-right '></i>
+              <li
+                className={` ${
+                  active === 'github' ? 'opacity-100 text-white' : 'opacity-60'
+                } px-5 flex justify-between items-center group`}
+              >
+                <i className=' group-hover:rotate-[23deg] transition-all ease-in duration-200 hover:text-secondary   fa-brands fa-github'></i>
+                <p className=' hover:text-secondary   tracking-wider'>github</p>
+                <i className=' hover:text-secondary  fa-solid fa-chevron-right '></i>
               </li>
-              <li className='md:hidden px-5 flex justify-between items-center group'>
-                <i className='opacity-60 group-hover:opacity-100 group-hover:rotate-[23deg] transition-all ease-in duration-200 hover:text-secondary   fa-brands fa-linkedin-in'></i>
-                <p className='opacity-60 group-hover:opacity-100 hover:text-secondary   tracking-wider'>
+              <li
+                className={` ${
+                  active === 'linkedin'
+                    ? 'opacity-100 text-white'
+                    : 'opacity-60'
+                } px-5 flex justify-between items-center group`}
+              >
+                <i className=' group-hover:rotate-[23deg] transition-all ease-in duration-200 hover:text-secondary   fa-brands fa-linkedin-in'></i>
+                <p className=' hover:text-secondary   tracking-wider'>
                   LinkedIn
                 </p>
-                <i className='opacity-60 group-hover:opacity-100 hover:text-secondary  fa-solid fa-chevron-right '></i>
+                <i className=' hover:text-secondary  fa-solid fa-chevron-right '></i>
               </li>
             </ul>
           </nav>
