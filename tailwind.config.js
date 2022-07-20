@@ -10,6 +10,7 @@ module.exports = {
         variant2: '#22262A',
         github: '#22272E',
         cta: '##1988E1',
+        react: '#00D8FF',
       },
       fontFamily: {
         console: 'Inconsolata',

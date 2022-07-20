@@ -36,12 +36,10 @@ const TagCloud = () => {
         }}
       >
         <div className='  rounded-md'>
-          <div className='select-none'>
+          <div className='select-none  '>
             <h2 className='px-3  text-3xl text-white/90 rounded-md'>skills</h2>
 
-            <div
-              className={` py-4 flex gap-2 justify-evenly text-4xl  select-none`}
-            >
+            <div className={` py-4 flex justify-evenly text-4xl  select-none `}>
               <i
                 onMouseOver={() => {
                   loadData(
@@ -57,6 +55,22 @@ const TagCloud = () => {
                     ? ` ${color} opacity-100 rotate-[16deg]`
                     : 'opacity-30'
                 }   fa-brands fa-bootstrap text-5xl transition-all duration-300`}
+              ></i>
+              <i
+                onMouseOver={() => {
+                  loadData(
+                    true,
+                    'javascript',
+                    'text-amber-400',
+                    'JavaScript is a text-based programming language used both on the client-side and server-side that allows you to make web pages interactive. Where HTML and CSS are languages that give structure and style to web pages, JavaScript gives web pages interactive elements that engage a user.',
+                    'fa-brands fa-js-square'
+                  )
+                }}
+                className={`transition-all duration-500 ${
+                  name === 'javascript' && active
+                    ? ` ${color} opacity-100 -rotate-[16deg]`
+                    : 'opacity-30'
+                }   fa-brands fa-js-square text-5xl  transition-all duration-300`}
               ></i>
               <i
                 onMouseOver={() => {
@@ -78,6 +92,22 @@ const TagCloud = () => {
                 onMouseOver={() => {
                   loadData(
                     true,
+                    'react',
+                    'text-react',
+                    'git is the most popular CSS Framework for developing responsive and mobile-first websites. Bootstrap 5 is the newest version.',
+                    'fa-brands fa-react'
+                  )
+                }}
+                className={` ${
+                  name === 'react' && active
+                    ? ` ${color} opacity-100 -rotate-[16deg]`
+                    : 'opacity-30'
+                }   fa-brands fa-react text-5xl  transition-all duration-300`}
+              ></i>
+              <i
+                onMouseOver={() => {
+                  loadData(
+                    true,
                     'css',
                     'text-orange-400',
                     'CSS (Cascading Style Sheets) allows you to create great-looking web pages, but how does it work under the hood? This article explains what CSS is with a simple syntax example and also covers some key terms about the language.',
@@ -90,22 +120,7 @@ const TagCloud = () => {
                     : 'opacity-30'
                 }   fa-brands fa-css3 text-5xl  transition-all duration-300`}
               ></i>
-              <i
-                onMouseOver={() => {
-                  loadData(
-                    true,
-                    'javascript',
-                    'text-amber-400',
-                    'JavaScript is a text-based programming language used both on the client-side and server-side that allows you to make web pages interactive. Where HTML and CSS are languages that give structure and style to web pages, JavaScript gives web pages interactive elements that engage a user.',
-                    'fa-brands fa-js-square'
-                  )
-                }}
-                className={`transition-all duration-500 ${
-                  name === 'javascript' && active
-                    ? ` ${color} opacity-100 -rotate-[16deg]`
-                    : 'opacity-30'
-                }   fa-brands fa-js-square text-5xl  transition-all duration-300`}
-              ></i>
+
               <i
                 onMouseOver={() => {
                   loadData(
@@ -155,7 +170,26 @@ const TagCloud = () => {
                 }   fa-brands fa-github text-5xl  transition-all duration-300`}
               ></i>
             </div>
-            <div className=' flex flex-wrap text-gray-400 gap-x-4 gap-y-3 tracking-wider'>
+            <div className=' flex flex-wrap gap-x-7  gap-y-5  items-center text-gray-400  tracking-wider'>
+              <span
+                onMouseOver={() => {
+                  loadData(
+                    true,
+                    'react',
+                    'text-react',
+                    'react is a text-based programming language used both on the client-side and server-side that allows you to make web pages interactive. Where HTML and CSS are languages that give structure and style to web pages, JavaScript gives web pages interactive elements that engage a user.',
+                    'fa-brands fa-react'
+                  )
+                }}
+                className={`transition-all duration-500 ${
+                  name === 'react' && active
+                    ? 'opacity-100 border-react/70 translate-y-1  rotate-6 text-white/80 text-3xl border-[2px]'
+                    : 'opacity-40 border-secondary border-[1px]'
+                } flex justify-center  rounded-md border-solid  px-6 py-2 `}
+              >
+                react
+              </span>
+
               <span
                 onMouseOver={() => {
                   loadData(
@@ -168,9 +202,9 @@ const TagCloud = () => {
                 }}
                 className={`transition-all duration-500 ${
                   name === 'javascript' && active
-                    ? 'opacity-100 border-amber-400/70 translate-y-1 scale-125 rotate-6 text-white/80 text-xl border-[2px]'
+                    ? 'opacity-100 border-amber-400/70 translate-y-1  rotate-6 text-white/80 text-3xl border-[2px]'
                     : 'opacity-40 border-secondary border-[1px]'
-                } flex justify-center  rounded-md border-solid  px-5 py-2 `}
+                } flex justify-center  rounded-md border-solid  px-6 py-2 `}
               >
                 javascript
               </span>
@@ -187,9 +221,9 @@ const TagCloud = () => {
                 }}
                 className={`transition-all duration-500 ${
                   name === 'html' && active
-                    ? 'opacity-100 border-sky-400/70 -translate-y-1 scale-125 -rotate-6 text-white/80 text-xl border-[2px]'
+                    ? 'opacity-100 border-sky-400/70 -translate-y-1  -rotate-6 text-white/80 text-3xl border-[2px]'
                     : 'opacity-40 border-secondary border-[1px]'
-                } flex justify-center  rounded-md border-solid border-secondary px-5 py-2 `}
+                } flex justify-center  rounded-md border-solid border-secondary px-6 py-2 `}
               >
                 html
               </span>
@@ -205,9 +239,9 @@ const TagCloud = () => {
                 }}
                 className={`transition-all duration-500 ${
                   name === 'github' && active
-                    ? 'opacity-100 border-white/70 translate-y-1 scale-125 rotate-6 text-white/80 text-xl border-[2px]'
+                    ? 'opacity-100 border-white/70 translate-y-1  rotate-6 text-white/80 text-3xl border-[2px]'
                     : 'opacity-40 border-secondary border-[1px]'
-                } flex justify-center  rounded-md border-solid  px-5 py-2 `}
+                } flex justify-center  rounded-md border-solid  px-6 py-2 `}
               >
                 gitub
               </span>
@@ -223,9 +257,9 @@ const TagCloud = () => {
                 }}
                 className={`transition-all duration-500 ${
                   name === 'css' && active
-                    ? 'opacity-100 border-orange-400 scale-125 -translate-y-2 rotate-3 text-white/80 text-xl border-[2px]'
+                    ? 'opacity-100 border-orange-400  -translate-y-2 rotate-3 text-white/80 text-3xl border-[2px]'
                     : 'opacity-40 border-secondary border-[1px]'
-                } flex justify-center  rounded-md border-solid  px-5 py-2 `}
+                } flex justify-center  rounded-md border-solid  px-6 py-2 `}
               >
                 css
               </span>
@@ -242,9 +276,9 @@ const TagCloud = () => {
                 }}
                 className={`transition-all duration-500 ${
                   name === 'git' && active
-                    ? 'opacity-100 border-red-400/70 scale-150 -rotate-[12deg] text-white/80 text-xl border-[2px]'
+                    ? 'opacity-100 border-red-400/70  -rotate-[12deg] text-white/80 text-3xl border-[2px]'
                     : 'opacity-40 border-secondary border-[1px]'
-                } flex justify-center  rounded-md border-solid  px-5 py-2 `}
+                } flex justify-center  rounded-md border-solid  px-6 py-2 `}
               >
                 git
               </span>
@@ -261,9 +295,9 @@ const TagCloud = () => {
                 }}
                 className={`transition-all duration-500 ${
                   name === 'node js' && active
-                    ? 'opacity-100 border-green-400/70 translate-y-1 scale-125 rotate-6 text-white/80 text-xl border-[2px]'
+                    ? 'opacity-100 border-green-400/70 translate-y-1  rotate-6 text-white/80 text-3xl border-[2px]'
                     : 'opacity-40 border-secondary border-[1px]'
-                } flex justify-center  rounded-md border-solid  px-5 py-2 `}
+                } flex justify-center  rounded-md border-solid  px-6 py-2 `}
               >
                 node Js
               </span>
@@ -279,9 +313,9 @@ const TagCloud = () => {
                 }}
                 className={`transition-all duration-500 ${
                   name === 'bootstrap' && active
-                    ? 'opacity-100 border-violet-400 scale-125 -rotate-6  text-xl border-[2px]'
+                    ? 'opacity-100 border-violet-400  -rotate-6  text-xl border-[2px]'
                     : 'opacity-40 border-secondary  border-[1px]'
-                } flex justify-center  rounded-md border-solid  px-5 py-2 `}
+                } flex justify-center  rounded-md border-solid  px-6 py-2 `}
               >
                 bootstrap
               </span>
