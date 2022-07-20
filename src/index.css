@@ -30,8 +30,8 @@
     word-spacing: .2rem
   }
   
-  .cta__home{
-    
+  @keyframes blinker {
+    10% { opacity: 0.0; }
   }
 
   .cta{
@@ -109,6 +109,7 @@
     .modal__about__container{
       max-height: 240px;
     }
+
     .card h1{
       zoom: 1;
     }
@@ -122,7 +123,7 @@
       margin-top: 40%;
     }
     .card {
-      zoom: 1.2;
+      zoom: .96;
     }
     .about{
       zoom: .7

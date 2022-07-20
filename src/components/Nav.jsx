@@ -114,27 +114,6 @@ const Nav = () => {
                 </span>
               </p>
             </li>
-            <li
-              onClick={() => {
-                setActive('skills')
-                handlerNavigate('/skills')
-              }}
-              className={`${
-                active === 'skills' ? ' text-white opacity-100' : ''
-              } cursor-pointer  hover:text-white flex items-baseline gap-1 translate-y-0 hover:translate-y-1 hover:scale-105 transition-all ease-out duration-300 group`}
-            >
-              <p className='flex items-baseline gap-1'>
-                <i className='fa-solid text-xl fa-hammer group-hover:rotate-[-23deg] transition-all ease-in-out duration-300'></i>
-
-                <span
-                  className={` ${
-                    active === 'skills' ? 'opacity-100' : 'opacity-40'
-                  }  group-hover:opacity-100 text-lg`}
-                >
-                  skills
-                </span>
-              </p>
-            </li>
           </div>
         </ul>
       </nav>
