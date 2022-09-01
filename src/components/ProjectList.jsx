@@ -24,7 +24,7 @@ const ProjectList = () => {
   const [about, setAbout] = useState('')
   const [urlDemo, setUrlDemo] = useState('')
   const [urlCode, setUrlCode] = useState('')
-  const [screenshot, setScreenshot] = useState('')
+  const [screenshots, setScreenshots] = useState('')
   const [video, setVideo] = useState('')
 
   const handlerCloseModal = () => {
@@ -52,7 +52,7 @@ const ProjectList = () => {
               setAbout(project.descLong)
               setUrlDemo(project.urlDemo)
               setUrlCode(project.urlCode)
-              setScreenshot('feature is currently beeing developed')
+              setScreenshots(project.screenShots)
               setVideo('video feature is currently beeing developed')
             }}
             key={project.id}
@@ -85,7 +85,7 @@ const ProjectList = () => {
                   setAbout(project.descLong)
                   setUrlDemo(project.urlDemo)
                   setUrlCode(project.urlCode)
-                  setScreenshot('feature is currently beeing developed')
+                  setScreenshots(project.screenShots)
                   setVideo('video feature is currently beeing developed')
                 }}
                 className='bg-secondary text-variant1 hover:text-white cta2 font-semibold absolute lg:text-xl bottom-2 lg:bottom-4 px-2 lg:px-10  py-1 xl:py-2 rounded-md border-solid border-2 border-white   tracking-wider'
@@ -105,7 +105,7 @@ const ProjectList = () => {
         urlDemo={urlDemo}
         urlCode={urlCode}
         stack={stack}
-        screenshots={screenshot}
+        screenshots={screenshots}
         video={video}
       />
     </>

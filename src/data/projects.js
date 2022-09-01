@@ -4,12 +4,16 @@ import page1 from '../assets/page1.png'
 import tasks from '../assets/tasks.png'
 import vetapp from '../assets/vetapp.png'
 import heroe from '../assets/heroe.jpg'
+import valen1 from '../assets/screenshots/valen1.png'
+import valen2 from '../assets/screenshots/valen2.png'
+import valen3 from '../assets/screenshots/valen3.png'
+import valen4 from '../assets/screenshots/valen4.png'
 
 export const projectsData = [
   {
     id: 1,
     img: page1,
-    name: 'valen-img',
+    name: 'valen-img.com',
     stack: [
       'html',
       'css',
@@ -24,6 +28,7 @@ export const projectsData = [
       'Landing page built with React and Vanilla CSS for a berlin based photographer. Features 3 different categories of albums (animated with framer motion) he liked, that when ever an album gets clicked a modal pops up with a carousel (swiper js) of pictures',
     urlDemo: 'https://www.valen-img.com/',
     urlCode: 'https://github.com/santiagomanso/ValentinLallanaPH',
+    screenShots: [valen1, valen2, valen3, valen4],
   },
   {
     id: 2,
@@ -43,6 +48,7 @@ export const projectsData = [
       'In this application i used MERN stack (MongoDB Express React Nodejs) to build an application clone of the one that i used when i worked at GoFlink in Berlin, germany. I tested with a zebra phone scanner and was able to scann products and perform create update delete operations with pre-stablished items on its own API REST',
     urlDemo: 'https://inventory.santimanso.com/',
     urlCode: 'https://github.com/santiagomanso/inventory',
+    screenShots: '',
   },
   {
     id: 3,
@@ -54,6 +60,7 @@ export const projectsData = [
       'one final project from FreeCodeCamp.org that displays a random quote and author from two arrays, scheduled to upgrade to Tailwind Css',
     urlDemo: 'https://lambent-mandazi-599f73.netlify.app/',
     urlCode: 'https://github.com/santiagomanso/random-quote-generator',
+    screenShots: '',
   },
   {
     id: 4,
@@ -74,6 +81,7 @@ export const projectsData = [
       'Frontend application that consumes its own REST API made with MongoDB where an user is bound to Projects and multiple tasks that each project has',
     urlDemo: 'https://unrivaled-faloodeh-b0ddb1.netlify.app/',
     urlCode: 'https://github.com/santiagomanso/merntasks-client',
+    screenShots: '',
   },
   {
     id: 5,
@@ -93,6 +101,7 @@ export const projectsData = [
       'Example applition that allows users to have multiple pets and be able to schedule appointments with different doctors, built around MERN stack (MongoDB Express React Nodejs) consumes an api where users are related to pets and appointments',
     urlDemo: 'https://dazzling-kleicha-493283.netlify.app/',
     urlCode: 'https://github.com/santiagomanso/vet.app',
+    screenShots: '',
   },
   {
     id: 6,
@@ -112,5 +121,6 @@ export const projectsData = [
       'Superheroes application where i learn to use react-router-dom, animate-css, and i got to practise a bit with javascript array methods filter. Built with React 16 and bootstrap 5, but i schedule myself to update it to react 18 and use tailwind css instead of bootstrap',
     urlDemo: 'https://exquisite-rolypoly-147bef.netlify.app/',
     urlCode: 'https://github.com/santiagomanso/heroes-app',
+    screenShots: '',
   },
 ]

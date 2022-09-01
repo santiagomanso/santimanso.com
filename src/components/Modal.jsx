@@ -50,7 +50,7 @@ export default function Modal({
         className='fixed top-0 left-0 bottom-0 right-0 bg-black/70'
         onClick={onClose}
       />
-      <div className='fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] w-screen h-full lg:h-[70%] lg:w-[70vw] modal'>
+      <div className='fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] w-screen h-full lg:h-[70%] lg:w-[70vw] modal select-none'>
         <div
           className={` ${animation3} flex flex-col lg:flex-row w-full h-full`}
         >
@@ -140,12 +140,16 @@ export default function Modal({
                 </div>
                 <div className='bg-secondary/10 px-3 py-2 text-white text-lg lg:text-2xl font-console font-[200] rounded-br-lg rounded-bl-lg overflow-auto modal__about__container'>
                   <div className='h-[20vh] overflow-auto'>
-                    <span className='font-console modal__about'>
-                      {tabContent}
-                    </span>
-                    {(active === 'screenshots') | (active === 'video') ? (
-                      <i className='fa-solid fa-person-digging text-yellow-400/80 text-3xl'></i>
-                    ) : null}
+                    {/* render the array of screenshots but also different content of the tab section */}
+                    {active === 'screenshots' ? (
+                      screenshots.map((img, index) => (
+                        <img key={index} src={img} alt='' />
+                      ))
+                    ) : (
+                      <span className='font-console modal__about'>
+                        {tabContent}
+                      </span>
+                    )}
                   </div>
                 </div>
               </div>
@@ -156,7 +160,7 @@ export default function Modal({
                 href={urlDemo}
                 target='_blank'
                 rel='noreferrer'
-                className='flex items-center gap-1 text-lg lg:text-2xl px-7 lg:px-12 py-2 border-2 border-white border-solid rounded-md bg-purple-700/70 hover:bg-purple-700 group hover:-translate-y-2 transition-all duration-300 hover:-rotate-3'
+                className='flex items-center gap-1 text-lg lg:text-xl px-7 lg:px-8 py-1 border-2 border-white border-solid rounded-md bg-purple-700/70 hover:bg-purple-700 group hover:-translate-y-2 transition-all duration-300 hover:-rotate-3'
               >
                 <svg
                   aria-hidden='true'
@@ -179,7 +183,7 @@ export default function Modal({
                 href={urlCode}
                 target='_blank'
                 rel='noreferrer'
-                className='flex gap-1 items-center text-lg lg:text-2xl px-7 lg:px-12 py-2 border-2 border-white border-solid rounded-md bg-variant2 cta group transition-all duration-300 hover:-translate-y-2 hover:rotate-3'
+                className='flex gap-1 items-center text-lg lg:text-xl px-7 lg:px-8 py-1 border-2 border-white border-solid rounded-md bg-variant2 cta group transition-all duration-300 hover:-translate-y-2 hover:rotate-3'
               >
                 <svg
                   aria-hidden='true'
