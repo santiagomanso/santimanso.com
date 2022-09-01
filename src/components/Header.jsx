@@ -35,12 +35,12 @@ const Header = () => {
 
   return (
     <>
-      <div className={`${animation1} absolute top-[14%] w-[66%]`}>
+      <div className={`${animation1} absolute top-[14%] w-full lg:w-[66%]`}>
         <TagCloud />
       </div>
 
       <aside
-        className={` ${animation1} w-full flex flex-col tracking-wider select-none header__welcome`}
+        className={` ${animation1} lg:mt-[40%]  w-full flex flex-col tracking-wider select-none header__welcome`}
       >
         <div className='flex flex-col'>
           <div className='flex justify-between items-center'>

@@ -1,5 +1,4 @@
 import Nav from './Nav'
-import ProjectList from './ProjectList'
 
 const Container = ({ children }) => {
   return (
@@ -11,10 +10,9 @@ const Container = ({ children }) => {
         <div className='pt-5 lg:pt-12'>
           <Nav />
         </div>
-        <div className=''>
-          <div className='flex  h-full items-start lg:items-end container px-2 lg:px-0'>
-            {children}
-          </div>
+
+        <div className='flex h-full items-start lg:items-end container px-2 lg:px-0'>
+          {children}
         </div>
       </div>
     </div>

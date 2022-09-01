@@ -54,11 +54,16 @@ const Nav = () => {
               handlerNavigate('/')
             }}
             className={`${
-              active === 'home' ? ' text-white opacity-100' : ''
+              active === 'home'
+                ? ' text-white opacity-100 -translate-y-1 scale-110'
+                : ''
             } cursor-pointer  hover:text-white flex items-baseline gap-1 translate-y-0 hover:translate-y-1 hover:scale-105 transition-all ease-out duration-300 group`}
           >
             <p className='flex items-baseline gap-1'>
-              <i className='fa-solid text-xl fa-code group-hover:rotate-[-23deg] transition-all ease-in-out duration-300'></i>
+              <i
+                className={` ${active === 'home' ? 'rotate-[-23deg]' : ''}
+              fa-solid fa-house text-xl group-hover:rotate-[-23deg] transition-all ease-in-out duration-300`}
+              ></i>
 
               <span
                 className={` ${
@@ -77,12 +82,17 @@ const Nav = () => {
               }}
               className={`${
                 active === 'portfolio'
-                  ? ' text-white opacity-100 translate-y-1 scale-110 '
+                  ? ' text-white opacity-100 -translate-y-1 scale-110 '
                   : ''
               } cursor-pointer  hover:text-white flex items-baseline gap-1 translate-y-0 hover:translate-y-1 hover:scale-105 transition-all ease-out duration-300 group`}
             >
               <p className='flex items-baseline gap-1' href='/portfolio'>
-                <i className='fa-solid text-xl fa-folder-open group-hover:rotate-[-23deg] transition-all ease-in-out duration-300'></i>
+                <i
+                  className={` ${
+                    active === 'portfolio' ? 'rotate-[-23deg]' : ''
+                  }
+                  fa-solid text-xl fa-folder-open group-hover:rotate-[-23deg] transition-all ease-in-out duration-300`}
+                ></i>
 
                 <span
                   className={` ${
@@ -99,11 +109,18 @@ const Nav = () => {
                 handlerNavigate('/curriculum')
               }}
               className={`${
-                active === 'curriculum' ? ' text-white opacity-100' : ''
+                active === 'curriculum'
+                  ? ' text-white opacity-100 -translate-y-1 scale-110'
+                  : ''
               } cursor-pointer  hover:text-white flex items-baseline gap-1 translate-y-0 hover:translate-y-1 hover:scale-105 transition-all ease-out duration-300 group`}
             >
               <p className='flex items-baseline gap-1'>
-                <i className='fa-solid text-xl fa-file-lines group-hover:rotate-[-23deg] transition-all ease-in-out duration-300'></i>
+                <i
+                  className={` ${
+                    active === 'curriculum' ? 'rotate-[-23deg]' : ''
+                  }
+                fa-solid text-xl fa-file-lines group-hover:rotate-[-23deg] transition-all ease-in-out duration-300`}
+                ></i>
 
                 <span
                   className={` ${

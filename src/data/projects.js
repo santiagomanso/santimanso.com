@@ -8,14 +8,22 @@ import heroe from '../assets/heroe.jpg'
 export const projectsData = [
   {
     id: 1,
-    img: quote,
-    name: 'Quote Machine',
-    stack: ['html', 'css', 'javascript', 'react', 'responsive design'],
-    descShort: 'Renders a random quote and author made for FreecodeCamp.org',
+    img: page1,
+    name: 'valen-img',
+    stack: [
+      'html',
+      'css',
+      'javascript',
+      'react',
+      'responsive design',
+      'swiper js',
+      'framer motion',
+    ],
+    descShort: 'Photographer personal site',
     descLong:
-      'one final project from FreeCodeCamp.org that displays a random quote and author from two arrays, scheduled to upgrade to Tailwind Css',
-    urlDemo: 'https://lambent-mandazi-599f73.netlify.app/',
-    urlCode: 'https://github.com/santiagomanso/random-quote-generator',
+      'Landing page built with React and Vanilla CSS for a berlin based photographer. Features 3 different categories of albums (animated with framer motion) he liked, that when ever an album gets clicked a modal pops up with a carousel (swiper js) of pictures',
+    urlDemo: 'https://www.valen-img.com/',
+    urlCode: 'https://github.com/santiagomanso/ValentinLallanaPH',
   },
   {
     id: 2,
@@ -38,23 +46,14 @@ export const projectsData = [
   },
   {
     id: 3,
-    img: page1,
-    name: 'Landing page',
-    stack: [
-      'mongo db',
-      'express',
-      'vanilla css',
-      'react',
-      'html',
-      'responsive design',
-      'Node js',
-    ],
-    descShort:
-      'Example landing page intended to use as an overall landing website',
+    img: quote,
+    name: 'Quote Machine',
+    stack: ['html', 'css', 'javascript', 'react', 'responsive design'],
+    descShort: 'Renders a random quote and author made for FreecodeCamp.org',
     descLong:
-      'Made with semantic HTML tags sections mains and articles to display a variety of information',
-    urlDemo: 'https://mellifluous-dragon-2deb6b.netlify.app/',
-    urlCode: 'https://github.com/santiagomanso/portfolio',
+      'one final project from FreeCodeCamp.org that displays a random quote and author from two arrays, scheduled to upgrade to Tailwind Css',
+    urlDemo: 'https://lambent-mandazi-599f73.netlify.app/',
+    urlCode: 'https://github.com/santiagomanso/random-quote-generator',
   },
   {
     id: 4,
