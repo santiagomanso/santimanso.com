@@ -4,10 +4,25 @@ import page1 from '../assets/page1.png'
 import tasks from '../assets/tasks.png'
 import vetapp from '../assets/vetapp.png'
 import heroe from '../assets/heroe.jpg'
-import valen1 from '../assets/screenshots/valen1.png'
-import valen2 from '../assets/screenshots/valen2.png'
-import valen3 from '../assets/screenshots/valen3.png'
-import valen4 from '../assets/screenshots/valen4.png'
+
+//projects screenshots
+//valen-img
+import valen1 from '../assets/screenshots/valen/valen1.png'
+import valen2 from '../assets/screenshots/valen/valen2.png'
+import valen3 from '../assets/screenshots/valen/valen3.png'
+import valen4 from '../assets/screenshots/valen/valen4.png'
+
+//inventory manager
+import inventory1 from '../assets/screenshots/inventory/inventory1.png'
+import inventory2 from '../assets/screenshots/inventory/inventory2.png'
+import inventory3 from '../assets/screenshots/inventory/inventory3.png'
+import inventory4 from '../assets/screenshots/inventory/inventory4.png'
+import inventory5 from '../assets/screenshots/inventory/inventory5.png'
+import inventory6 from '../assets/screenshots/inventory/inventory6.png'
+
+//quote machine
+import quote1 from '../assets/screenshots/quote/quote1.png'
+import quote2 from '../assets/screenshots/quote/quote2.png'
 
 export const projectsData = [
   {
@@ -48,7 +63,14 @@ export const projectsData = [
       'In this application i used MERN stack (MongoDB Express React Nodejs) to build an application clone of the one that i used when i worked at GoFlink in Berlin, germany. I tested with a zebra phone scanner and was able to scann products and perform create update delete operations with pre-stablished items on its own API REST',
     urlDemo: 'https://inventory.santimanso.com/',
     urlCode: 'https://github.com/santiagomanso/inventory',
-    screenShots: '',
+    screenShots: [
+      inventory1,
+      inventory2,
+      inventory3,
+      inventory4,
+      inventory5,
+      inventory6,
+    ],
   },
   {
     id: 3,
@@ -60,7 +82,7 @@ export const projectsData = [
       'one final project from FreeCodeCamp.org that displays a random quote and author from two arrays, scheduled to upgrade to Tailwind Css',
     urlDemo: 'https://lambent-mandazi-599f73.netlify.app/',
     urlCode: 'https://github.com/santiagomanso/random-quote-generator',
-    screenShots: '',
+    screenShots: [quote1, quote2],
   },
   {
     id: 4,
