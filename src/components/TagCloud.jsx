@@ -492,7 +492,7 @@ const TagCloud = () => {
           </div>
         </div>
       </div>
-      <div className='lg:hidden mt-28 w-full grid grid-cols-2 pr-3'>
+      <div className='hidden mt-28 w-full grid-cols-2 pr-3'>
         <div className='bg-gray-200/40 h-52 flex flex-wrap gap-x-2 gap-y-1 text-sm'>
           <span className='border-2 border-solid border-secondary px-3 flex items-center rounded-md'>
             html

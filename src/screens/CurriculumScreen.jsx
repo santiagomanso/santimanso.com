@@ -6,7 +6,7 @@ const CurriculumScreen = () => {
   const [animation1] = useContext(AnimationContext)
 
   return (
-    <div className={` ${animation1} flex w-full h-[70vh] mt-5`}>
+    <div className={` ${animation1} flex w-full h-[70vh] mt-10 lg:mt-5 `}>
       <div className='bg-blue-500/30 w-[40%] rounded-xl px-5 overflow-auto'>
         <img
           src={santi}
@@ -100,7 +100,6 @@ const CurriculumScreen = () => {
           </li>
         </ul>
       </div>
-
       <div className='bg-slate-100 w-[60%] rounded-xl px-5  overflow-auto'>
         <h1 className='text-blue-900 text-3xl tracking-wider flex justify-center mt-2'>
           Santiago Manso Castro

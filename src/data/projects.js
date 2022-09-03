@@ -1,3 +1,4 @@
+//icons for the flex list of projects
 import quote from '../assets/quote.png'
 import inventory from '../assets/inventory.png'
 import page1 from '../assets/page1.png'
@@ -24,6 +25,7 @@ import inventory6 from '../assets/screenshots/inventory/inventory6.png'
 import quote1 from '../assets/screenshots/quote/quote1.png'
 import quote2 from '../assets/screenshots/quote/quote2.png'
 
+//array of projects to feed ProjectList and modal components
 export const projectsData = [
   {
     id: 1,
