@@ -44,9 +44,9 @@ const Nav = () => {
   }, [pathname])
 
   return (
-    <>
+    <nav>
       {/* PC/LAPTOP nav */}
-      <nav className=' hidden lg:inline text-secondary  tracking-widest select-none'>
+      <div className='hidden lg:block text-secondary  tracking-widest select-none'>
         <ul className=' flex justify-between items-center'>
           <li
             onClick={() => {
@@ -133,7 +133,7 @@ const Nav = () => {
             </li>
           </div>
         </ul>
-      </nav>
+      </div>
 
       {/* Phones */}
       <div
@@ -255,7 +255,7 @@ const Nav = () => {
           </nav>
         </div>
       </div>
-    </>
+    </nav>
   )
 }
 
