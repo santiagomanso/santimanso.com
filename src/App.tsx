@@ -1,30 +1,32 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Container from './components/Container'
 import Nav from './components/Nav'
-
 import { AnimationProvider } from './context/animationContext'
 import { ModalProvider } from './context/ModalContext'
 import { NavProvider } from './context/NavContext'
-import CurriculumScreen from './screens/CurriculumScreen'
-import HomeScreen from './screens/HomeScreen'
-import PortfolioScreen from './screens/PortfolioScreen'
-import SkillsScreen from './screens/SkillsScreen'
+import HomeScreen from './pages/HomeScreen'
+import PortfolioScreen from './pages/PortfolioScreen'
+import SkillsScreen from './pages/SkillsScreen'
+import CurriculumScreen from './pages/CurriculumScreen'
+import AppContainer from './components/containers/AppContainer'
+import Footer from './components/footer/Footer'
 
 function App() {
   return (
     <AnimationProvider>
       <ModalProvider>
         <NavProvider>
-          <BrowserRouter>
-            <Container>
+          <AppContainer>
+            <BrowserRouter>
+              <Nav />
               <Routes>
-                <Route exact path='/' element={<HomeScreen />} />
+                <Route path='/' element={<HomeScreen />} />
                 <Route path='/portfolio' element={<PortfolioScreen />} />
                 <Route path='/skills' element={<SkillsScreen />} />
                 <Route path='/curriculum' element={<CurriculumScreen />} />
               </Routes>
-            </Container>
-          </BrowserRouter>
+            </BrowserRouter>
+            <Footer />
+          </AppContainer>
         </NavProvider>
       </ModalProvider>
     </AnimationProvider>

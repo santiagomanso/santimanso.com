@@ -62,7 +62,7 @@ const ProjectList = () => {
               <img
                 src={project.img}
                 alt='quote'
-                className='absolute left-[10%] w-5/6 h-5/6 group-hover:scale-[1.8] group-hover:-rotate-[23deg] group-hover:opacity-50 transition-all duration-1000'
+                className='absolute bg-orange-400 left-[10%] w-5/6 h-5/6 group-hover:scale-[1.8] group-hover:-rotate-[23deg] group-hover:opacity-50 transition-all duration-1000'
               />
             </div>
             <div

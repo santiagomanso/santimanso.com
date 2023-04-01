@@ -3,175 +3,162 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300&display=swap');
-@layer base{
 
-  *{
-    font-family: Staatliches, sans-serif;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    box-sizing: border-box;
-    list-style: none;
-    text-decoration: none;
+* {
+  font-family: Staatliches, sans-serif;
+}
+
+@layer base {
+  h1 {
+    @apply text-white;
   }
-  .app{
-    background: linear-gradient(55deg, rgba(55,86,106,1) 3%, rgba(34,38,42,1) 16%);
+  h2 {
+    @apply text-secondary;
   }
 
-  h1{
-    @apply text-white 
-  }
-  h2{
-    @apply text-secondary 
+  .app {
+    word-spacing: 0.2rem;
   }
 
-  .app{
-    word-spacing: .2rem
-  }
-  
   @keyframes blinker {
-    10% { opacity: 0.0; }
+    10% {
+      opacity: 0;
+    }
   }
 
-  .cta{
+  .cta {
     box-shadow: inset 0 0 0 0 rgba(148, 164, 180, 0.8);
     transition: ease-out 5s;
   }
 
-  .cta:hover{
+  .cta:hover {
     cursor: pointer;
     box-shadow: inset 250px 0 0 0.9px rgba(148, 164, 180, 0.8);
-  
   }
 
-  .cta2{
-    box-shadow: inset 0 0 0 0 #343A41;
-    transition: ease-out .6s;
+  .cta2 {
+    box-shadow: inset 0 0 0 0 #343a41;
+    transition: ease-out 0.6s;
   }
-  
-  .cta2:hover{
+
+  .cta2:hover {
     cursor: pointer;
-    box-shadow: inset 250px 0 0 0.9px #343A41;
+    box-shadow: inset 250px 0 0 0.9px #343a41;
   }
 
-  .card{
+  .card {
     box-shadow: 10px 10px 10px black;
   }
-
 }
 
-  body::-webkit-scrollbar {
-    display: none;
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #22262a;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #94a4b4;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #7d48b5;
+}
+
+@media (-webkit-device-pixel-ratio: 1.5) {
+  .header__welcome {
+    margin-top: 40%;
   }
 
-  /* width */
-  ::-webkit-scrollbar {
-    width: 10px;
+  h1 {
+    zoom: 0.7;
+  }
+  h2 {
+    zoom: 0.8;
+  }
+  .tabs-header {
+    zoom: 1.34;
+  }
+  .modal__stack {
+    zoom: 0.8;
+  }
+  .modal__about {
+    zoom: 0.7;
+  }
+  .modal__about__container {
+    max-height: 240px;
   }
 
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #22262A; 
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #94A4B4; 
+  .card {
+    zoom: 0.7;
+    width: 25% !important;
   }
 
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #7d48b5; 
+  .card h1 {
+    zoom: 1;
+  }
+  .modal__buttons {
+    zoom: 1;
+  }
+}
+
+@media (-webkit-device-pixel-ratio: 1.25) {
+  .card {
+    zoom: 0.8;
+    width: 23% !important;
+  }
+  .about {
+    zoom: 0.7;
   }
 
-  @media (-webkit-device-pixel-ratio: 1.50) {
-
-    .header__welcome{
-      margin-top: 40%;
-    }
-
-    h1{
-      zoom: .7;
-    }
-    h2{
-      zoom: .8;
-    }
-    .tabs-header{
-      zoom: 1.34
-    }
-    .modal__stack{
-      zoom: .8;
-    }
-    .modal__about{
-      zoom: .7;
-    }
-    .modal__about__container{
-      max-height: 240px;
-    }
-
-    .card{
-      zoom: .7;
-      width: 25% !important;
-    }
-
-    .card h1{
-      zoom: 1;
-    }
-    .modal__buttons{
-      zoom: 1;
-    }
+  .modal__about__container {
+    max-height: 300px;
   }
+}
 
-  @media (-webkit-device-pixel-ratio: 1.25) {
-    
-    .card {
-      zoom: .8;
-      width: 23% !important;
-    }
-    .about{
-      zoom: .7
-    }
-
-    .modal__about__container{
-      max-height: 300px;
-    }
-
+@media (-webkit-device-pixel-ratio: 1) {
+  .header__welcome {
+    margin-top: 45%;
   }
-
-  @media (-webkit-device-pixel-ratio: 1.00) {
-    .header__welcome{
-      margin-top: 45%;
-    }
-    .portfolio__header{
-      zoom: 1.2;
-    }
-    aside{
-      zoom: 1.3;
-    }
-    nav{
-      zoom: 1.4;
-    }
-    .card{
-      zoom:1.35
-    }
-    .tabs-header{
-      zoom: 1.3
-    }
-    .modal__right h1{
-      zoom: 1;
-    }
-    .modal__right__project{
-      zoom: 1;
-    }
-    .modal__about__container{
-      zoom: 1.5;
-    }
-    .modal__about{
-      zoom: .7;
-    }
-    .modal__buttons{
-      margin-top: 10px;
-      zoom: 1.3;
-    }
+  .portfolio__header {
+    zoom: 1.2;
   }
+  aside {
+    zoom: 1.3;
+  }
+  nav {
+    zoom: 1.4;
+  }
+  .card {
+    zoom: 1.35;
+  }
+  .tabs-header {
+    zoom: 1.3;
+  }
+  .modal__right h1 {
+    zoom: 1;
+  }
+  .modal__right__project {
+    zoom: 1;
+  }
+  .modal__about__container {
+    zoom: 1.5;
+  }
+  .modal__about {
+    zoom: 0.7;
+  }
+  .modal__buttons {
+    margin-top: 10px;
+    zoom: 1.3;
+  }
+}
