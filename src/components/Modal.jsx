@@ -50,7 +50,7 @@ export default function Modal({
         className='fixed top-0 left-0 bottom-0 right-0 bg-black/70'
         onClick={onClose}
       />
-      <div className='fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] w-screen h-full lg:h-[70%] lg:w-[70vw] modal select-none'>
+      <div className='fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] w-screen h-full lg:h-[70%] lg:w-[70vw] modal z-20'>
         <div
           className={` ${animation3} flex flex-col lg:flex-row w-full h-full`}
         >
@@ -217,6 +217,6 @@ export default function Modal({
         </button>
       </div>
     </>,
-    document.getElementById('portal')
+    document.getElementById('portal'),
   )
 }
