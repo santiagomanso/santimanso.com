@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Nav from './components/Nav'
+
 import { AnimationProvider } from './context/animationContext'
 import { ModalProvider } from './context/ModalContext'
 import { NavProvider } from './context/NavContext'
@@ -9,6 +9,7 @@ import SkillsScreen from './pages/SkillsScreen'
 import CurriculumScreen from './pages/CurriculumScreen'
 import AppContainer from './components/containers/AppContainer'
 import Footer from './components/footer/Footer'
+import Navbar from './components/navbar/Navbar'
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
         <NavProvider>
           <AppContainer>
             <BrowserRouter>
-              <Nav />
+              <Navbar />
               <Routes>
                 <Route path='/' element={<HomeScreen />} />
                 <Route path='/portfolio' element={<PortfolioScreen />} />
