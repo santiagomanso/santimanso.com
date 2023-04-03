@@ -1,34 +1,13 @@
-import React, { useContext } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { AnimationContext } from '../context/animationContext'
+import { useContext } from 'react'
 import { headerInterface } from '../interfaces/headerInterface'
 import TypeWriterEfffect from 'react-typewriter-effect'
+import { AnimationContext } from '../context/animationContext'
 
-const Header = ({ title, subtitle, typeWriterText }: headerInterface) => {
-  const [
-    animation1,
-    animation2,
-    animation3,
-    setAnimation1,
-    setAnimation2,
-    setAnimation3,
-  ] = useContext(AnimationContext)
-
-  const navigate = useNavigate()
-
-  const handlerNavigate = () => {
-    setAnimation1('animate__animated animate__backOutRight')
-    setAnimation2('animate__animated animate__fadeOutLeft')
-    setTimeout(() => {
-      navigate('/portfolio')
-      setAnimation1('animate__animated animate__fadeInLeft')
-      setAnimation2('animate__animated animate__fadeInLeft')
-    }, 1500)
-  }
-
+const Header = ({ title, typeWriterText }: headerInterface) => {
+  const { animationSwipe } = useContext(AnimationContext)
   return (
     <section
-      className={` ${animation1} w-full flex flex-col tracking-wider select-none header__welcome`}
+      className={` ${animationSwipe} flex flex-col tracking-wider select-none header__welcome`}
     >
       <div className='flex flex-col'>
         <div className='flex justify-between items-center'>
@@ -39,11 +18,13 @@ const Header = ({ title, subtitle, typeWriterText }: headerInterface) => {
                 fontFamily: 'Staatliches', //chooose your font
                 fontWeight: 100,
                 color: 'gray',
+                textAlign: 'center',
               }}
               cursorColor='#3F3D56'
               multiText={typeWriterText} //comes from props
-              multiTextDelay={1000}
-              typeSpeed={30}
+              multiTextDelay={8000}
+              typeSpeed={80}
+              changeDeleteSpeed={2000}
               multiTextLoop
             />
           </div>
