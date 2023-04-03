@@ -12,7 +12,9 @@ const Header = ({ title, typeWriterText }: headerInterface) => {
       <div className='flex flex-col'>
         <div className='flex justify-between items-center'>
           <div>
-            <h1 className='text-3xl sm:text-4xl lg:text-5xl'>{title}</h1>
+            <h1 className='text-3xl text-gray-700 dark:text-gray-100 tracking-wide sm:text-4xl lg:text-5xl'>
+              {title}
+            </h1>
             <TypeWriterEfffect
               textStyle={{
                 fontFamily: 'Staatliches', //chooose your font

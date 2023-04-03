@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { AnimationContext } from '../../context/animationContext'
 import { responsiveNavItems } from '../../data/responsiveNavItems'
 import { navItems } from '../../interfaces/navItemsInterface'
-import path from 'path'
+import ThemeSwitcher from '../theme/ThemeSwitcher'
 
 const Navbar = () => {
   const [active, setActive] = useState<String>('/') //active url
@@ -28,19 +28,19 @@ const Navbar = () => {
   }
 
   return (
-    <nav>
+    <nav className='lg:py-1'>
       {/* PC/LAPTOP nav */}
       <div
-        className={`${animationSwipe} hidden lg:block text-secondary  tracking-widest select-none`}
+        className={`${animationSwipe} hidden lg:block text-gray-700 dark:text-secondary  tracking-widest select-none`}
       >
-        <ul className=' flex justify-between items-center'>
+        <ul className=' flex justify-between items-baseline'>
           <li
             onClick={() => handleClick(responsiveNavItems[0])}
             className={`${
               active === responsiveNavItems[0].path
-                ? ' text-gray-100 opacity-100 scale-110'
-                : 'hover:-translate-y-1 hover:scale-105'
-            } cursor-pointer  hover:text-gray-100 flex items-baseline gap-1 translate-y-0  transition-all ease-out duration-300 group`}
+                ? ' text-gray-900 opacity-100 scale-110'
+                : 'hover:-translate-y-1 hover:scale-105 hover:text-gray-700'
+            } cursor-pointer dark:text-secondary flex items-baseline gap-1 translate-y-0  transition-all ease-out duration-300 group`}
           >
             <p className='flex items-baseline gap-1'>
               <i
@@ -63,6 +63,7 @@ const Navbar = () => {
               </span>
             </p>
           </li>
+          <ThemeSwitcher />
           <div className=' flex gap-20'>
             {responsiveNavItems &&
               responsiveNavItems.map((item) => {
@@ -73,9 +74,9 @@ const Navbar = () => {
                       onClick={() => handleClick(item)}
                       className={`${
                         active === item.path
-                          ? ' text-gray-100 opacity-100 -translate-y-1 scale-110 '
+                          ? 'text-gray-900 dark:text-gray-100 opacity-100 -translate-y-1 scale-110 '
                           : 'hover:-translate-y-1 hover:scale-105'
-                      } cursor-pointer  hover:text-gray-100 flex items-baseline gap-1 translate-y-0  transition-all ease-out duration-300 group`}
+                      } cursor-pointer  dark:hover:text-gray-100 flex items-baseline gap-1 translate-y-0  transition-all ease-out duration-300 group`}
                     >
                       <p className='flex items-baseline gap-1'>
                         <i
@@ -89,7 +90,9 @@ const Navbar = () => {
 
                         <span
                           className={` ${
-                            active === item.path ? 'opacity-100' : 'opacity-40'
+                            active === item.path
+                              ? 'opacity-100'
+                              : 'dark:opacity-40'
                           }  group-hover:opacity-100 text-lg`}
                         >
                           {item.text}
@@ -128,6 +131,9 @@ const Navbar = () => {
             >
               <i className={`fa-solid fa-xmark`}></i>
             </button>
+            <div className='absolute top-3 left-6'>
+              <ThemeSwitcher setOpen={setOpen} />
+            </div>
             <ul className=' flex flex-col gap-12 pt-20 px-2 text-3xl sm:text-4xl '>
               {responsiveNavItems &&
                 responsiveNavItems.map((item) => {
