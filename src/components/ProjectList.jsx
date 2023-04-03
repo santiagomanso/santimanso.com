@@ -27,23 +27,23 @@ const ProjectList = () => {
 
   return (
     <>
-      <div className='relative grid grid-cols-3 w-full gap-x-20 gap-y-10 select-none h-full'>
+      <div className='relative grid grid-cols-1 lg:grid-cols-3 w-full gap-10 select-none h-full lg:p-10'>
         {projectsData.map((project) => (
           <article
-            onClick={() => {
-              // setShowNav(false)
-              setOpenModal(true)
-              setName(project.name)
-              setStack(project.stack)
-              setImg(project.img)
-              setAbout(project.descLong)
-              setUrlDemo(project.urlDemo)
-              setUrlCode(project.urlCode)
-              setScreenshots(project.screenShots)
-              setVideo('video feature is currently beeing developed')
-            }}
+            // onClick={() => {
+            //   // setShowNav(false)
+            //   setOpenModal(true)
+            //   setName(project.name)
+            //   setStack(project.stack)
+            //   setImg(project.img)
+            //   setAbout(project.descLong)
+            //   setUrlDemo(project.urlDemo)
+            //   setUrlCode(project.urlCode)
+            //   setScreenshots(project.screenShots)
+            //   setVideo('video feature is currently beeing developed')
+            // }}
             key={project.id}
-            className='relative overflow-hidden group card border-solid border-[3px] border-secondary/40 hover:border-white/60  bg-slate-400/50 hover:bg-black/20 rounded-md cursor-pointer'
+            className='relative overflow-hidden group card border-solid border-[3px] border-secondary/40 hover:border-white/60 h-[250px] lg:h-auto lg:w-auto bg-gradient-to-br from-neutral-900 to-neutral-400 hover:bg-black/20 rounded-md cursor-pointer lg:cursor-default'
           >
             <div className='text-white'>
               <img
