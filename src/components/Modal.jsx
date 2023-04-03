@@ -34,14 +34,7 @@ export default function Modal({
     setTabContent(arg)
   }
 
-  const [
-    animation1,
-    animation2,
-    animation3,
-    setAnimation1,
-    setAnimation2,
-    setAnimation3,
-  ] = useContext(AnimationContext)
+  const {} = useContext(AnimationContext)
   if (!open) return null
 
   return ReactDom.createPortal(
@@ -51,9 +44,7 @@ export default function Modal({
         onClick={onClose}
       />
       <div className='fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] w-screen h-full lg:h-[70%] lg:w-[70vw] modal z-20'>
-        <div
-          className={` ${animation3} flex flex-col lg:flex-row w-full h-full`}
-        >
+        <div className={`  flex flex-col lg:flex-row w-full h-full`}>
           <div className='text-white flex justify-center items-center w-full lg:w-2/3 h-2/4 lg:h-full bg-variant2 overflow-hidden select-none'>
             <img
               src={img}
@@ -212,7 +203,7 @@ export default function Modal({
           }}
         >
           <i
-            className={`${animation3} absolute right-3 top-0 text-secondary text-5xl lg:text-5xl fa-solid fa-xmark select-none `}
+            className={` absolute right-3 top-0 text-secondary text-5xl lg:text-5xl fa-solid fa-xmark select-none `}
           ></i>
         </button>
       </div>

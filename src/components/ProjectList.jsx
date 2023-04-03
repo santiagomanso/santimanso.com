@@ -2,21 +2,11 @@ import { projectsData } from '../data/projects'
 import { ModalContext } from '../context/ModalContext'
 import { useContext, useState } from 'react'
 import Modal from './Modal'
-import { AnimationContext } from '../context/animationContext'
-import { NavContext } from '../context/NavContext'
 
 const ProjectList = () => {
-  const [
-    animation1,
-    animation2,
-    animation3,
-    setAnimation1,
-    setAnimation2,
-    setAnimation3,
-  ] = useContext(AnimationContext)
+  // const {} = useContext(AnimationContext)
 
   const [openModal, setOpenModal] = useContext(ModalContext)
-  const [openNav, showNav, setOpenNav, setShowNav] = useContext(NavContext)
 
   const [img, setImg] = useState('')
   const [name, setName] = useState('')
@@ -28,23 +18,20 @@ const ProjectList = () => {
   const [video, setVideo] = useState('')
 
   const handlerCloseModal = () => {
-    setAnimation3('animate__animated animate__slideOutRight')
-    setTimeout(() => {
-      setAnimation3('animate__animated animate__slideInRight')
-    }, 900)
+    setTimeout(() => {}, 900)
     setTimeout(() => {
       setOpenModal(false)
-      setShowNav(true) //hide navigation bar from smartphones
+      // setShowNav(true) //hide navigation bar from smartphones
     }, 750)
   }
 
   return (
     <>
-      <div className='mt-2 relative flex flex-wrap justify-center gap-x-5 lg:gap-x-10 gap-y-6 lg:justify-between  select-none'>
+      <div className='relative grid grid-cols-3 w-full gap-x-20 gap-y-10 select-none h-full'>
         {projectsData.map((project) => (
-          <div
+          <article
             onClick={() => {
-              setShowNav(false)
+              // setShowNav(false)
               setOpenModal(true)
               setName(project.name)
               setStack(project.stack)
@@ -56,13 +43,13 @@ const ProjectList = () => {
               setVideo('video feature is currently beeing developed')
             }}
             key={project.id}
-            className='relative overflow-hidden group card border-solid border-[3px] border-secondary/40 hover:border-white/60  h-48 w-40 lg:h-60 lg:w-60  bg-slate-400/50 hover:bg-black/20 rounded-md cursor-pointer'
+            className='relative overflow-hidden group card border-solid border-[3px] border-secondary/40 hover:border-white/60  bg-slate-400/50 hover:bg-black/20 rounded-md cursor-pointer'
           >
             <div className='text-white'>
               <img
                 src={project.img}
                 alt='quote'
-                className='absolute bg-orange-400 left-[10%] w-5/6 h-5/6 group-hover:scale-[1.8] group-hover:-rotate-[23deg] group-hover:opacity-50 transition-all duration-1000'
+                className='absolute left-[10%] w-5/6 h-5/6 group-hover:scale-[1.8] group-hover:-rotate-[23deg] group-hover:opacity-50 transition-all duration-1000'
               />
             </div>
             <div
@@ -77,7 +64,7 @@ const ProjectList = () => {
               </p>
               <button
                 onClick={() => {
-                  setShowNav(false)
+                  // setShowNav(false)
                   setOpenModal(true)
                   setName(project.name)
                   setStack(project.stack)
@@ -93,7 +80,7 @@ const ProjectList = () => {
                 view project
               </button>
             </div>
-          </div>
+          </article>
         ))}
       </div>
       <Modal
