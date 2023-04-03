@@ -1,5 +1,5 @@
 export interface headerInterface {
-  title?: String
-  subtitle?: String
-  typeWriterText?: String
+  title?: string
+  subtitle?: string
+  typeWriterText?: string[]
 }
