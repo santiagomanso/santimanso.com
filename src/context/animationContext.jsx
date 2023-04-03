@@ -2,28 +2,24 @@ import { createContext, useState } from 'react'
 
 export const AnimationContext = createContext()
 
-export const AnimationProvider = (props) => {
-  const [animation1, setAnimation1] = useState(
-    'animate__animated animate__fadeInLeft'
+export const AnimationProvider = ({ children }) => {
+  const [animationSwipe, setAnimationSwipe] = useState(
+    'animate__animated animate__fadeInUp',
   )
-  const [animation2, setAnimation2] = useState(
-    'animate__animated animate__fadeInLeft'
+  const [animationFade, setAnimationFade] = useState(
+    'animate__animated animate__fadeIn',
   )
-  const [animation3, setAnimation3] = useState(
-    'animate__animated animate__slideInRight'
-  )
+
+  const data = {
+    animationSwipe,
+    animationFade,
+    setAnimationSwipe,
+    setAnimationFade,
+  }
+
   return (
-    <AnimationContext.Provider
-      value={[
-        animation1,
-        animation2,
-        animation3,
-        setAnimation1,
-        setAnimation2,
-        setAnimation3,
-      ]}
-    >
-      {props.children}
+    <AnimationContext.Provider value={data}>
+      {children}
     </AnimationContext.Provider>
   )
 }
