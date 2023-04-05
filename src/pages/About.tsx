@@ -1,26 +1,32 @@
-import santi from '../assets/santi.png'
+import TagCloud from '../components/TagCloud'
+import MainContainer from '../components/containers/MainContainer'
+
+const santi = require('../assets/santi.png')
 type Props = {}
 
 const About = (props: Props) => {
   return (
-    <div>
-      <div className='flex items-center justify-center '>
+    <MainContainer gap='gap-4' padding='lg:py-10'>
+      <div className='flex items-center justify-center bg-secondary rounded-full overflow-hidden border-2 border-secondary bg-gradient-to-br from-slate-800 to-neutral-600'>
         <img
           src={santi}
           alt='santiago manso'
-          className='rounded-full object-top'
+          className='rounded object-scale-down w-[300px] h-[300px]'
         />
       </div>
-      <h2 className='text-center text-2xl'>About me</h2>
-      <p className='text-secondary text-center px-20 tracking-wider'>
-        I am a fullstack developer based in berlin, i attended a full-time (800+
-        hours) bootcamp (web developing with Typescript+NextJs). In the academy
-        i was happy about beeing surrounded with other people that was venturing
-        in the coding world i've been developing apps with react, javascript,
-        typescript and different css frameworks since 2+ years. Beeing Tailwind
-        Css the one i like the most.
-      </p>
-    </div>
+      <div>
+        <h2 className='text-center text-3xl text-gray-200'>About me</h2>
+        <p className='text-secondary text-center px-20 tracking-widest text-xl'>
+          I am a fullstack developer based in berlin, i attended a full-time
+          (800+ hours) bootcamp (web developing with Typescript+NextJs). In the
+          academy i was happy about beeing surrounded with other people that was
+          venturing in the coding world i've been developing apps with react,
+          javascript, typescript and different css frameworks since 2+ years.
+          Beeing Tailwind Css the one i like the most.
+        </p>
+      </div>
+      <TagCloud />
+    </MainContainer>
   )
 }
 
