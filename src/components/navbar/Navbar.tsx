@@ -1,14 +1,15 @@
-import { useContext, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useContext, useState, useEffect, useRef } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { AnimationContext } from '../../context/animationContext'
 import { responsiveNavItems } from '../../data/responsiveNavItems'
 import { navItems } from '../../interfaces/navItemsInterface'
 import ThemeSwitcher from '../theme/ThemeSwitcher'
+import { keyboardKey } from '@testing-library/user-event'
 
 const Navbar = () => {
   const [active, setActive] = useState<String>('/') //active url
   const [open, setOpen] = useState(false) //modal phones-tab logic
-
+  const menuRef = useRef<HTMLDivElement>(null)
   const { animationSwipe } = useContext(AnimationContext)
 
   const navigate = useNavigate()
@@ -26,6 +27,35 @@ const Navbar = () => {
       window.open(item.path, '_blank')
     }
   }
+
+  const location = useLocation()
+  useEffect(() => {
+    if (location.pathname === '/portfolio') {
+      setActive(location.pathname)
+      setOpen(false)
+    }
+  }, [location])
+
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+        setOpen(false)
+      }
+    }
+
+    const keyHandler = (e: keyboardKey) => {
+      if (e.key === 'Escape') {
+        setOpen(false)
+      }
+    }
+
+    document.addEventListener('mousedown', handler)
+    document.addEventListener('keydown', keyHandler)
+    return () => {
+      document.removeEventListener('mousedown', handler)
+      document.addEventListener('keydown', keyHandler)
+    }
+  })
 
   return (
     <nav className='lg:py-1'>
@@ -107,7 +137,7 @@ const Navbar = () => {
       </div>
 
       {/* Phones */}
-      <div className='lg:hidden'>
+      <div className='lg:hidden' ref={menuRef}>
         {/* OPEN aside button */}
         <button
           onClick={() => setOpen(true)}

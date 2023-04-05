@@ -18,7 +18,7 @@ const ThemeSwitcher = ({ setOpen }: ThemeSwitcherProps) => {
   return (
     <div
       onClick={handleSelect}
-      className='flex w-20 h-10 bg-gray-200 dark:bg-purple-700 outline outline-1 transition-colors  rounded-full'
+      className='flex w-20 h-10 bg-gray-200 dark:bg-purple-700 outline outline-1 transition-colors cursor-pointer rounded-full'
     >
       <div
         className={`${
