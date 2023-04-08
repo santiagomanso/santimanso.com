@@ -1,10 +1,10 @@
-import ProjectList from '../components/ProjectList'
 import MainContainer from '../components/containers/MainContainer'
+import ProjectSwiper from '../components/swiper/ProjectSwiper'
 
 const PortfolioScreen = () => {
   return (
-    <MainContainer>
-      <ProjectList />
+    <MainContainer border>
+      <ProjectSwiper />
     </MainContainer>
   )
 }
