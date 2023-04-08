@@ -4,7 +4,7 @@ import MainContainer from '../components/containers/MainContainer'
 
 const HomeScreen = () => {
   return (
-    <MainContainer border>
+    <MainContainer border justifyCenter>
       <Header
         title='santiago manso castro'
         typeWriterText={[
