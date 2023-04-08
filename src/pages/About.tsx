@@ -11,7 +11,7 @@ const About = (props: Props) => {
         <img
           src={santi}
           alt='santiago manso'
-          className='rounded object-scale-down w-[300px] h-[300px]'
+          className='rounded object-contain  object-bottom w-[300px] h-[300px]'
         />
       </div>
       <div>
