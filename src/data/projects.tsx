@@ -1,3 +1,5 @@
+import { Projects } from '../interfaces/projectInterface'
+
 //icons for the flex list of projects
 const quote = require('../assets/quote.png')
 const inventory = require('../assets/inventory.png')
@@ -26,7 +28,7 @@ const quote1 = require('../assets/screenshots/quote/quote1.png')
 const quote2 = require('../assets/screenshots/quote/quote2.png')
 
 //array of projects to feed ProjectList and modal components
-export const projectsData = [
+export const projectsData: Projects = [
   {
     id: 1,
     img: page1,
@@ -107,7 +109,7 @@ export const projectsData = [
       'Frontend application that consumes its own REST API made with MongoDB where an user is bound to Projects and multiple tasks that each project has',
     urlDemo: 'https://unrivaled-faloodeh-b0ddb1.netlify.app/',
     urlCode: 'https://github.com/santiagomanso/merntasks-client',
-    screenShots: '',
+    screenShots: [quote1, quote2],
   },
   {
     id: 5,
@@ -127,7 +129,7 @@ export const projectsData = [
       'Example applition that allows users to have multiple pets and be able to schedule appointments with different doctors, built around MERN stack (MongoDB Express React Nodejs) consumes an api where users are related to pets and appointments',
     urlDemo: 'https://dazzling-kleicha-493283.netlify.app/',
     urlCode: 'https://github.com/santiagomanso/vet.app',
-    screenShots: '',
+    screenShots: [quote1, quote2],
   },
   {
     id: 6,
@@ -147,6 +149,6 @@ export const projectsData = [
       'Superheroes application where i learn to use react-router-dom, animate-css, and i got to practise a bit with javascript array methods filter. Built with React 16 and bootstrap 5, but i schedule myself to update it to react 18 and use tailwind css instead of bootstrap',
     urlDemo: 'https://exquisite-rolypoly-147bef.netlify.app/',
     urlCode: 'https://github.com/santiagomanso/heroes-app',
-    screenShots: '',
+    screenShots: [quote1, quote2],
   },
 ]
