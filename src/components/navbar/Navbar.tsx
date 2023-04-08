@@ -77,7 +77,7 @@ const Navbar = () => {
                 className={`${responsiveNavItems[0].icon} text-xl 
                 ${
                   active === responsiveNavItems[0].path
-                    ? ''
+                    ? 'dark:text-gray-100'
                     : 'group-hover:rotate-[-23deg]'
                 } transition-all ease-in-out duration-300`}
               ></i>
@@ -85,7 +85,7 @@ const Navbar = () => {
               <span
                 className={` ${
                   active === responsiveNavItems[0].path
-                    ? 'opacity-100'
+                    ? 'opacity-100 dark:text-gray-100'
                     : 'opacity-40'
                 }  group-hover:opacity-100 text-lg`}
               >
@@ -143,7 +143,7 @@ const Navbar = () => {
           onClick={() => setOpen(true)}
           className={`${
             open ? 'inline' : ''
-          }  text-white text-4xl sm:text-5xl absolute top-4 sm:top-15 right-8 z-10`}
+          }  text-white dark:text-neutral-800 text-4xl sm:text-5xl absolute top-4 sm:top-15 right-8 z-50`}
         >
           <i className='fa-solid fa-bars'></i>
         </button>
@@ -151,7 +151,7 @@ const Navbar = () => {
         <aside
           className={`${
             open ? 'translate-x-0' : ' translate-x-full'
-          } bg-gradient-to-br from-primary to-zinc-900 w-full md:w-3/5 h-screen fixed top-0 right-0 z-10 select-none ease-in-out duration-300`}
+          } bg-gradient-to-br from-primary to-zinc-900 w-full md:w-3/5 h-screen fixed top-0 right-0 z-50 select-none ease-in-out duration-300`}
         >
           <article className={`text-secondary`}>
             {/* CLOSE aside button */}
