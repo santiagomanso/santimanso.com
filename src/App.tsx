@@ -22,7 +22,7 @@ function App() {
               <Route path='/portfolio' element={<PortfolioScreen />} />
             </Routes>
           </BrowserRouter>
-          <Footer />
+          <Footer displayOnPc />
         </AppContainer>
       </ModalProvider>
     </AnimationProvider>
