@@ -13,23 +13,16 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
   // }
 
   return (
-    <div className={`  flex flex-col lg:flex-row w-full h-full`}>
-      <div className='hidden md:flex   justify-center items-center w-full lg:w-2/3 h-2/4 lg:h-full  overflow-hidden select-none'>
-        <img
-          src={project.img}
-          alt=''
-          className='w-2/4 lg:w-3/4 h-3/4 animate-spin-slow'
-        />
+    <div className={`flex flex-col  lg:flex-row w-full h-full`}>
+      <div className='hidden md:flex items-center  w-full  h-2/4 lg:h-full lg:w-2/3 overflow-hidden select-none'>
+        <img src={project.img} alt='' className='' />
       </div>
-      <div className=' flex flex-col justify-between items-start px-1 lg:px-4 pt-2 lg:pt-2 pb-6 w-full lg:w-2/3 h-full'>
+      <div className=' flex flex-col justify-between items-start p-0 lg:px-4 pt-2 lg:pt-2 lg:pb-20 w-full lg:w-2/3'>
         <div>
-          <h2 className='text-variant1 dark:text-secondary text-xl lg:text-2xl modal__right__project'>
-            PROJECT
-          </h2>
-          <h1 className=' text-2xl dark:text-gray-100 lg:text-4xl tracking-wider'>
+          <h1 className='text-center text-2xl dark:text-gray-100 lg:text-4xl tracking-wider'>
             {project.name}
           </h1>
-          <ul className='flex flex-wrap gap-2 lg:gap-4 text-secondary mt-2 lg:mt-3 text-sm lg:text-xl modal__stack'>
+          <ul className='flex flex-wrap gap-2 lg:gap-4 text-secondary mt-2 lg:mt-3 text-sm lg:text-xl justify-center'>
             {project.stack.map((tech, i) => (
               <li
                 key={i}
@@ -40,7 +33,7 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
             ))}
           </ul>
 
-          <div className='mt-4'>
+          <div className='mt-5 md:mt-7'>
             {/* TABS */}
             <ul className='flex justify-start text-md tracking-wider select-none hover:cursor-pointer bg-secondary dark:bg-variant2'>
               <li
@@ -49,7 +42,7 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
                   // handlerTab(about)
                 }}
                 className={`flex items-baseline gap-1 ${
-                  active === 'about' ? '' : ''
+                  active === 'about' ? 'bg-slate-500 dark:bg-primary' : ''
                 }  px-4 lg:px-6 py-2 group`}
               >
                 <h2 className=' dark:text-gray-200'>about</h2>
@@ -57,7 +50,7 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
                   className={`fa-solid fa-address-card  ${
                     active === 'about'
                       ? 'text-sky-600'
-                      : 'text-secondary group-hover:text-sky-600 group-hover:-translate-y-1 group-hover:-rotate-6 group-hover:translate-x-[0.10rem]'
+                      : 'text-variant1 dark:text-secondary group-hover:text-sky-600 group-hover:-translate-y-1 group-hover:-rotate-6 group-hover:translate-x-[0.10rem]'
                   }  transition-all duration-300`}
                 ></i>
               </li>
@@ -67,7 +60,7 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
                   // handlerTab(screenshots)
                 }}
                 className={`flex items-baseline gap-1 ${
-                  active === 'screenshots' ? '' : ''
+                  active === 'screenshots' ? 'bg-slate-500 dark:bg-primary' : ''
                 }   px-4 lg:px-6 py-2 group`}
               >
                 <h2 className=' dark:text-gray-200'>screenshots</h2>
@@ -75,7 +68,7 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
                   className={`fa-solid fa-camera  ${
                     active === 'screenshots'
                       ? 'text-green-600'
-                      : 'text-secondary group-hover:text-green-600 group-hover:-translate-y-1 group-hover:-rotate-6 group-hover:translate-x-[0.10rem]'
+                      : 'text-variant1 dark:text-secondary group-hover:text-green-600 group-hover:-translate-y-1 group-hover:-rotate-6 group-hover:translate-x-[0.10rem]'
                   }  transition-all duration-300`}
                 ></i>
               </li>
@@ -85,7 +78,7 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
                   // handlerTab(video)
                 }}
                 className={`flex items-baseline gap-1 ${
-                  active === 'video' ? '' : ''
+                  active === 'video' ? 'bg-slate-500 dark:bg-primary' : ''
                 }   px-6 py-2 group`}
               >
                 <h2 className=' dark:text-gray-200'>Video</h2>
@@ -93,36 +86,57 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
                   className={`fa-solid fa-video  ${
                     active === 'video'
                       ? 'text-red-500'
-                      : 'text-secondary group-hover:text-red-500 group-hover:-translate-y-1 group-hover:-rotate-6 group-hover:translate-x-[0.10rem]'
+                      : 'text-variant1 dark:text-secondary group-hover:text-red-500 group-hover:-translate-y-1 group-hover:-rotate-6 group-hover:translate-x-[0.10rem]'
                   }  transition-all duration-300`}
                 ></i>
               </li>
             </ul>
 
-            {/* CONTENT */}
-            <div className='bg-gradient-to-br dark:bg-gradient-to-tr from-gray-200 to-gray-400 px-3 py-2 text-white text-lg lg:text-2xl font-console font-[200] rounded-br-lg rounded-bl overflow-auto dark:from-zinc-900 dark:to-neutral-600'>
-              <div className='h-[35vh] overflow-auto'>
-                {/* render the array of screenshots but also different content of the tab section */}
-                {active === 'screenshots' ? (
-                  project.screenShots.map((img, index) => (
-                    <img key={index} src={img} alt='' />
-                  ))
-                ) : (
-                  <span className='font-console modal__about'>
-                    {tabContent}
-                  </span>
-                )}
-              </div>
+            {/* DESCRIPTION BOX */}
+            <div className='bg-gradient-to-br dark:bg-gradient-to-tr from-gray-200 to-gray-400 px-8 py-2 text-white text-lg lg:text-2xl font-console font-[200] overflow-auto rounded-b dark:from-zinc-900 dark:to-variant2 h-96 lg:h-[260px] border-b-2 border-l-2 border-r-2 outline-2 border-gray-400 dark:border-neutral-800'>
+              {/* render the array of screenshots but also different content of the tab section */}
+              {active === 'screenshots' ? (
+                project.screenShots.map((img, index) => (
+                  <img key={index} src={img} alt='' />
+                ))
+              ) : (
+                <span className='text-black dark:text-gray-100 font-medium text-lg font-console'>
+                  {project.descLong}
+                </span>
+              )}
             </div>
           </div>
         </div>
 
-        <div className='flex justify-evenly w-full  select-none text-white modal__buttons'>
+        <div className='mt-5  flex justify-evenly md:justify-around lg:justify-evenly md:px-10 lg:px-0 w-full select-none text-white lg:mt-2 '>
+          <a
+            href={project.urlCode}
+            target='_blank'
+            rel='noreferrer'
+            className='flex gap-1 items-center text-lg lg:text-xl px-7 lg:px-8 py-1 border-2 border-white border-solid rounded-md bg-variant2 cta group transition-all duration-300 hover:-translate-y-2 hover:-rotate-3'
+          >
+            <svg
+              aria-hidden='true'
+              focusable='false'
+              data-prefix='fas'
+              data-icon='code'
+              role='img'
+              xmlns='http://www.w3.org/2000/svg'
+              viewBox='0 0 640 512'
+              className='svg-inline--fa fa-code fa-w-20 text-white  w-5 lg:w-8'
+            >
+              <path
+                fill='currentColor'
+                d='M278.9 511.5l-61-17.7c-6.4-1.8-10-8.5-8.2-14.9L346.2 8.7c1.8-6.4 8.5-10 14.9-8.2l61 17.7c6.4 1.8 10 8.5 8.2 14.9L293.8 503.3c-1.9 6.4-8.5 10.1-14.9 8.2zm-114-112.2l43.5-46.4c4.6-4.9 4.3-12.7-.8-17.2L117 256l90.6-79.7c5.1-4.5 5.5-12.3.8-17.2l-43.5-46.4c-4.5-4.8-12.1-5.1-17-.5L3.8 247.2c-5.1 4.7-5.1 12.8 0 17.5l144.1 135.1c4.9 4.6 12.5 4.4 17-.5zm327.2.6l144.1-135.1c5.1-4.7 5.1-12.8 0-17.5L492.1 112.1c-4.8-4.5-12.4-4.3-17 .5L431.6 159c-4.6 4.9-4.3 12.7.8 17.2L523 256l-90.6 79.7c-5.1 4.5-5.5 12.3-.8 17.2l43.5 46.4c4.5 4.9 12.1 5.1 17 .6z'
+              ></path>
+            </svg>
+            <p className='text-white'>code</p>
+          </a>
           <a
             href={project.urlDemo}
             target='_blank'
             rel='noreferrer'
-            className='flex items-center gap-1 text-lg lg:text-xl px-7 lg:px-8 py-1 border-2 border-white border-solid rounded-md bg-purple-600 group hover:-translate-y-2 transition-all duration-300 hover:-rotate-3'
+            className='flex items-center gap-1 text-lg lg:text-xl px-7 lg:px-8 py-1 border-2 border-white border-solid rounded-md bg-purple-600 group hover:-translate-y-2 transition-all duration-300 hover:rotate-3'
           >
             <svg
               aria-hidden='true'
@@ -140,29 +154,6 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
               ></path>
             </svg>
             <p className='text-white '>view live</p>
-          </a>
-          <a
-            href={project.urlCode}
-            target='_blank'
-            rel='noreferrer'
-            className='flex gap-1 items-center text-lg lg:text-xl px-7 lg:px-8 py-1 border-2 border-white border-solid rounded-md bg-variant2 cta group transition-all duration-300 hover:-translate-y-2 hover:rotate-3'
-          >
-            <svg
-              aria-hidden='true'
-              focusable='false'
-              data-prefix='fas'
-              data-icon='code'
-              role='img'
-              xmlns='http://www.w3.org/2000/svg'
-              viewBox='0 0 640 512'
-              className='svg-inline--fa fa-code fa-w-20 text-white  w-5 lg:w-8'
-            >
-              <path
-                fill='currentColor'
-                d='M278.9 511.5l-61-17.7c-6.4-1.8-10-8.5-8.2-14.9L346.2 8.7c1.8-6.4 8.5-10 14.9-8.2l61 17.7c6.4 1.8 10 8.5 8.2 14.9L293.8 503.3c-1.9 6.4-8.5 10.1-14.9 8.2zm-114-112.2l43.5-46.4c4.6-4.9 4.3-12.7-.8-17.2L117 256l90.6-79.7c5.1-4.5 5.5-12.3.8-17.2l-43.5-46.4c-4.5-4.8-12.1-5.1-17-.5L3.8 247.2c-5.1 4.7-5.1 12.8 0 17.5l144.1 135.1c4.9 4.6 12.5 4.4 17-.5zm327.2.6l144.1-135.1c5.1-4.7 5.1-12.8 0-17.5L492.1 112.1c-4.8-4.5-12.4-4.3-17 .5L431.6 159c-4.6 4.9-4.3 12.7.8 17.2L523 256l-90.6 79.7c-5.1 4.5-5.5 12.3-.8 17.2l43.5 46.4c4.5 4.9 12.1 5.1 17 .6z'
-              ></path>
-            </svg>
-            <p className='text-white group-hover:text-variant1'>code</p>
           </a>
         </div>
       </div>
