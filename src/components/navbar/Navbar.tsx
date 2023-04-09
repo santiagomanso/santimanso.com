@@ -5,6 +5,7 @@ import { responsiveNavItems } from '../../data/responsiveNavItems'
 import { navItems } from '../../interfaces/navItemsInterface'
 import ThemeSwitcher from '../theme/ThemeSwitcher'
 import { keyboardKey } from '@testing-library/user-event'
+import Footer from '../Footer'
 
 const Navbar = () => {
   const [active, setActive] = useState<String>('/') //active url
@@ -143,7 +144,7 @@ const Navbar = () => {
           onClick={() => setOpen(true)}
           className={`${
             open ? 'inline' : ''
-          }  text-white dark:text-neutral-800 text-4xl sm:text-5xl absolute top-4 sm:top-15 right-8 z-50`}
+          }  dark:text-gray-300 text-neutral-800 text-4xl sm:text-5xl absolute top-4 sm:top-15 right-8 z-50`}
         >
           <i className='fa-solid fa-bars'></i>
         </button>
@@ -194,6 +195,7 @@ const Navbar = () => {
                 })}
             </ul>
           </article>
+          <Footer displayOnPhones />
         </aside>
       </div>
     </nav>
