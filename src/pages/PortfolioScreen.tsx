@@ -3,7 +3,7 @@ import ProjectSwiper from '../components/swiper/ProjectSwiper'
 
 const PortfolioScreen = () => {
   return (
-    <MainContainer border>
+    <MainContainer border justifyCenter>
       <ProjectSwiper />
     </MainContainer>
   )
