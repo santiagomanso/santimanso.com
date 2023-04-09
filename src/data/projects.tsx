@@ -3,7 +3,7 @@ import { Projects } from '../interfaces/projectInterface'
 //icons for the flex list of projects
 const quote = require('../assets/quote.png')
 const inventory = require('../assets/inventory.png')
-const page1 = require('../assets/page1.png')
+
 const tasks = require('../assets/tasks.png')
 const vetapp = require('../assets/vetapp.png')
 const heroe = require('../assets/heroe.jpg')
@@ -31,7 +31,7 @@ const quote2 = require('../assets/screenshots/quote/quote2.png')
 export const projectsData: Projects = [
   {
     id: 1,
-    img: page1,
+    img: 'https://i.ibb.co/Kx9prWv/main-Screenshot.png',
     name: 'Zombiemarkt',
     stack: [
       'axios',
@@ -46,7 +46,7 @@ export const projectsData: Projects = [
     descShort:
       "the zombie apocalypse has arrived, stock up before it's too late. ",
     descLong:
-      "This application is one of the two frontend applications running this e-commerce, conformed by two frontend applications and a backend application made with express in node.js. The end user of this app is a customer that will be able to add products to the shopping cart, make favorite products that the user wants, as well as leave comments on the product detail page. The application interacts with the backend creating an entry in the order collection, creating an order; at the same time and in the same controller updates the stock of the products (all products) that are part of the customer's order. The application works in react and has its own oauth protocol that allows to create users and login, it is deployed in vercel and for some reason that I don't know yet I can't work according to the sending of cookies from the backend to the frontend in vercel (in localhost if the res.cookie function works)",
+      'This is one of three applications in charge of running my e-commerce. what this app does is authenticate users (signUp / login), display products and provide add to cart support for users, as well as allow one comment as a review on the details of each product; it also gives the user the possibility of seeing his favorite products and how many orders the user has made with our e-commerce. Another key aspect is that this app sends the amount of items in each order alongside the itemQuantity so that the backend app can update the stock of items in the products collection and create a new entry on the Orders collection of my MongoDb database.',
     urlDemo: 'https://www.valen-img.com/',
     urlCode: 'https://github.com/santiagomanso/ValentinLallanaPH',
     screenShots: [valen1, valen2, valen3, valen4],
