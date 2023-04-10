@@ -17,7 +17,7 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
       <h1 className='text-center text-2xl dark:text-gray-100 lg:text-4xl tracking-wider'>
         {project.name}
       </h1>
-      <ul className='flex flex-wrap gap-2 lg:gap-4 text-secondary mt-2 lg:mt-3 text-sm lg:text-xl justify-center'>
+      <ul className='flex flex-wrap gap-2 lg:gap-4  text-secondary mt-0 lg:mt-0 text-sm lg:text-xl justify-center'>
         {project.stack.map((tech, i) => (
           <li
             key={i}
@@ -27,12 +27,12 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
           </li>
         ))}
       </ul>
-      <div className='flex bg-red-500 h-full justify-center'>
-        <div className='bg-green-400 hidden md:flex items-center  w-full  h-2/4 lg:h-full lg:w-1/2 overflow-hidden select-none'>
-          <img src={project.img} alt='' className='' />
+      <div className='md:mt-5 flex items-start justify-start h-3/4 w-full lg:h-3/4'>
+        <div className='h-full w-1/2 hidden md:flex items-center overflow-hidden select-none justify-center'>
+          <img src={project.img} alt='' className=' h-full w-full' />
         </div>
-        <div className='bg-blue-400 flex flex-col justify-center items-center p-0 lg:px-0 w-full lg:w-1/2'>
-          <div className='mt-5 md:mt-0'>
+        <div className='mt-2 md:mt-0 h-full lg:w-1/2 flex justify-center items-center overflow-hidden'>
+          <div className='mt-0 md:mt-0 h-full w-full'>
             {/* TABS */}
             <ul className='flex justify-start  text-md tracking-wider select-none hover:cursor-pointer bg-secondary dark:bg-variant2'>
               <li
@@ -92,11 +92,20 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
             </ul>
 
             {/* DESCRIPTION BOX */}
-            <div className='bg-gradient-to-br dark:bg-gradient-to-tr from-gray-200 to-gray-400 text-white text-lg lg:text-2xl font-console font-[200] overflow-auto rounded-b dark:from-zinc-900 dark:to-variant2 h-full  border-b-2 border-l-2 border-r-2 border-gray-400 dark:border-neutral-800'>
+            <div className='bg-gradient-to-br dark:bg-gradient-to-tr from-gray-200 to-gray-400 text-white text-lg lg:text-2xl font-console font-[200] overflow-scroll rounded-b dark:from-zinc-900 dark:to-variant2 h-full  border-b-2 border-l-2 border-r-2 border-gray-400 dark:border-neutral-800'>
               {/* render the array of screenshots but also different content of the tab section */}
               {active === 'screenshots' ? (
                 project.screenShots.map((img, index) => (
-                  <img key={index} src={img} alt='' className='overflow-auto' />
+                  <div
+                    key={index}
+                    className='h-1/2 flex justify-center items-center p-2 w-full overflow-hidden'
+                  >
+                    <img
+                      src={img}
+                      alt=''
+                      className=' w-full object-cover h-full overflow-auto'
+                    />
+                  </div>
                 ))
               ) : (
                 <span className='text-black dark:text-gray-100 font-medium text-lg font-console'>
