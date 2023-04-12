@@ -6,17 +6,17 @@ interface SingleProjectProps {
 
 const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
   const [active, setActive] = useState('about')
-  const [tabContent, setTabContent] = useState('')
 
   // const handlerTab = (arg) => {
   //   setTabContent(arg)
   // }
 
   return (
-    <div className={`flex flex-col  w-full h-full`}>
+    <article className={`flex flex-col  w-full h-full `}>
       <h1 className='text-center text-2xl dark:text-gray-100 lg:text-4xl tracking-wider'>
         {project.name}
       </h1>
+      {/* KEYWORDS */}
       <ul className='flex flex-wrap gap-2 lg:gap-4  text-secondary mt-0 lg:mt-0 text-sm lg:text-xl justify-center'>
         {project.stack.map((tech, i) => (
           <li
@@ -27,14 +27,21 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
           </li>
         ))}
       </ul>
+      {/* sections */}
       <div className='md:mt-5 flex items-start justify-start h-3/4 w-full lg:h-3/4'>
-        <div className='h-full w-1/2 hidden md:flex items-center overflow-hidden select-none justify-center'>
-          <img src={project.img} alt='' className=' h-full w-full' />
+        {/* LEFT */}
+        <div className='h-full w-1/2 hidden md:flex items-center  select-none justify-center'>
+          <img
+            src={project.img}
+            alt=''
+            className=' h-full w-full rounded-l-md'
+          />
         </div>
-        <div className='mt-2 md:mt-0 h-full lg:w-1/2 flex justify-center items-center overflow-hidden'>
+        {/* RIGHT */}
+        <div className='mt-2 md:mt-0 lg:w-1/2 h-full flex justify-center items-center'>
           <div className='mt-0 md:mt-0 h-full w-full'>
             {/* TABS */}
-            <ul className='flex justify-start  text-md tracking-wider select-none hover:cursor-pointer bg-secondary dark:bg-variant2'>
+            <ul className='flex justify-start  text-md tracking-wider select-none hover:cursor-pointer bg-secondary dark:bg-variant2 rounded-tr-md'>
               <li
                 onClick={() => {
                   setActive('about')
@@ -71,44 +78,53 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
                   }  transition-all duration-300`}
                 ></i>
               </li>
-              <li
-                onClick={() => {
-                  setActive('video')
-                  // handlerTab(video)
-                }}
-                className={`flex items-baseline gap-1 ${
-                  active === 'video' ? 'bg-slate-500 dark:bg-primary' : ''
-                }   px-6 py-2 group`}
-              >
-                <h2 className=' dark:text-gray-200'>Video</h2>
-                <i
-                  className={`fa-solid fa-video  ${
-                    active === 'video'
-                      ? 'text-red-500'
-                      : 'text-variant1 dark:text-secondary group-hover:text-red-500 group-hover:-translate-y-1 group-hover:-rotate-6 group-hover:translate-x-[0.10rem]'
-                  }  transition-all duration-300`}
-                ></i>
-              </li>
+              {project.video && (
+                <li
+                  onClick={() => {
+                    setActive('video')
+                    // handlerTab(video)
+                  }}
+                  className={`flex items-baseline gap-1 ${
+                    active === 'video' ? 'bg-slate-500 dark:bg-primary' : ''
+                  }   px-6 py-2 group`}
+                >
+                  <h2 className=' dark:text-gray-200'>Video</h2>
+                  <i
+                    className={`fa-solid fa-video  ${
+                      active === 'video'
+                        ? 'text-red-500'
+                        : 'text-variant1 dark:text-secondary group-hover:text-red-500 group-hover:-translate-y-1 group-hover:-rotate-6 group-hover:translate-x-[0.10rem]'
+                    }  transition-all duration-300`}
+                  ></i>
+                </li>
+              )}
             </ul>
 
             {/* DESCRIPTION BOX */}
-            <div className='bg-gradient-to-br dark:bg-gradient-to-tr from-gray-200 to-gray-400 text-white text-lg lg:text-2xl font-console font-[200] overflow-scroll rounded-b dark:from-zinc-900 dark:to-variant2 h-full  border-b-2 border-l-2 border-r-2 border-gray-400 dark:border-neutral-800'>
+            <div
+              className={`bg-gradient-to-br dark:bg-gradient-to-tr from-gray-200 to-gray-400 text-white text-lg lg:text-2xl font-console font-[200] dark:from-zinc-900 dark:to-variant2 h-[90%] lg:h-[91.7%] overflow-auto border-b-2 border-l-2 border-r-2 border-gray-400 dark:border-neutral-800 rounded-br-md ${
+                active === 'screenshots' ? 'p-0' : 'px-5 py-2'
+              }`}
+            >
               {/* render the array of screenshots but also different content of the tab section */}
               {active === 'screenshots' ? (
                 project.screenShots.map((img, index) => (
-                  <div
+                  <a
+                    href={img}
+                    target='_blank'
+                    rel='noreferrer'
                     key={index}
-                    className='h-1/2 flex justify-center items-center p-2 w-full overflow-hidden'
+                    className='lg:h-full flex justify-center items-center lg:p-0 w-full bg-gradient-to-br'
                   >
                     <img
                       src={img}
                       alt=''
-                      className=' w-full object-cover h-full overflow-auto'
+                      className=' w-full object-scale-down lg:h-full lg:p-5'
                     />
-                  </div>
+                  </a>
                 ))
               ) : (
-                <span className='text-black dark:text-gray-100 font-medium text-lg font-console'>
+                <span className='text-black dark:text-gray-100 font-medium text-lg font-console '>
                   {project.descLong}
                 </span>
               )}
@@ -122,7 +138,7 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
           href={project.urlCode}
           target='_blank'
           rel='noreferrer'
-          className='flex gap-1 items-center text-lg lg:text-xl px-7 lg:px-8 py-1 border-2 border-white border-solid rounded-md bg-variant2 cta group transition-all duration-300 hover:-translate-y-2 hover:-rotate-3'
+          className='flex gap-1 items-center text-lg lg:text-xl px-7 lg:px-8 py-1 border-2 border-white border-solid rounded-md bg-variant2'
         >
           <svg
             aria-hidden='true'
@@ -145,7 +161,7 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
           href={project.urlDemo}
           target='_blank'
           rel='noreferrer'
-          className='flex items-center gap-1 text-lg lg:text-xl px-7 lg:px-8 py-1 border-2 border-white border-solid rounded-md bg-purple-600 group hover:-translate-y-2 transition-all duration-300 hover:rotate-3'
+          className='flex items-center gap-1 text-lg lg:text-xl px-7 lg:px-8 py-1 border-2 border-white border-solid rounded-md bg-purple-600'
         >
           <svg
             aria-hidden='true'
@@ -165,7 +181,7 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
           <p className='text-white '>view live</p>
         </a>
       </div>
-    </div>
+    </article>
   )
 }
 export default SingleProject
