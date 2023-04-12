@@ -8,6 +8,7 @@ export interface ProjectI {
   urlDemo: string
   urlCode: string
   screenShots: string[]
+  video?: string
 }
 
 export type Projects = ProjectI[]
