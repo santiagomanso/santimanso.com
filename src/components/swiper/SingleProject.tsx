@@ -1,9 +1,23 @@
 import { ProjectI } from '../../interfaces/projectInterface'
 import { useState } from 'react'
+import YouTube, { YouTubeProps } from 'react-youtube'
 
 //interface for props, recieves a single project from ../data/projects.ts
 interface SingleProjectProps {
   project: ProjectI
+}
+
+const onPlayerReady: YouTubeProps['onReady'] = (event) => {
+  // access to player in all event handlers via event.target
+  event.target.playVideo()
+}
+const opts: YouTubeProps['opts'] = {
+  height: '380',
+  width: '100%',
+  playerVars: {
+    // https://developers.google.com/youtube/player_parameters
+    autoplay: 1,
+  },
 }
 
 const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
@@ -11,6 +25,48 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
 
   const handleClick = (link: string): void => {
     window.open(link, '_blank')
+  }
+
+  const renderTabs = () => {
+    switch (active) {
+      case 'about':
+        return (
+          <span className='text-black dark:text-gray-100 font-medium text-lg font-console '>
+            {project.descLong}
+          </span>
+        )
+
+      case 'screenshots':
+        return project.screenShots.map((img, index) => {
+          return (
+            <a
+              href={img}
+              target='_blank'
+              rel='noreferrer'
+              key={index}
+              className='lg:h-full flex justify-center items-center lg:p-0 w-full bg-gradient-to-br'
+            >
+              <img
+                src={img}
+                alt=''
+                className=' w-full object-scale-down lg:h-full lg:p-5'
+              />
+            </a>
+          )
+        })
+
+      case 'video':
+        return (
+          <YouTube
+            videoId={project.video}
+            opts={opts}
+            onReady={onPlayerReady}
+          />
+        )
+
+      default:
+        break
+    }
   }
 
   return (
@@ -32,7 +88,7 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
       {/* sections */}
       <div className='md:mt-5 flex items-start justify-start h-3/4 w-full lg:h-3/4'>
         {/* LEFT */}
-        <div className='h-full w-1/2 hidden md:flex items-center  select-none justify-center'>
+        <div className='h-full w-1/2 hidden md:flex items-center   justify-center'>
           <img
             src={project.img}
             alt=''
@@ -43,13 +99,13 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
         <div className='mt-2 md:mt-0 lg:w-1/2 h-full flex justify-center items-center'>
           <div className='mt-0 md:mt-0 h-full w-full'>
             {/* TABS */}
-            <ul className='flex justify-start  text-md tracking-wider select-none hover:cursor-pointer bg-secondary dark:bg-variant2 rounded-tr-md'>
+            <ul className='flex justify-start  text-md tracking-wider  bg-secondary dark:bg-variant2 rounded-tr-md'>
               <li
                 onClick={() => {
                   setActive('about')
                   // handlerTab(about)
                 }}
-                className={`flex items-baseline gap-1 ${
+                className={`flex items-baseline hover:cursor-pointer gap-1 ${
                   active === 'about' ? 'bg-slate-500 dark:bg-primary' : ''
                 }  px-4 lg:px-6 py-2 group`}
               >
@@ -67,7 +123,7 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
                   setActive('screenshots')
                   // handlerTab(screenshots)
                 }}
-                className={`flex items-baseline gap-1 ${
+                className={`flex items-baseline hover:cursor-pointer gap-1 ${
                   active === 'screenshots' ? 'bg-slate-500 dark:bg-primary' : ''
                 }   px-4 lg:px-6 py-2 group`}
               >
@@ -86,7 +142,7 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
                     setActive('video')
                     // handlerTab(video)
                   }}
-                  className={`flex items-baseline gap-1 ${
+                  className={`flex items-baseline hover:cursor-pointer gap-1 ${
                     active === 'video' ? 'bg-slate-500 dark:bg-primary' : ''
                   }   px-6 py-2 group`}
                 >
@@ -108,34 +164,13 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
                 active === 'screenshots' ? 'p-0' : 'px-5 py-2'
               }`}
             >
-              {/* render the array of screenshots but also different content of the tab section */}
-              {active === 'screenshots' ? (
-                project.screenShots.map((img, index) => (
-                  <a
-                    href={img}
-                    target='_blank'
-                    rel='noreferrer'
-                    key={index}
-                    className='lg:h-full flex justify-center items-center lg:p-0 w-full bg-gradient-to-br'
-                  >
-                    <img
-                      src={img}
-                      alt=''
-                      className=' w-full object-scale-down lg:h-full lg:p-5'
-                    />
-                  </a>
-                ))
-              ) : (
-                <span className='text-black dark:text-gray-100 font-medium text-lg font-console '>
-                  {project.descLong}
-                </span>
-              )}
+              {renderTabs()}
             </div>
           </div>
         </div>
       </div>
       {/* call to actions */}
-      <div className='mt-5  flex justify-evenly md:justify-around lg:justify-evenly md:px-10 lg:px-0 w-full select-none text-white lg:mt-2 '>
+      <div className='mt-5  flex justify-evenly md:justify-around lg:justify-evenly md:px-10 lg:px-0 w-full  text-white lg:mt-2 '>
         <button
           onClick={() => handleClick(project.urlCode)}
           className='flex gap-1 items-center text-lg lg:text-xl px-7 lg:px-8 py-1 border-2 border-white border-solid rounded-md bg-variant2'
