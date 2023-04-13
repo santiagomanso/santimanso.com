@@ -2,10 +2,9 @@ import { Projects } from '../interfaces/projectInterface'
 
 //icons for the flex list of projects
 const zombie = require('../assets/screenshots/zombiemarkt/main.png')
-const inventory = require('../assets/screenshots/inventoryManager/mainInventoryManager.png')
+const inventory = require('../assets/screenshots/inventoryManager/mockUp.png')
 const rich = require('../assets/screenshots/richSimulator/mockUp.png')
-const mockupDelivery =
-  'https://raw.githubusercontent.com/santiagomanso/delivery-fee-calculator/main/src/assets/mockup.png'
+const mockupDelivery = require('../assets/screenshots/deliveryFee/mockUp.png')
 const vetapp = require('../assets/vetapp.png')
 const heroe = require('../assets/heroe.jpg')
 
@@ -19,6 +18,11 @@ const zombie3 = require('../assets/screenshots/zombiemarkt/zombie3.png')
 const inventory1 = require('../assets/screenshots/inventoryManager/inventoryManager1.png')
 const inventory2 = require('../assets/screenshots/inventoryManager/inventoryManager2.png')
 const inventory3 = require('../assets/screenshots/inventoryManager/inventoryManager3.png')
+
+//deliveryFee
+const deliveryFee1 = require('../assets/screenshots/deliveryFee/deliveryFee1.png')
+const deliveryFee2 = require('../assets/screenshots/deliveryFee/deliveryFee2.png')
+const deliveryFee3 = require('../assets/screenshots/deliveryFee/deliveryFee3.png')
 
 //quote machine
 const rich1 = require('../assets/screenshots/richSimulator/rich1.png')
@@ -79,7 +83,7 @@ export const projectsData: Projects = [
       'css',
       'javascript',
       'react',
-      'responsive design',
+      'guest account',
     ],
     descShort: 'Renders a random quote and author made for FreecodeCamp.org',
     descLong:
@@ -87,6 +91,7 @@ export const projectsData: Projects = [
     urlDemo: 'https://rich-simulator.netlify.app/',
     urlCode: 'https://github.com/santiagomanso/rich-commerce',
     screenShots: [rich1, rich2, rich3, rich4],
+    video: 'WN44D_yQlXI',
   },
   {
     id: 4,
@@ -108,7 +113,7 @@ export const projectsData: Projects = [
       'Do you want to know how big companies charge for delivery service? This small scale application recreates a scenario where the shipping cost depends on multiple factors such as: the price of the shopping cart, the quantity of products and the distance traveled; as an extra point I added a playground section where one can randomly select values to see more quickly different scenarios where the factors previously described influence altering the shipping cost.',
     urlDemo: 'https://github.com/santiagomanso/delivery-fee-calculator',
     urlCode: 'https://deliveryfee.netlify.app/',
-    screenShots: [''],
+    screenShots: [deliveryFee1, deliveryFee2, deliveryFee3],
   },
   {
     id: 5,
