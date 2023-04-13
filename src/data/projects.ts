@@ -3,9 +3,9 @@ import { Projects } from '../interfaces/projectInterface'
 //icons for the flex list of projects
 const zombie = require('../assets/screenshots/zombiemarkt/main.png')
 const inventory = require('../assets/screenshots/inventoryManager/mainInventoryManager.png')
-const rich = require('../assets/screenshots/richSimulator/main.png')
-
-const tasks = require('../assets/tasks.png')
+const rich = require('../assets/screenshots/richSimulator/mockUp.png')
+const mockupDelivery =
+  'https://raw.githubusercontent.com/santiagomanso/delivery-fee-calculator/main/src/assets/mockup.png'
 const vetapp = require('../assets/vetapp.png')
 const heroe = require('../assets/heroe.jpg')
 
@@ -90,7 +90,7 @@ export const projectsData: Projects = [
   },
   {
     id: 4,
-    img: tasks,
+    img: mockupDelivery,
     name: 'Delivery Fee calculator',
     stack: [
       'multi language',
