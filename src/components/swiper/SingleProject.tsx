@@ -1,5 +1,7 @@
 import { ProjectI } from '../../interfaces/projectInterface'
 import { useState } from 'react'
+
+//interface for props, recieves a single project from ../data/projects.ts
 interface SingleProjectProps {
   project: ProjectI
 }
@@ -7,9 +9,9 @@ interface SingleProjectProps {
 const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
   const [active, setActive] = useState('about')
 
-  // const handlerTab = (arg) => {
-  //   setTabContent(arg)
-  // }
+  const handleClick = (link: string): void => {
+    window.open(link, '_blank')
+  }
 
   return (
     <article className={`flex flex-col  w-full h-full `}>
@@ -134,13 +136,12 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
       </div>
       {/* call to actions */}
       <div className='mt-5  flex justify-evenly md:justify-around lg:justify-evenly md:px-10 lg:px-0 w-full select-none text-white lg:mt-2 '>
-        <a
-          href={project.urlCode}
-          target='_blank'
-          rel='noreferrer'
+        <button
+          onClick={() => handleClick(project.urlCode)}
           className='flex gap-1 items-center text-lg lg:text-xl px-7 lg:px-8 py-1 border-2 border-white border-solid rounded-md bg-variant2'
         >
           <svg
+            onClick={() => handleClick(project.urlCode)}
             aria-hidden='true'
             focusable='false'
             data-prefix='fas'
@@ -148,7 +149,7 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
             role='img'
             xmlns='http://www.w3.org/2000/svg'
             viewBox='0 0 640 512'
-            className='svg-inline--fa fa-code fa-w-20 text-white  w-5 lg:w-8'
+            className='svg-inline--fa fa-code  text-white  w-5 lg:w-8'
           >
             <path
               fill='currentColor'
@@ -156,14 +157,13 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
             ></path>
           </svg>
           <p className='text-white'>code</p>
-        </a>
-        <a
-          href={project.urlDemo}
-          target='_blank'
-          rel='noreferrer'
+        </button>
+        <button
+          onClick={() => handleClick(project.urlDemo)}
           className='flex items-center gap-1 text-lg lg:text-xl px-7 lg:px-8 py-1 border-2 border-white border-solid rounded-md bg-purple-600'
         >
           <svg
+            onClick={() => handleClick(project.urlCode)}
             aria-hidden='true'
             focusable='false'
             data-prefix='fas'
@@ -179,7 +179,7 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
             ></path>
           </svg>
           <p className='text-white '>view live</p>
-        </a>
+        </button>
       </div>
     </article>
   )
