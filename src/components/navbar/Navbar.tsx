@@ -13,6 +13,9 @@ const Navbar = () => {
   const menuRef = useRef<HTMLDivElement>(null)
   const { animationSwipe } = useContext(AnimationContext)
 
+  //pdf
+  const cv = require('../../assets/SantiagoMansoCastroCV.pdf')
+
   const navigate = useNavigate()
 
   /* This function recieves a link such as /, /portfolio and set it as the active state, then we use tailwind classes to apply some styling by using this active class on the <li> element */
@@ -96,7 +99,28 @@ const Navbar = () => {
           <div className=' flex gap-20'>
             {responsiveNavItems &&
               responsiveNavItems.map((item) => {
-                if (item.id !== 1) {
+                if (item.id !== 1 && item.text === 'curriculum') {
+                  return (
+                    <a
+                      className='cursor-pointer hover:text-black dark:hover:text-gray-100 flex items-baseline gap-1 translate-y-0  transition-all ease-out duration-300 group hover:-translate-y-1'
+                      href={cv}
+                      download='curriculum.pdf'
+                    >
+                      <i
+                        className={` ${
+                          active === item.path ? 'rotate-[-23deg]' : ''
+                        }
+                          fa-solid text-xl group-hover:rotate-[-23deg] transition-all ease-in-out duration-300 ${
+                            item.icon
+                          } `}
+                      ></i>
+                      <p className=' dark:opacity-40 dark:group-hover:opacity-100 text-lg dark:group-hover:text-gray-100 hover:text-black hover:opacity-100'>
+                        curriculum
+                      </p>
+                    </a>
+                  )
+                }
+                if (item.id !== 1 && item.text !== 'curriculum') {
                   return (
                     <li
                       key={item.id}
