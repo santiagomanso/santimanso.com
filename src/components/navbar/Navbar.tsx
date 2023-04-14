@@ -69,26 +69,24 @@ const Navbar = () => {
             onClick={() => handleClick(responsiveNavItems[0])}
             className={`${
               active === responsiveNavItems[0].path
-                ? ' text-gray-900 opacity-100 scale-110'
-                : 'hover:-translate-y-1 hover:scale-105 hover:text-gray-700'
-            } cursor-pointer dark:text-secondary flex items-baseline gap-1 translate-y-0  transition-all ease-out duration-300 group`}
+                ? ' dark:text-gray-100 opacity-100 scale-110'
+                : 'hover:-translate-y-1 hover:scale-105 text-gray-700 dark:text-secondary'
+            } cursor-pointer  flex items-baseline gap-1 translate-y-0  transition-all ease-out duration-300 groupo hover:text-black dark:hover:text-gray-100`}
           >
             <p className='flex items-baseline gap-1'>
               <i
                 className={`${responsiveNavItems[0].icon} text-xl 
                 ${
                   active === responsiveNavItems[0].path
-                    ? 'dark:text-gray-100'
-                    : 'group-hover:rotate-[-23deg]'
-                } transition-all ease-in-out duration-300`}
+                    ? 'text-black dark:text-gray-100 '
+                    : 'group-hover:rotate-[-23deg] hover:text-black'
+                } transition-all ease-in-out duration-300 dark:hover:text-gray-100`}
               ></i>
 
               <span
                 className={` ${
-                  active === responsiveNavItems[0].path
-                    ? 'opacity-100 dark:text-gray-100'
-                    : 'opacity-40'
-                }  group-hover:opacity-100 text-lg`}
+                  active === responsiveNavItems[0].path ? ' ' : ''
+                }   group-hover:opacity-100 text-lg`}
               >
                 {responsiveNavItems[0].text}
               </span>
@@ -105,9 +103,9 @@ const Navbar = () => {
                       onClick={() => handleClick(item)}
                       className={`${
                         active === item.path
-                          ? 'text-gray-900 dark:text-gray-100 opacity-100 -translate-y-1 scale-110 '
+                          ? 'text-black dark:text-gray-100 opacity-100 -translate-y-1 scale-110 '
                           : 'hover:-translate-y-1 hover:scale-105'
-                      } cursor-pointer  dark:hover:text-gray-100 flex items-baseline gap-1 translate-y-0  transition-all ease-out duration-300 group`}
+                      } cursor-pointer hover:text-black dark:hover:text-gray-100 flex items-baseline gap-1 translate-y-0  transition-all ease-out duration-300 group`}
                     >
                       <p className='flex items-baseline gap-1'>
                         <i

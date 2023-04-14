@@ -96,16 +96,16 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
           />
         </div>
         {/* RIGHT */}
-        <div className='mt-2 md:mt-0 lg:w-1/2 h-full flex justify-center items-center'>
+        <div className='mt-2 md:mt-0 lg:w-1/2 h-full flex justify-center items-center rounded-b-md'>
           <div className='mt-0 md:mt-0 h-full w-full'>
             {/* TABS */}
-            <ul className='flex justify-start  text-md tracking-wider  bg-secondary dark:bg-variant2 rounded-tr-md'>
+            <ul className='flex justify-start  text-md tracking-wider  bg-secondary dark:bg-variant2 rounded-tr-md rounded'>
               <li
                 onClick={() => {
                   setActive('about')
                   // handlerTab(about)
                 }}
-                className={`flex items-baseline hover:cursor-pointer gap-1 ${
+                className={`flex items-baseline hover:cursor-pointer rounded-tl-md gap-1 ${
                   active === 'about' ? 'bg-slate-500 dark:bg-primary' : ''
                 }  px-4 lg:px-6 py-2 group`}
               >
@@ -160,7 +160,7 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
 
             {/* DESCRIPTION BOX */}
             <div
-              className={`bg-gradient-to-br dark:bg-gradient-to-tr from-gray-200 to-gray-400 text-white text-lg lg:text-2xl font-console font-[200] dark:from-zinc-900 dark:to-variant2 h-[90%] lg:h-[91.7%] overflow-auto border-b-2 border-l-2 border-r-2 border-gray-400 dark:border-neutral-800 rounded-br-md ${
+              className={`bg-gradient-to-br dark:bg-gradient-to-tr from-gray-200 to-gray-400 text-white text-lg lg:text-2xl font-console font-[200] dark:from-zinc-900 dark:to-variant2 h-[90%] lg:h-[91.7%] overflow-auto border-b-2 border-l-2 border-r-2 border-gray-400 dark:border-neutral-800 rounded-b-md ${
                 active === 'screenshots' ? 'p-0' : 'px-5 py-2'
               }`}
             >
