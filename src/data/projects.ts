@@ -1,7 +1,7 @@
 import { Projects } from '../interfaces/projectInterface'
 
 //icons for the flex list of projects
-const zombie = require('../assets/screenshots/zombiemarkt/main.png')
+const zombie = require('../assets/screenshots/zombiemarkt/mockUp.png')
 const inventory = require('../assets/screenshots/inventoryManager/mockUp.png')
 const rich = require('../assets/screenshots/richSimulator/mockUp.png')
 const mockupDelivery = require('../assets/screenshots/deliveryFee/mockUp.png')
