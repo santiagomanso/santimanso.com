@@ -19,12 +19,12 @@ const About = (props: Props) => {
           About me
         </h2>
         <p className='text-slate-600 dark:text-secondary text-center px-20 tracking-widest text-xl'>
-          I am a fullstack developer based in berlin, i attended a full-time
-          (800+ hours) bootcamp (web developing with Typescript+NextJs). In the
-          academy i was happy about beeing surrounded with other people that was
-          venturing in the coding world i've been developing apps with react,
-          javascript, typescript and different css frameworks since 2+ years.
-          Beeing Tailwind Css the one i like the most.
+          I'm a full stack developer based in Berlin, I attended a full time
+          (800+ hours) bootcamp (web development with Typescript+NextJs). At the
+          academy I was happy to be around other people who were venturing into
+          the world of coding. I have been developing applications with React,
+          JavaScript, TypeScript and different CSS frameworks for more than 2
+          years. Being Tailwind Css the one I like the most.
         </p>
       </div>
       {/* <TagCloud /> */}

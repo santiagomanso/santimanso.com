@@ -38,7 +38,7 @@ export const projectsData: Projects = [
     name: 'Zombiemarkt',
     stack: [
       'fullstack',
-      'js-cookie',
+      'authentication',
       'html',
       'css',
       'javascript',
@@ -48,7 +48,7 @@ export const projectsData: Projects = [
     descShort:
       "the zombie apocalypse has arrived, stock up before it's too late. ",
     descLong:
-      'This is one of three applications in charge of running my e-commerce. what this app does is authenticate users (signUp / login), display products and provide add to cart support for users, as well as allow one comment as a review on the details of each product; it also gives the user the possibility of seeing his favorite products and how many orders the user has made with our e-commerce. Another key aspect is that this app sends the amount of items in each order alongside the itemQuantity so that the backend app can update the stock of items in the products collection and create a new entry on the Orders collection of my MongoDb database.',
+      'Humanity is on the verge of extinction, this is the last remaining online shopping platform, a supermarket store. Our drivers can overcome the wave of zombies and bring your products to your home safe and sound.This is one of three applications that makes e-commerce work, the purpose of this app is to register users, create orders and update the stock of products once the order is placed.',
     urlDemo: 'https://zombie-markt-fj2k.vercel.app/',
     urlCode: 'https://github.com/santiagomanso/ZombieMarkt',
     screenShots: [zombie1, zombie2, zombie3],
@@ -99,13 +99,13 @@ export const projectsData: Projects = [
     name: 'Delivery Fee calculator',
     stack: [
       'multi language',
+      'typescript',
+      'javascript',
       'HTML',
       'CSS',
       'tailwind css',
       'react',
-      'typescript',
       'css',
-      'ract',
     ],
     descShort:
       'Shipping cost calculator made with typescript, React.Js and tailwindCss',
@@ -114,45 +114,5 @@ export const projectsData: Projects = [
     urlDemo: 'https://github.com/santiagomanso/delivery-fee-calculator',
     urlCode: 'https://deliveryfee.netlify.app/',
     screenShots: [deliveryFee1, deliveryFee2, deliveryFee3],
-  },
-  {
-    id: 5,
-    img: vetapp,
-    stack: [
-      'node js',
-      'react',
-      'vanilla css',
-      'express',
-      'mongo db',
-      'responsive design',
-      'html',
-    ],
-    name: 'Vet Appointments',
-    descShort: 'Teleclinic for pets! working on...',
-    descLong:
-      'Example applition that allows users to have multiple pets and be able to schedule appointments with different doctors, built around MERN stack (MongoDB Express React Nodejs) consumes an api where users are related to pets and appointments',
-    urlDemo: 'https://dazzling-kleicha-493283.netlify.app/',
-    urlCode: 'https://github.com/santiagomanso/vet.app',
-    screenShots: [''],
-  },
-  {
-    id: 6,
-    img: heroe,
-    name: 'Heroes App',
-    stack: [
-      'bootstrap',
-      'responsive design',
-      'html',
-      'react',
-      'mongo db',
-      'express',
-      'node js',
-    ],
-    descShort: 'Renders two categories of superheroes.',
-    descLong:
-      'Superheroes application where i learn to use react-router-dom, animate-css, and i got to practise a bit with javascript array methods filter. Built with React 16 and bootstrap 5, but i schedule myself to update it to react 18 and use tailwind css instead of bootstrap',
-    urlDemo: 'https://exquisite-rolypoly-147bef.netlify.app/',
-    urlCode: 'https://github.com/santiagomanso/heroes-app',
-    screenShots: [''],
   },
 ]
