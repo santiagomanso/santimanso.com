@@ -23,15 +23,19 @@ const Navbar = () => {
 
   /* This function recieves a link such as /, /portfolio and set it as the active state, then we use tailwind classes to apply some styling by using this active class on the <li> element */
   const handleClick = (item: navItems) => {
-    if (active !== item.path && !item.newTab) {
-      //dont navigate if the link is the actual url
-      setOpen(false)
-      setActive(item.path)
-      navigate(item.path)
-    }
-    if (item.newTab) {
-      setOpen(false)
-      window.open(item.path, '_blank')
+    if (item.id === 6) {
+      return
+    } else {
+      if (active !== item.path && !item.newTab) {
+        //dont navigate if the link is the actual url
+        setOpen(false)
+        setActive(item.path)
+        navigate(item.path)
+      }
+      if (item.newTab) {
+        setOpen(false)
+        window.open(item.path, '_blank')
+      }
     }
   }
 
@@ -198,30 +202,58 @@ const Navbar = () => {
               {responsiveNavItems &&
                 responsiveNavItems.map((item) => {
                   if (item.id === 2 || item.id === 3) return ''
-                  return (
-                    <li
-                      key={item.id}
-                      onClick={() => handleClick(item)}
-                      className={` ${
-                        active === `${item.path}`
-                          ? 'opacity-100 text-gray-100'
-                          : 'opacity-60 text-secondary'
-                      } px-5 flex justify-between items-center group`}
-                    >
-                      <i
+                  if (item.id === 6) {
+                    return (
+                      <a
+                        href={cv}
+                        download='SantiagoMansoCastroCV.pdf'
+                        key={item.id}
+                        onClick={() => handleClick(item)}
                         className={` ${
-                          active === `${item.path}` ? 'rotate-[23deg]' : ''
-                        } transition-all ease-in duration-200 ${item.icon}`}
-                      ></i>
-                      <p className='tracking-wider'>{item.text[language]}</p>
-                      <i
+                          active === `${item.path}`
+                            ? 'opacity-100 text-gray-100'
+                            : 'opacity-60 text-secondary'
+                        } px-5 flex justify-between items-center group`}
+                      >
+                        <i
+                          className={` ${
+                            active === `${item.path}` ? 'rotate-[23deg]' : ''
+                          } transition-all ease-in duration-200 ${item.icon}`}
+                        ></i>
+                        <p className='tracking-wider'>{item.text[language]}</p>
+                        <i
+                          className={` ${
+                            active === `${item.path}` ? 'rotate-90' : ''
+                          } 
+                    fa-solid fa-chevron-right transition-all ease-in-out duration-150`}
+                        ></i>
+                      </a>
+                    )
+                  } else
+                    return (
+                      <li
+                        key={item.id}
+                        onClick={() => handleClick(item)}
                         className={` ${
-                          active === `${item.path}` ? 'rotate-90' : ''
-                        } 
+                          active === `${item.path}`
+                            ? 'opacity-100 text-gray-100'
+                            : 'opacity-60 text-secondary'
+                        } px-5 flex justify-between items-center group`}
+                      >
+                        <i
+                          className={` ${
+                            active === `${item.path}` ? 'rotate-[23deg]' : ''
+                          } transition-all ease-in duration-200 ${item.icon}`}
+                        ></i>
+                        <p className='tracking-wider'>{item.text[language]}</p>
+                        <i
+                          className={` ${
+                            active === `${item.path}` ? 'rotate-90' : ''
+                          } 
                       fa-solid fa-chevron-right transition-all ease-in-out duration-150`}
-                      ></i>
-                    </li>
-                  )
+                        ></i>
+                      </li>
+                    )
                 })}
             </ul>
           </article>
