@@ -1,6 +1,7 @@
 import { ProjectI } from '../../interfaces/projectInterface'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import YouTube, { YouTubeProps } from 'react-youtube'
+import { LanguageContext } from '../../context/LanguageContext'
 
 //interface for props, recieves a single project from ../data/projects.ts
 interface SingleProjectProps {
@@ -21,6 +22,7 @@ const opts: YouTubeProps['opts'] = {
 }
 
 const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
+  const { text, language } = useContext(LanguageContext)
   const [active, setActive] = useState('about')
 
   const handleClick = (link: string): void => {
@@ -32,7 +34,7 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
       case 'about':
         return (
           <span className='text-black dark:text-gray-100 font-medium text-lg font-console '>
-            {project.descLong}
+            {project.descLong[language]}
           </span>
         )
 
@@ -109,7 +111,7 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
                   active === 'about' ? 'bg-slate-500 dark:bg-primary' : ''
                 }  px-4 lg:px-6 py-2 group`}
               >
-                <h2 className=' dark:text-gray-200'>about</h2>
+                <h2 className=' dark:text-gray-200'>{text.description}</h2>
                 <i
                   className={`fa-solid fa-address-card  ${
                     active === 'about'
@@ -127,7 +129,7 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
                   active === 'screenshots' ? 'bg-slate-500 dark:bg-primary' : ''
                 }   px-4 lg:px-6 py-2 group`}
               >
-                <h2 className=' dark:text-gray-200'>screenshots</h2>
+                <h2 className=' dark:text-gray-200'>{text.screenShots}</h2>
                 <i
                   className={`fa-solid fa-camera  ${
                     active === 'screenshots'

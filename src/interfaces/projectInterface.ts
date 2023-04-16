@@ -4,7 +4,12 @@ export interface ProjectI {
   name: string
   stack: string[]
   descShort: string
-  descLong: string
+  descLong: {
+    [index: string]: string
+    en: string
+    es: string
+    de: string
+  }
   urlDemo: string
   urlCode: string
   screenShots: string[]

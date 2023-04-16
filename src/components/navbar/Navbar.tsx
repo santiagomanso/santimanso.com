@@ -6,8 +6,11 @@ import { navItems } from '../../interfaces/navItemsInterface'
 import ThemeSwitcher from '../theme/ThemeSwitcher'
 import { keyboardKey } from '@testing-library/user-event'
 import Footer from '../Footer'
+import LanguageSwitcher from '../LanguageSwitcher'
+import { LanguageContext } from '../../context/LanguageContext'
 
 const Navbar = () => {
+  const { language } = useContext(LanguageContext)
   const [active, setActive] = useState<String>('/') //active url
   const [open, setOpen] = useState(false) //modal phones-tab logic
   const menuRef = useRef<HTMLDivElement>(null)
@@ -65,9 +68,9 @@ const Navbar = () => {
     <nav className='lg:py-1'>
       {/* PC/LAPTOP nav */}
       <div
-        className={`${animationSwipe} hidden lg:block text-gray-700 dark:text-secondary  tracking-widest select-none`}
+        className={`hidden lg:block text-gray-700 dark:text-secondary  tracking-widest select-none`}
       >
-        <ul className=' flex justify-between items-baseline'>
+        <ul className=' flex justify-between items-center'>
           <li
             onClick={() => handleClick(responsiveNavItems[0])}
             className={`${
@@ -91,20 +94,22 @@ const Navbar = () => {
                   active === responsiveNavItems[0].path ? ' ' : ''
                 }   group-hover:opacity-100 text-lg`}
               >
-                {responsiveNavItems[0].text}
+                {responsiveNavItems[0].text[language]}
               </span>
             </p>
           </li>
-          <ThemeSwitcher />
-          <div className=' flex gap-20'>
+
+          <div className='flex items-center gap-20 z-20 relative'>
             {responsiveNavItems &&
               responsiveNavItems.map((item) => {
-                if (item.id !== 1 && item.text === 'curriculum') {
+                if (item.id === 2) return <LanguageSwitcher />
+                if (item.id === 3) return <ThemeSwitcher />
+                if (item.id === 6) {
                   return (
                     <a
                       className='cursor-pointer hover:text-black dark:hover:text-gray-100 flex items-baseline gap-1 translate-y-0  transition-all ease-out duration-300 group hover:-translate-y-1'
                       href={cv}
-                      download='curriculum.pdf'
+                      download='SantiagoMansoCastroCV.pdf'
                     >
                       <i
                         className={` ${
@@ -115,12 +120,12 @@ const Navbar = () => {
                           } `}
                       ></i>
                       <p className=' dark:opacity-40 dark:group-hover:opacity-100 text-lg dark:group-hover:text-gray-100 hover:text-black hover:opacity-100'>
-                        curriculum
+                        {item.text[language]}
                       </p>
                     </a>
                   )
                 }
-                if (item.id !== 1 && item.text !== 'curriculum') {
+                if (item.id !== 1 && item.text[language] !== 'curriculum') {
                   return (
                     <li
                       key={item.id}
@@ -148,7 +153,7 @@ const Navbar = () => {
                               : 'dark:opacity-40'
                           }  group-hover:opacity-100 text-lg`}
                         >
-                          {item.text}
+                          {item.text[language]}
                         </span>
                       </p>
                     </li>
@@ -205,7 +210,7 @@ const Navbar = () => {
                           active === `${item.path}` ? 'rotate-[23deg]' : ''
                         } transition-all ease-in duration-200 ${item.icon}`}
                       ></i>
-                      <p className='tracking-wider'>{item.text}</p>
+                      <p className='tracking-wider'>{item.text[language]}</p>
                       <i
                         className={` ${
                           active === `${item.path}` ? 'rotate-90' : ''
