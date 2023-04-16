@@ -53,14 +53,14 @@ const LanguageSwitcher = (props: NoProps) => {
       <ul
         className={`fixed duration-100 ${
           open ? ' scale-100' : 'scale-0'
-        } bg-gradient-to-br to-slate-600 from-gray-300 dark:from-indigo-900 dark:to-slate-400/90 capitalize w-40 flex flex-col  gap-4 rounded-md overflow-hidden z-[999]`}
+        } bg-gradient-to-br to-slate-600 from-gray-300 dark:from-slate-800 dark:to-neutral-800 capitalize w-40 flex flex-col  gap-4 rounded-md overflow-hidden z-[999]`}
       >
         {countries.map((country: Country) => {
           return (
             <li
               key={country.id}
               onClick={() => handleClick(country)}
-              className='flex items-center justify-start gap-2 hover:bg-white hover:translate-x-1 duration-200 p-3 z-50 rounded-lg w-[90%]'
+              className='flex items-center justify-start gap-2 hover:bg-gray-300 dark:hover:bg-zinc-900 hover:translate-x-1 duration-200 p-3 z-50 rounded w-[90%]'
             >
               <img src={country.flag} alt={country.name[language]} />
               <span className='text-'>{country.name[language]}</span>

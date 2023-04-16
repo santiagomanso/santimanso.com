@@ -5,15 +5,17 @@ import MainContainer from '../components/containers/MainContainer'
 const HomeScreen = () => {
   return (
     <MainContainer border justifyCenter>
-      <Header
-        title='santiago manso castro'
-        typeWriterText={[
-          'Fullstack developer💻',
-          'Typescript 💓',
-          'Tailwind Css 💓',
-        ]}
-      />
-      <Cta />
+      <div className='flex flex-col items-center -translate-y-40 lg:translate-y-0'>
+        <Header
+          title='santiago manso castro'
+          typeWriterText={[
+            'Fullstack developer💻',
+            'Typescript 💓',
+            'Tailwind Css 💓',
+          ]}
+        />
+        <Cta />
+      </div>
     </MainContainer>
   )
 }

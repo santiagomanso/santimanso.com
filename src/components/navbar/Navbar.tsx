@@ -102,11 +102,12 @@ const Navbar = () => {
           <div className='flex items-center gap-20 z-20 relative'>
             {responsiveNavItems &&
               responsiveNavItems.map((item) => {
-                if (item.id === 2) return <LanguageSwitcher />
-                if (item.id === 3) return <ThemeSwitcher />
+                if (item.id === 2) return <LanguageSwitcher key={item.id} />
+                if (item.id === 3) return <ThemeSwitcher key={item.id} />
                 if (item.id === 6) {
                   return (
                     <a
+                      key={item.id}
                       className='cursor-pointer hover:text-black dark:hover:text-gray-100 flex items-baseline gap-1 translate-y-0  transition-all ease-out duration-300 group hover:-translate-y-1'
                       href={cv}
                       download='SantiagoMansoCastroCV.pdf'
@@ -189,12 +190,14 @@ const Navbar = () => {
             >
               <i className={`fa-solid fa-xmark`}></i>
             </button>
-            <div className='absolute top-3 left-6'>
+            <div className='absolute flex gap-32 top-3 left-6'>
               <ThemeSwitcher setOpen={setOpen} />
+              <LanguageSwitcher />
             </div>
             <ul className=' flex flex-col gap-12 pt-20 px-2 text-3xl sm:text-4xl '>
               {responsiveNavItems &&
                 responsiveNavItems.map((item) => {
+                  if (item.id === 2 || item.id === 3) return ''
                   return (
                     <li
                       key={item.id}
