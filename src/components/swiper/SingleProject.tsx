@@ -77,7 +77,7 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
         {project.name}
       </h1>
       {/* KEYWORDS */}
-      <ul className='flex flex-wrap gap-2 lg:gap-4  text-secondary mt-0 lg:mt-0 text-sm lg:text-xl justify-center'>
+      <ul className='flex flex-wrap gap-2 lg:gap-4  text-secondary mt-3 lg:mt-4 text-sm lg:text-xl justify-center'>
         {project.stack.map((tech, i) => (
           <li
             key={i}
@@ -172,7 +172,7 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
         </div>
       </div>
       {/* call to actions */}
-      <div className='mt-5  flex justify-evenly md:justify-around lg:justify-evenly md:px-10 lg:px-0 w-full  text-white lg:mt-2 '>
+      <div className='mt-5  flex justify-between md:justify-around lg:justify-evenly md:px-10 lg:px-0 w-full z-30 text-white lg:mt-2 '>
         <button
           onClick={() => handleClick(project.urlCode)}
           className='flex gap-1 items-center text-lg lg:text-xl px-7 lg:px-8 py-1 border-2 border-white border-solid rounded-md bg-variant2'
