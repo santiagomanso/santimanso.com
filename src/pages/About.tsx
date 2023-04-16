@@ -17,10 +17,10 @@ const About = (props: Props) => {
         />
       </div>
       <div>
-        <h2 className='text-center text-3xl font-medium text-slate-700 dark:text-gray-200'>
+        <h2 className='text-center text-2xl lg:text-3xl font-medium text-slate-700 dark:text-gray-200'>
           {text.aboutMe}
         </h2>
-        <p className='text-slate-600 dark:text-secondary text-center px-20 tracking-widest text-xl'>
+        <p className='text-slate-600 dark:text-secondary text-center px-2 md:px-10 lg:px-20 tracking-widest  lg:text-xl w-full'>
           {text.aboutMeText}
         </p>
       </div>

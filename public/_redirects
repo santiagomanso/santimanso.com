@@ -1,1 +1,5 @@
-/\* /index.html
+# Redirects from what the browser requests to what we serve
+
+# See: https://www.netlify.com/docs/redirects/
+
+/\* /index.html 200
