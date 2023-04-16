@@ -1,6 +1,4 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-
-import { ModalProvider } from './context/ModalContext'
 import HomeScreen from './pages/HomeScreen'
 import PortfolioScreen from './pages/PortfolioScreen'
 import AppContainer from './components/containers/AppContainer'
@@ -8,11 +6,12 @@ import Navbar from './components/navbar/Navbar'
 import Footer from './components/Footer'
 import { AnimationProvider } from './context/animationContext'
 import About from './pages/About'
+import { LanguageProvider } from './context/LanguageContext'
 
 function App() {
   return (
     <AnimationProvider>
-      <ModalProvider>
+      <LanguageProvider>
         <AppContainer>
           <BrowserRouter>
             <Navbar />
@@ -24,7 +23,7 @@ function App() {
           </BrowserRouter>
           <Footer displayOnPc />
         </AppContainer>
-      </ModalProvider>
+      </LanguageProvider>
     </AnimationProvider>
   )
 }
