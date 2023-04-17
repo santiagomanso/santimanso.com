@@ -178,7 +178,6 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
           className='flex gap-1 items-center text-lg lg:text-xl px-7 lg:px-8 py-1 border-2 border-white border-solid rounded-md bg-variant2'
         >
           <svg
-            onClick={() => handleClick(project.urlCode)}
             aria-hidden='true'
             focusable='false'
             data-prefix='fas'
@@ -200,7 +199,6 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
           className='flex items-center gap-1 text-lg lg:text-xl px-7 lg:px-8 py-1 border-2 border-white border-solid rounded-md bg-purple-600'
         >
           <svg
-            onClick={() => handleClick(project.urlCode)}
             aria-hidden='true'
             focusable='false'
             data-prefix='fas'
