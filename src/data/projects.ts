@@ -56,6 +56,7 @@ export const projectsData: Projects = [
       es: 'La humanidad está al borde de la extinción, esta es la última plataforma de compras online que queda, un supermercado online. Nuestros conductores pueden superar la oleada de zombis y llevar tus productos a casa sanos y salvos. Esta es una de las tres aplicaciones que hacen funcionar el comercio electrónico, la finalidad de esta app es registrar usuarios, crear pedidos y actualizar el stock de productos una vez realizado el pedido.',
       de: 'Die Menschheit ist am Rande des Aussterbens, dies ist die letzte verbleibende Online-Shopping-Plattform, ein Supermarkt. Dies ist eine der drei Anwendungen, die den elektronischen Handel funktionieren lassen. Der Zweck dieser App ist es, Benutzer zu registrieren, Bestellungen zu erstellen und den Bestand an Produkten zu aktualisieren, sobald die Bestellung aufgegeben wurde.',
     },
+    video: 'FBpk9-WpLDE',
     urlDemo: 'https://zombie-markt-fj2k.vercel.app/',
     urlCode: 'https://github.com/santiagomanso/ZombieMarkt',
     screenShots: [zombie1, zombie2, zombie3, zombie4, zombie5, zombie6],
