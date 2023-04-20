@@ -46,12 +46,12 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
               target='_blank'
               rel='noreferrer'
               key={index}
-              className='lg:h-full flex justify-center items-center lg:p-0 w-full bg-gradient-to-br'
+              className='lg:h-full flex justify-center items-center py-5 lg:p-0 w-full bg-gradient-to-br'
             >
               <img
                 src={img}
                 alt=''
-                className=' w-full object-scale-down lg:h-full lg:p-5'
+                className=' w-full object-scale-down lg:h-full pl-2 pr-8 lg:p-5'
               />
             </a>
           )
@@ -88,7 +88,7 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
         ))}
       </ul>
       {/* sections */}
-      <div className='md:mt-5 flex items-start justify-start h-3/4 w-full lg:h-3/4'>
+      <div className='md:mt-5 flex items-start justify-start h-1/2 w-full lg:h-3/4'>
         {/* LEFT */}
         <div className='h-full w-1/2 hidden md:flex items-center   justify-center'>
           <img
