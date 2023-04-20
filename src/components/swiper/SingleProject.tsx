@@ -90,7 +90,7 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
       {/* sections */}
       <div className='md:mt-5 flex items-start justify-start h-1/2 w-full lg:h-3/4'>
         {/* LEFT */}
-        <div className='h-full w-1/2 hidden md:flex items-center   justify-center'>
+        <div className='h-full w-1/2 hidden lg:flex items-center   justify-center'>
           <img
             src={project.img}
             alt=''
@@ -98,7 +98,7 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
           />
         </div>
         {/* RIGHT */}
-        <div className='mt-2 md:mt-0 lg:w-1/2 h-full flex justify-center items-center rounded-b-md'>
+        <div className='mt-2 md:mt-0 w-full lg:w-1/2 h-full flex justify-center items-center rounded-b-md'>
           <div className='mt-0 md:mt-0 h-full w-full'>
             {/* TABS */}
             <ul className='flex justify-start  text-md tracking-wider  bg-secondary dark:bg-variant2 rounded-tr-md rounded'>
@@ -109,7 +109,7 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
                 }}
                 className={`flex items-baseline hover:cursor-pointer rounded-tl-md gap-1 ${
                   active === 'about' ? 'bg-slate-500 dark:bg-primary' : ''
-                }  px-4 lg:px-6 py-2 group`}
+                }  px-2 sm:px-4 lg:px-6 py-2 group`}
               >
                 <h2 className=' dark:text-gray-200'>{text.description}</h2>
                 <i
