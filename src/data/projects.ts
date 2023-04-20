@@ -59,7 +59,7 @@ export const projectsData: Projects = [
     video: 'FBpk9-WpLDE',
     urlDemo: 'https://zombie-markt-fj2k.vercel.app/',
     urlCode: 'https://github.com/santiagomanso/ZombieMarkt',
-    screenShots: [zombie1, zombie2, zombie3, zombie4, zombie5, zombie6],
+    screenShots: [zombie4, zombie1, zombie2, zombie3, zombie5, zombie6],
   },
   {
     id: 2,
