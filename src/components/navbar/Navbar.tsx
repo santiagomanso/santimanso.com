@@ -17,7 +17,7 @@ const Navbar = () => {
   const { animationSwipe } = useContext(AnimationContext)
 
   //pdf
-  const cv = require('../../assets/SantiagoMansoCastroCV.pdf')
+  const cv = require('../../assets/SantiagoMansoCastro_CV.pdf')
 
   const navigate = useNavigate()
 
