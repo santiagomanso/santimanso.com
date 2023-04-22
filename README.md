@@ -16,9 +16,7 @@ npx install
 react
 typescript
 tailwindcss
-react-icons
+swiperjs
 react-typewriter-effect
 react-router-dom
 ```
-
-## 🚧 This portfolio is currently undergoing mantenance.
