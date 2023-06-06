@@ -13,6 +13,7 @@ export interface ProjectI {
   urlDemo: string
   urlCode: string
   screenShots: string[]
+  challenges?: string[]
   video?: string
 }
 
