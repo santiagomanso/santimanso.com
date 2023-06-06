@@ -33,7 +33,7 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
     switch (active) {
       case 'about':
         return (
-          <span className='text-black dark:text-gray-100 font-medium text-lg font-console '>
+          <span className='text-black dark:text-gray-100 font-medium text-lg font-console'>
             {project.descLong[language]}
           </span>
         )
@@ -46,7 +46,26 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
               target='_blank'
               rel='noreferrer'
               key={index}
-              className='lg:h-full flex justify-center items-center py-5 lg:p-0 w-full bg-gradient-to-br'
+              className='lg:h-full flex justify-center items-center py-5 lg:py-0 lg:p-0 w-full bg-gradient-to-br'
+            >
+              <img
+                src={img}
+                alt=''
+                className=' w-full object-scale-down lg:h-full pl-2 pr-8 lg:p-5'
+              />
+            </a>
+          )
+        })
+
+      case 'challenges':
+        return project.challenges?.map((img, index) => {
+          return (
+            <a
+              href={img}
+              target='_blank'
+              rel='noreferrer'
+              key={index}
+              className='lg:h-full flex justify-center items-center py-5 lg:py-0 lg:p-0 w-full bg-gradient-to-br'
             >
               <img
                 src={img}
@@ -72,7 +91,7 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
   }
 
   return (
-    <article className={`flex flex-col  w-full h-full `}>
+    <article className={`flex flex-col  w-full h-full`}>
       <h1 className='text-center text-2xl dark:text-gray-100 lg:text-4xl tracking-wider'>
         {project.name}
       </h1>
@@ -88,7 +107,7 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
         ))}
       </ul>
       {/* sections */}
-      <div className='md:mt-5 flex items-start justify-start h-1/2 w-full lg:h-3/4'>
+      <div className='md:mt-5 flex items-start justify-start h-1/2 w-full lg:h-[70%]'>
         {/* LEFT */}
         <div className='h-full w-1/2 hidden lg:flex items-center   justify-center'>
           <img
@@ -101,7 +120,7 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
         <div className='mt-2 md:mt-0 w-full lg:w-1/2 h-full flex justify-center items-center rounded-b-md'>
           <div className='mt-0 md:mt-0 h-full w-full'>
             {/* TABS */}
-            <ul className='flex justify-start  text-md tracking-wider  bg-secondary dark:bg-variant2 rounded-tr-md rounded'>
+            <ul className='flex flex-wrap justify-start  text-md tracking-wider  bg-secondary dark:bg-variant2 rounded-tr-md rounded'>
               <li
                 onClick={() => {
                   setActive('about')
@@ -109,7 +128,7 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
                 }}
                 className={`flex items-baseline hover:cursor-pointer rounded-tl-md gap-1 ${
                   active === 'about' ? 'bg-slate-500 dark:bg-primary' : ''
-                }  px-2 sm:px-4 lg:px-6 py-2 group`}
+                }  px-2 sm:px-4 lg:px-4 py-2 group`}
               >
                 <h2 className=' dark:text-gray-200'>{text.description}</h2>
                 <i
@@ -120,6 +139,28 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
                   }  transition-all duration-300`}
                 ></i>
               </li>
+              {project.challenges && (
+                <li
+                  onClick={() => {
+                    setActive('challenges')
+                    // handlerTab(challenges)
+                  }}
+                  className={`flex items-baseline hover:cursor-pointer gap-1 ${
+                    active === 'challenges'
+                      ? 'bg-slate-500 dark:bg-primary'
+                      : ''
+                  }   px-4 py-2 group`}
+                >
+                  <h2 className=' dark:text-gray-200'>{text.challanges}</h2>
+                  <i
+                    className={`fa-solid fa-triangle-exclamation  ${
+                      active === 'challenges'
+                        ? 'text-yellow-500'
+                        : 'text-variant1 dark:text-secondary group-hover:text-yellow-500 group-hover:-translate-y-1 group-hover:-rotate-6 group-hover:translate-x-[0.10rem]'
+                    }  transition-all duration-300`}
+                  ></i>
+                </li>
+              )}
               <li
                 onClick={() => {
                   setActive('screenshots')
@@ -127,7 +168,7 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
                 }}
                 className={`flex items-baseline hover:cursor-pointer gap-1 ${
                   active === 'screenshots' ? 'bg-slate-500 dark:bg-primary' : ''
-                }   px-4 lg:px-6 py-2 group`}
+                }   px-4 lg:px-4 py-2 group`}
               >
                 <h2 className=' dark:text-gray-200'>{text.screenShots}</h2>
                 <i
@@ -146,7 +187,7 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
                   }}
                   className={`flex items-baseline hover:cursor-pointer gap-1 ${
                     active === 'video' ? 'bg-slate-500 dark:bg-primary' : ''
-                  }   px-6 py-2 group`}
+                  }   px-4 py-2 group`}
                 >
                   <h2 className=' dark:text-gray-200'>Video</h2>
                   <i
@@ -162,9 +203,9 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
 
             {/* DESCRIPTION BOX */}
             <div
-              className={`bg-gradient-to-br dark:bg-gradient-to-tr from-gray-200 to-gray-400 text-white text-lg lg:text-2xl font-console font-[200] dark:from-zinc-900 dark:to-variant2 h-[90%] lg:h-[91.7%] overflow-auto border-b-2 border-l-2 border-r-2 border-gray-400 dark:border-neutral-800 rounded-b-md ${
-                active === 'screenshots' ? 'p-0' : 'px-5 py-2'
-              }`}
+              className={`bg-gradient-to-br dark:bg-gradient-to-tr from-gray-200 to-gray-400 text-white text-lg lg:text-2xl font-console font-[200] dark:from-zinc-900 dark:to-variant2 h-[90%] lg:h-[91.7%] overflow-auto border-b-2 border-l-2 border-r-2 border-gray-400 dark:border-neutral-800 rounded-b-md
+              ${active === 'about' ? 'px-6 py-2' : ''}
+              `}
             >
               {renderTabs()}
             </div>
@@ -172,7 +213,7 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
         </div>
       </div>
       {/* call to actions */}
-      <div className='mt-5  flex justify-between md:justify-around lg:justify-evenly md:px-10 lg:px-0 w-full z-30 text-white lg:mt-2 '>
+      <div className='mt-16 md:mt-2  flex justify-between md:justify-around lg:justify-evenly md:px-10 lg:px-0 w-full z-30 text-white lg:mt-4 '>
         <button
           onClick={() => handleClick(project.urlCode)}
           className='flex gap-1 items-center text-lg lg:text-xl px-7 lg:px-8 py-1 border-2 border-white border-solid rounded-md bg-variant2'
