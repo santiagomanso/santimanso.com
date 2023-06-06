@@ -59,7 +59,8 @@ export const projectsData: Projects = [
     video: 'FBpk9-WpLDE',
     urlDemo: 'https://zombie-markt-fj2k.vercel.app/',
     urlCode: 'https://github.com/santiagomanso/ZombieMarkt',
-    screenShots: [zombie4, zombie1, zombie2, zombie3, zombie5, zombie6],
+    screenShots: [zombie1, zombie2, zombie3],
+    challenges: [zombie4, zombie5, zombie6],
   },
   {
     id: 2,
@@ -83,6 +84,7 @@ export const projectsData: Projects = [
     urlDemo: 'https://zombie-markt-gswm.vercel.app/',
     urlCode: 'https://github.com/santiagomanso/ZombieMarkt',
     screenShots: [inventory1, inventory2, inventory3],
+    // challenges: [],
   },
   {
     id: 3,
@@ -105,6 +107,7 @@ export const projectsData: Projects = [
     urlDemo: 'https://rich-simulator.netlify.app/',
     urlCode: 'https://github.com/santiagomanso/rich-commerce',
     screenShots: [rich1, rich2, rich3, rich4],
+    // challenges: [],
     video: 'WN44D_yQlXI',
   },
   {
@@ -131,5 +134,6 @@ export const projectsData: Projects = [
     urlDemo: 'https://deliveryfee.netlify.app/',
     urlCode: 'https://github.com/santiagomanso/delivery-fee-calculator',
     screenShots: [deliveryFee1, deliveryFee2, deliveryFee3],
+    // challenges: [],
   },
 ]
