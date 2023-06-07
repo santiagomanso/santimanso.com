@@ -22,6 +22,8 @@ const zombie6 =
 const inventory1 = require('../assets/screenshots/inventoryManager/inventoryManager1.png')
 const inventory2 = require('../assets/screenshots/inventoryManager/inventoryManager2.png')
 const inventory3 = require('../assets/screenshots/inventoryManager/inventoryManager3.png')
+const challengeInv1 =
+  'https://raw.githubusercontent.com/santiagomanso/ZombieMarkt/main/inventory-manager/src/assets/debouncedFlowchart.png'
 
 //deliveryFee
 const deliveryFee1 = require('../assets/screenshots/deliveryFee/deliveryFee1.png')
@@ -84,7 +86,7 @@ export const projectsData: Projects = [
     urlDemo: 'https://zombie-markt-gswm.vercel.app/',
     urlCode: 'https://github.com/santiagomanso/ZombieMarkt',
     screenShots: [inventory1, inventory2, inventory3],
-    // challenges: [],
+    challenges: [challengeInv1],
   },
   {
     id: 3,
