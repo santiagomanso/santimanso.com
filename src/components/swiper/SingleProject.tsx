@@ -107,7 +107,7 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
         ))}
       </ul>
       {/* sections */}
-      <div className='md:mt-5 flex items-start justify-start h-1/2 w-full lg:h-[70%]'>
+      <div className='md:mt-5 flex items-start justify-start h-1/2 w-full lg:h-[68%]'>
         {/* LEFT */}
         <div className='h-full w-1/2 hidden lg:flex items-center   justify-center'>
           <img
@@ -213,7 +213,7 @@ const SingleProject: React.FC<SingleProjectProps> = ({ project }) => {
         </div>
       </div>
       {/* call to actions */}
-      <div className='mt-16 md:mt-2  flex justify-between md:justify-around lg:justify-evenly md:px-10 lg:px-0 w-full z-30 text-white lg:mt-4 '>
+      <div className='mt-16 md:mt-2  flex justify-between md:justify-around lg:justify-evenly md:px-10 lg:px-0 w-full z-30 text-white lg:mt-3 '>
         <button
           onClick={() => handleClick(project.urlCode)}
           className='flex gap-1 items-center text-lg lg:text-xl px-7 lg:px-8 py-1 border-2 border-white border-solid rounded-md bg-variant2'

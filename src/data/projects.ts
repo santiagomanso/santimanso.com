@@ -30,11 +30,13 @@ const deliveryFee1 = require('../assets/screenshots/deliveryFee/deliveryFee1.png
 const deliveryFee2 = require('../assets/screenshots/deliveryFee/deliveryFee2.png')
 const deliveryFee3 = require('../assets/screenshots/deliveryFee/deliveryFee3.png')
 
-//quote machine
+//rich simulator
 const rich1 = require('../assets/screenshots/richSimulator/rich1.png')
 const rich2 = require('../assets/screenshots/richSimulator/rich2.png')
 const rich3 = require('../assets/screenshots/richSimulator/rich3.png')
 const rich4 = require('../assets/screenshots/richSimulator/rich4.png')
+const challengeRich1 =
+  'https://raw.githubusercontent.com/santiagomanso/rich-commerce/5371bcf0d82815e2879c48734e66b468210edcea/src/components/carousel/carousel.png'
 
 //array of projects to feed ProjectList and modal components
 export const projectsData: Projects = [
@@ -109,7 +111,7 @@ export const projectsData: Projects = [
     urlDemo: 'https://rich-simulator.netlify.app/',
     urlCode: 'https://github.com/santiagomanso/rich-commerce',
     screenShots: [rich1, rich2, rich3, rich4],
-    // challenges: [],
+    challenges: [challengeRich1],
     video: 'WN44D_yQlXI',
   },
   {
