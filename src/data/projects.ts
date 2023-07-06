@@ -12,7 +12,7 @@ const zombie1 = require('../assets/screenshots/zombiemarkt/zombie1.png')
 const zombie2 = require('../assets/screenshots/zombiemarkt/zombie2.png')
 const zombie3 = require('../assets/screenshots/zombiemarkt/zombie3.png')
 const zombie4 =
-  'https://raw.githubusercontent.com/santiagomanso/ZombieMarkt/main/e-commerce/e-commerce_reusable-components.drawio.png'
+  'https://raw.githubusercontent.com/santiagomanso/ZombieMarkt/main/q-commerce/e-commerce_reusable-components.drawio.png'
 const zombie5 =
   'https://raw.githubusercontent.com/santiagomanso/ZombieMarkt/main/server/createOrder%20flowchart.jpg'
 const zombie6 =
