@@ -7,7 +7,7 @@ const HomeScreen = () => {
     <MainContainer border justifyCenter>
       <div className='flex flex-col items-center -translate-y-40 lg:translate-y-0'>
         <Header
-          title='santiago manso castro'
+          title='santiago menso castro'
           typeWriterText={[
             'Fullstack developer💻',
             'Typescript 💓',
