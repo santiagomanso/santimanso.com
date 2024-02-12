@@ -7,3 +7,19 @@
 * {
   font-family: Staatliches, sans-serif;
 }
+
+/* media query targetting screen-scale 150% */
+@media (-webkit-device-pixel-ratio: 1.5) {
+  .appContainer {
+    zoom: 0.6;
+    max-width: 65%;
+  }
+}
+
+/* media query targetting screen-scale 125% */
+@media (-webkit-device-pixel-ratio: 1.25) {
+  .appContainer {
+    zoom: 0.8;
+    max-width: 75%;
+  }
+}
